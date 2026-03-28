@@ -3122,7 +3122,6 @@
   }
 
   const DISHES = [
-    { key:"onigiri", name:"おにぎり", unit:"1個", kcal:180, protein:4.0, fat:1.5, carb:38, hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:35.0, fiber:0.5, salt:0.6 },
     { key:"bread_meal", name:"食パン", unit:"1枚", kcal:160, protein:5, fat:2, carb:30, type:"パン", group:"料理", cat:"主食", sugar:42.0, fiber:2.2, salt:0.8 },
     { key:"spaghetti", name:"パスタ", unit:"1皿", kcal:600, protein:20, fat:18, carb:90, hasVariants:true, type:"麺", group:"料理", cat:"主食", sugar:76.0, fiber:3.5, salt:1.8 },
     
@@ -3131,19 +3130,16 @@
     { key:"yakisoba", name:"焼きそば", unit:"1皿", kcal:600, protein:18, fat:20, carb:85, type:"麺", group:"料理", cat:"主食", sugar:70.0, fiber:3.0, salt:2.5 },
     { key:"fried_rice", name:"チャーハン", unit:"1皿", kcal:700, protein:18, fat:25, carb:90, type:"米", group:"料理", cat:"主食", sugar:75.0, fiber:1.5, salt:2.0 },
     { key:"omurice", name:"オムライス", unit:"1皿", kcal:720, protein:20, fat:26, carb:95, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:1.5, salt:2.0 },
-    { key:"donburi", name:"丼", unit:"1杯", kcal:650, protein:20, fat:20, carb:90, type:"丼", group:"料理", cat:"主食", sugar:74.0, fiber:1.2, salt:2.0 },
+    { key:"donburi", name:"丼", unit:"1杯", kcal:650, protein:20, fat:20, carb:90, type:"米", group:"料理", cat:"主食", sugar:74.0, fiber:1.2, salt:2.0 },
     { key:"curry_rice", name:"カレーライス", unit:"1皿", kcal:740, protein:18, fat:22, carb:106, type:"米", group:"料理", cat:"主食", sugar:94.0, fiber:4.0, salt:2.5 },
     { key:"hayashi_rice", name:"ハヤシライス", unit:"1皿", kcal:750, protein:18, fat:24, carb:105, type:"米", group:"料理", cat:"主食", sugar:88.0, fiber:2.5, salt:2.2 },
     { key:"ramen_ie", name:"家系ラーメン", unit:"1杯", kcal:850, protein:30, fat:40, carb:80, type:"麺", group:"料理", cat:"主食", sugar:62.0, fiber:2.0, salt:6.5 },
     { key:"ramen_tonkotsu", name:"豚骨ラーメン", unit:"1杯", kcal:700, protein:28, fat:30, carb:70, type:"麺", group:"料理", cat:"主食", sugar:58.0, fiber:1.8, salt:6.0 },
-    { key:"ramen_tantan", name:"担々麺", unit:"1杯", kcal:780, protein:28, fat:32, carb:85, type:"麺", group:"料理", cat:"主食", sugar:70.0, fiber:2.5, salt:5.5 },
     { key:"ramen", name:"ラーメン", unit:"1杯", kcal:650, protein:25, fat:20, carb:85, hasVariants:true, type:"麺", group:"料理", cat:"主食", sugar:72.0, fiber:2.0, salt:5.0 },
     { key:"ramen_large", name:"ラーメン（大盛）", unit:"1杯", kcal:860, protein:28, fat:28, carb:108, type:"麺", group:"料理", cat:"主食", sugar:90.0, fiber:2.5, salt:6.5 },
-    { key:"conbini_bento_chicken", name:"チキン弁当", unit:"1個", kcal:650, protein:30, fat:20, carb:85, type:"米", group:"料理", cat:"主食", sugar:70.0, fiber:2.0, salt:2.5 },
-    { key:"conbini_bento_fish", name:"焼き魚弁当", unit:"1個", kcal:600, protein:28, fat:18, carb:80, type:"米", group:"料理", cat:"主食", sugar:66.0, fiber:1.5, salt:2.5 },
     { key:"conbini_sandwich_egg", name:"サンドイッチ（たまご）", unit:"1パック", kcal:320, protein:12, fat:16, carb:30, type:"パン", group:"料理", cat:"主食", sugar:25.0, fiber:1.2, salt:1.5 },
     { key:"conbini_sandwich_ham", name:"サンドイッチ（ハム）", unit:"1パック", kcal:300, protein:13, fat:12, carb:32, type:"パン", group:"料理", cat:"主食", sugar:27.0, fiber:1.2, salt:1.8 },
-    { key:"gyudon", name:"牛丼", unit:"1杯", kcal:720, protein:22, fat:20, carb:98, hasVariants:true, type:"丼", group:"料理", cat:"主食", sugar:82.0, fiber:1.0, salt:2.2 },
+    { key:"gyudon", name:"牛丼", unit:"1杯", kcal:720, protein:22, fat:20, carb:98, hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:82.0, fiber:1.0, salt:2.2 },
     { key:"matsuya_set", name:"定食（ご飯＋主菜）", unit:"1食", kcal:800, protein:30, fat:25, carb:100, type:"米", group:"料理", cat:"主食", sugar:82.0, fiber:2.0, salt:3.0 },
     { key:"karaage_set", name:"唐揚げ定食", unit:"1食", kcal:950, protein:35, fat:40, carb:105, type:"米", group:"料理", cat:"主食", sugar:86.0, fiber:2.5, salt:3.5 },
     { key:"hamburg_set", name:"ハンバーグ定食", unit:"1食", kcal:840, protein:28, fat:36, carb:92, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:2.5, salt:3.5 },
@@ -3154,14 +3150,12 @@
     { key:"pizza_slice", name:"ピザ（1枚）", unit:"1枚", kcal:250, protein:10, fat:10, carb:30, type:"粉もの", group:"料理", cat:"主食", sugar:25.0, fiber:1.2, salt:1.5 },
     { key:"pizza_whole", name:"ピザ（1枚分）", unit:"1枚", kcal:1200, protein:45, fat:50, carb:130, type:"粉もの", group:"料理", cat:"主食", sugar:108.0, fiber:5.0, salt:7.0 },
     { key:"burger_set", name:"ハンバーガーセット", unit:"1セット", kcal:800, protein:25, fat:35, carb:95, type:"パン", group:"料理", cat:"主食", sugar:78.0, fiber:3.0, salt:3.5 },
-    { key:"oyakodon", name:"親子丼", unit:"1杯", kcal:680, protein:28, fat:18, carb:92, type:"丼", group:"料理", cat:"主食", sugar:76.0, fiber:1.2, salt:2.5 },
-    { key:"katsudon", name:"カツ丼", unit:"1杯", kcal:920, protein:32, fat:36, carb:108, type:"丼", group:"料理", cat:"主食", sugar:90.0, fiber:1.5, salt:3.0 },
-    { key:"tendon", name:"天丼", unit:"1杯", kcal:860, protein:20, fat:32, carb:112, type:"丼", group:"料理", cat:"主食", sugar:95.0, fiber:1.5, salt:3.5 },
-    { key:"kaisendon", name:"海鮮丼", unit:"1杯", kcal:620, protein:30, fat:10, carb:92, type:"丼", group:"料理", cat:"主食", sugar:78.0, fiber:1.0, salt:2.0 },
-    { key:"butadon", name:"豚丼", unit:"1杯", kcal:690, protein:22, fat:22, carb:90, type:"丼", group:"料理", cat:"主食", sugar:75.0, fiber:1.0, salt:2.5 },
-    { key:"yakitori_bowl", name:"焼き鳥丼", unit:"1杯", kcal:650, protein:28, fat:18, carb:88, type:"丼", group:"料理", cat:"主食", sugar:74.0, fiber:1.0, salt:2.5 },
-    { key:"taco_rice", name:"タコライス", unit:"1皿", kcal:780, protein:25, fat:32, carb:92, type:"米", group:"料理", cat:"主食", sugar:76.0, fiber:2.0, salt:2.5 },
-    { key:"gapao_rice", name:"ガパオライス", unit:"1皿", kcal:720, protein:24, fat:24, carb:92, type:"米", group:"料理", cat:"主食", sugar:76.0, fiber:1.5, salt:2.5 },
+    { key:"oyakodon", name:"親子丼", unit:"1杯", kcal:680, protein:28, fat:18, carb:92, type:"米", group:"料理", cat:"主食", sugar:76.0, fiber:1.2, salt:2.5 },
+    { key:"katsudon", name:"カツ丼", unit:"1杯", kcal:920, protein:32, fat:36, carb:108, type:"米", group:"料理", cat:"主食", sugar:90.0, fiber:1.5, salt:3.0 },
+    { key:"tendon", name:"天丼", unit:"1杯", kcal:860, protein:20, fat:32, carb:112, type:"米", group:"料理", cat:"主食", sugar:95.0, fiber:1.5, salt:3.5 },
+    { key:"kaisendon", name:"海鮮丼", unit:"1杯", kcal:620, protein:30, fat:10, carb:92, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:1.0, salt:2.0 },
+    { key:"butadon", name:"豚丼", unit:"1杯", kcal:690, protein:22, fat:22, carb:90, type:"米", group:"料理", cat:"主食", sugar:75.0, fiber:1.0, salt:2.5 },
+    { key:"yakitori_bowl", name:"焼き鳥丼", unit:"1杯", kcal:650, protein:28, fat:18, carb:88, type:"米", group:"料理", cat:"主食", sugar:74.0, fiber:1.0, salt:2.5 },
     { key:"keema_curry", name:"キーマカレー", unit:"1皿", kcal:760, protein:24, fat:26, carb:102, type:"米", group:"料理", cat:"主食", sugar:86.0, fiber:4.0, salt:2.5 },
     { key:"dry_curry", name:"ドライカレー", unit:"1皿", kcal:740, protein:22, fat:24, carb:100, type:"米", group:"料理", cat:"主食", sugar:84.0, fiber:3.5, salt:2.2 },
     { key:"fried_chicken_curry", name:"カツカレー", unit:"1皿", kcal:1050, protein:30, fat:40, carb:125, type:"米", group:"料理", cat:"主食", sugar:110.0, fiber:4.5, salt:3.0 },
@@ -3185,38 +3179,28 @@
     { key:"kitsune_udon", name:"きつねうどん", unit:"1杯", kcal:430, protein:13, fat:9, carb:72, type:"麺", group:"料理", cat:"主食", sugar:58.0, fiber:1.5, salt:3.0 },
     { key:"zaru_soba", name:"ざるそば", unit:"1枚", kcal:320, protein:12, fat:2, carb:62, type:"麺", group:"料理", cat:"主食", sugar:51.0, fiber:2.5, salt:1.5 },
     { key:"tempura_soba", name:"天ぷらそば", unit:"1杯", kcal:540, protein:14, fat:18, carb:78, type:"麺", group:"料理", cat:"主食", sugar:63.0, fiber:2.5, salt:3.5 },
-    { key:"gratin", name:"グラタン", unit:"1皿", kcal:520, protein:18, fat:24, carb:54, type:"粉もの", group:"料理", cat:"主食", sugar:44.0, fiber:1.5, salt:1.8 },
-    { key:"doria", name:"ドリア", unit:"1皿", kcal:680, protein:20, fat:24, carb:92, type:"粉もの", group:"料理", cat:"主食", sugar:76.0, fiber:1.5, salt:2.0 },
-    { key:"okonomiyaki", name:"お好み焼き", unit:"1枚", kcal:620, protein:20, fat:26, carb:72, type:"粉もの", group:"料理", cat:"主食", sugar:58.0, fiber:2.0, salt:2.5 },
+    { key:"okonomiyaki_v_parent", name:"お好み焼き", unit:"1枚", kcal:620, protein:20, fat:26, carb:72, hasVariants:true, type:"粉もの", group:"料理", cat:"主食", sugar:58.0, fiber:2.0, salt:2.5 },
     { key:"takoyaki", name:"たこ焼き", unit:"8個", kcal:420, protein:14, fat:14, carb:58, type:"粉もの", group:"料理", cat:"主食", sugar:50.0, fiber:1.2, salt:2.5 },
-    { key:"sashimi", name:"刺身", unit:"1皿", kcal:200, protein:30, fat:5, carb:2, group:"料理", cat:"主菜", sugar:0.5, fiber:0.0, salt:0.8 },
+    { key:"sashimi", name:"刺身", unit:"1皿", kcal:200, protein:30, fat:5, carb:2, type:"魚系", group:"料理", cat:"主菜", sugar:0.5, fiber:0.0, salt:0.8 },
     { key:"boiled_egg", name:"ゆで卵", unit:"1個", kcal:80, protein:6.5, fat:5.5, carb:0.5, group:"料理", cat:"主菜", sugar:0.2, fiber:0.0, salt:0.2 },
-    { key:"yakiniku", name:"焼肉", unit:"1人前", kcal:700, protein:35, fat:50, carb:20, group:"料理", cat:"主菜", sugar:5.0, fiber:0.0, salt:1.5 },
-    { key:"karaage", name:"唐揚げ", unit:"5個", kcal:420, protein:28, fat:26, carb:14, group:"料理", cat:"主菜", sugar:8.0, fiber:0.3, salt:1.5 },
-    { key:"hamburg", name:"ハンバーグ", unit:"1個", kcal:320, protein:18, fat:22, carb:12, group:"料理", cat:"主菜", sugar:10.0, fiber:0.5, salt:1.5 },
-    { key:"grilled_fish", name:"焼き魚", unit:"1切れ", kcal:180, protein:20, fat:10, carb:0, group:"料理", cat:"主菜", sugar:0.0, fiber:0.0, salt:0.5 },
-    { key:"ginger_pork", name:"生姜焼き", unit:"1人前", kcal:380, protein:24, fat:24, carb:14, group:"料理", cat:"主菜", sugar:8.0, fiber:0.3, salt:2.0 },
-    { key:"tofu_steak", name:"豆腐ステーキ", unit:"1皿", kcal:180, protein:14, fat:10, carb:8, group:"料理", cat:"主菜", sugar:4.0, fiber:0.5, salt:1.2 },
-    { key:"kimchi", name:"キムチ", unit:"100g", kcal:60, protein:3, fat:1, carb:10, group:"料理", cat:"副菜", sugar:5.0, fiber:1.5, salt:2.5 },
-    { key:"potato_salad", name:"ポテトサラダ", unit:"100g", kcal:150, protein:3, fat:9, carb:15, group:"料理", cat:"副菜", sugar:12.0, fiber:1.2, salt:1.0 },
-    { key:"macaroni_salad", name:"マカロニサラダ", unit:"100g", kcal:170, protein:4, fat:10, carb:18, group:"料理", cat:"副菜", sugar:15.0, fiber:1.0, salt:1.0 },
-    { key:"coleslaw", name:"コールスロー", unit:"100g", kcal:120, protein:2, fat:7, carb:13, group:"料理", cat:"副菜", sugar:10.0, fiber:1.2, salt:0.8 },
-    { key:"edamame", name:"枝豆", unit:"100g", kcal:130, protein:11, fat:6, carb:9, group:"料理", cat:"副菜", sugar:4.0, fiber:3.5, salt:0.0 },
-    { key:"conbini_salad", name:"コンビニサラダ", unit:"1袋", kcal:80, protein:3, fat:3, carb:10, group:"料理", cat:"副菜", sugar:5.0, fiber:1.5, salt:0.3 },
-    { key:"conbini_pasta_salad", name:"パスタサラダ", unit:"1個", kcal:320, protein:10, fat:12, carb:42, type:"麺", group:"料理", cat:"副菜", sugar:36.0, fiber:2.0, salt:1.5 },
-    { key:"fries", name:"ポテト", unit:"Mサイズ", kcal:410, protein:5, fat:20, carb:50, group:"料理", cat:"副菜", sugar:42.0, fiber:2.5, salt:0.8 },
-    { key:"hiyayakko", name:"冷奴", unit:"1皿", kcal:90, protein:8, fat:5, carb:2, group:"料理", cat:"副菜", sugar:1.2, fiber:0.4, salt:0.3 },
-    { key:"salad", name:"サラダ", unit:"1皿", kcal:60, protein:2, fat:3, carb:8, group:"料理", cat:"副菜", sugar:5.0, fiber:1.5, salt:0.3 },
-    { key:"broccoli_salad", name:"ブロッコリーサラダ", unit:"1皿", kcal:90, protein:4, fat:5, carb:9, group:"料理", cat:"副菜", sugar:4.0, fiber:3.0, salt:0.5 },
-    { key:"seaweed_salad", name:"海藻サラダ", unit:"1皿", kcal:40, protein:2, fat:1, carb:7, group:"料理", cat:"副菜", sugar:4.0, fiber:2.0, salt:0.8 },
-    { key:"kinpira", name:"きんぴらごぼう", unit:"1皿", kcal:120, protein:2, fat:5, carb:18, group:"料理", cat:"副菜", sugar:14.0, fiber:3.5, salt:1.5 },
-    { key:"ohitashi", name:"おひたし", unit:"1皿", kcal:35, protein:2, fat:0.5, carb:4, group:"料理", cat:"副菜", sugar:2.0, fiber:1.5, salt:0.5 },
-    { key:"misoshiru", name:"味噌汁", unit:"1杯", kcal:60, protein:3, fat:2, carb:7, group:"料理", cat:"汁物", sugar:3.0, fiber:0.8, salt:1.5 },
-    { key:"miso_soup", name:"味噌汁（軽め）", unit:"1杯", kcal:50, protein:3, fat:1.5, carb:6, group:"料理", cat:"汁物", sugar:2.5, fiber:0.6, salt:1.2 },
-    { key:"conbini_soup_chicken", name:"鶏スープ", unit:"1杯", kcal:120, protein:10, fat:6, carb:6, group:"料理", cat:"汁物", sugar:3.0, fiber:0.5, salt:1.5 },
-    { key:"tonjiru", name:"豚汁", unit:"1杯", kcal:180, protein:8, fat:10, carb:14, group:"料理", cat:"汁物", sugar:6.0, fiber:2.0, salt:1.8 },
-    { key:"egg_soup", name:"卵スープ", unit:"1杯", kcal:80, protein:5, fat:4, carb:5, group:"料理", cat:"汁物", sugar:2.0, fiber:0.2, salt:1.2 },
-    { key:"wakame_soup", name:"わかめスープ", unit:"1杯", kcal:40, protein:2, fat:1, carb:5, group:"料理", cat:"汁物", sugar:2.0, fiber:0.8, salt:1.5 },
+    { key:"yakiniku", name:"焼肉", unit:"1人前", kcal:700, protein:35, fat:50, carb:20, type:"肉系", group:"料理", cat:"主菜", sugar:5.0, fiber:0.0, salt:1.5 },
+    { key:"karaage", name:"唐揚げ", unit:"5個", kcal:420, protein:28, fat:26, carb:14, type:"肉系", group:"料理", cat:"主菜", sugar:8.0, fiber:0.3, salt:1.5 },
+    { key:"hamburg", name:"ハンバーグ", unit:"1個", kcal:320, protein:18, fat:22, carb:12, type:"肉系", group:"料理", cat:"主菜", sugar:10.0, fiber:0.5, salt:1.5 },
+    { key:"grilled_fish", name:"焼き魚", unit:"1切れ", kcal:180, protein:20, fat:10, carb:0, type:"魚系", group:"料理", cat:"主菜", sugar:0.0, fiber:0.0, salt:0.5 },
+    { key:"ginger_pork", name:"生姜焼き", unit:"1人前", kcal:380, protein:24, fat:24, carb:14, type:"肉系", group:"料理", cat:"主菜", sugar:8.0, fiber:0.3, salt:2.0 },
+    { key:"salad_v_parent",        name:"サラダ",     unit:"1皿",   kcal:60,  protein:2,  fat:3,  carb:8,  hasVariants:true, group:"料理", cat:"副菜", sugar:5.0,  fiber:1.5, salt:0.3 },
+    { key:"potato_salad_v_parent", name:"ポテサラ系", unit:"100g",  kcal:150, protein:3,  fat:9,  carb:15, hasVariants:true, group:"料理", cat:"副菜", sugar:12.0, fiber:1.2, salt:1.0 },
+    { key:"washoku_side_v_parent", name:"和惣菜",     unit:"1皿",   kcal:80,  protein:2,  fat:3,  carb:12, hasVariants:true, group:"料理", cat:"副菜", sugar:8.0,  fiber:2.5, salt:1.2 },
+    { key:"fries",                 name:"ポテト",     unit:"Mサイズ",kcal:410, protein:5,  fat:20, carb:50, group:"料理", cat:"副菜", sugar:42.0, fiber:2.5, salt:0.8 },
+    { key:"edamame",               name:"枝豆",       unit:"100g",  kcal:130, protein:11, fat:6,  carb:9,  group:"料理", cat:"副菜", sugar:4.0,  fiber:3.5, salt:0.0 },
+    { key:"miso_v_parent",         name:"味噌汁",             unit:"1杯", kcal:60,  protein:3,   fat:2, carb:7,  hasVariants:true, group:"料理", cat:"汁物", sugar:3.0, fiber:0.8, salt:1.5 },
+    { key:"instant_soup_v_parent", name:"インスタントスープ", unit:"1食", kcal:40,  protein:1.5, fat:1, carb:6,  hasVariants:true, group:"料理", cat:"汁物", sugar:3.0, fiber:0.5, salt:1.5 },
+    { key:"soup_can_v_parent",     name:"缶・レトルトスープ", unit:"1個", kcal:128, protein:2,   fat:4, carb:20, hasVariants:true, group:"料理", cat:"汁物", sugar:12.0,fiber:0.8, salt:1.2 },
+    { key:"egg_soup",              name:"卵スープ",           unit:"1杯", kcal:80,  protein:5,   fat:4, carb:5,  group:"料理", cat:"汁物", sugar:2.0, fiber:0.2, salt:1.2 },
+    { key:"wakame_soup",           name:"わかめスープ",       unit:"1杯", kcal:40,  protein:2,   fat:1, carb:5,  group:"料理", cat:"汁物", sugar:2.0, fiber:0.8, salt:1.5 },
+    { key:"onion_soup",            name:"オニオングラタンスープ",unit:"1杯",kcal:210,protein:7,  fat:8, carb:28, group:"料理", cat:"汁物" },
+    { key:"minestrone",            name:"ミネストローネ",     unit:"1杯", kcal:120, protein:4,   fat:3, carb:20, group:"料理", cat:"汁物" },
+    { key:"asia_tom_yum",          name:"トムヤムクン",       unit:"1杯", kcal:140, protein:12,  fat:6, carb:12, group:"料理", cat:"汁物", sugar:5.0, fiber:1.0, salt:2.5 },
     { key:"chicken_v_parent", name:"鶏肉", unit:"100g", kcal:120, protein:22, fat:1.5, carb:0, hasVariants:true, group:"食材", cat:"肉", sugar:0.0, fiber:0.0, salt:0.1 },
     { key:"pork_v_parent", name:"豚肉", unit:"100g", kcal:248, protein:19, fat:19, carb:0, hasVariants:true, group:"食材", cat:"肉", sugar:0.0, fiber:0.0, salt:0.1 },
     { key:"beef_v_parent", name:"牛肉", unit:"100g", kcal:318, protein:17, fat:27, carb:0, hasVariants:true, group:"食材", cat:"肉", sugar:0.0, fiber:0.0, salt:0.1 },
@@ -3241,65 +3225,83 @@
     { key:"ginger", name:"しょうが", unit:"10g", kcal:8, protein:0.2, fat:0.1, carb:2, group:"食材", cat:"野菜", sugar:0.5, fiber:0.7, salt:0.0 },
     { key:"shiso", name:"大葉（しそ）", unit:"5g", kcal:1, protein:0.2, fat:0.0, carb:0.2, group:"食材", cat:"野菜", sugar:0.0, fiber:0.4, salt:0.0 },
     { key:"mitsuba", name:"三つ葉", unit:"20g", kcal:5, protein:0.4, fat:0.0, carb:1, group:"食材", cat:"野菜", sugar:0.3, fiber:0.6, salt:0.0 },
-    { key:"rice_v_parent", name:"ごはん・米", unit:"1食分", kcal:250, protein:4, fat:0.5, carb:55, hasVariants:true, type:"米", group:"食材", cat:"炭水化物", sugar:54.0, fiber:0.3, salt:0.0 },
-    { key:"bread_v_parent", name:"パン", unit:"1枚", kcal:160, protein:5, fat:2, carb:30, hasVariants:true, type:"パン", group:"食材", cat:"炭水化物", sugar:42.0, fiber:2.2, salt:0.8 },
-    { key:"noodle_v_parent", name:"麺（乾麺・生麺）", unit:"1食分", kcal:270, protein:9, fat:1.5, carb:60, hasVariants:true, type:"麺", group:"食材", cat:"炭水化物", sugar:2.0, fiber:2.0, salt:0.2 },
-    { key:"cheese_v_parent", name:"チーズ", unit:"1食分", kcal:60, protein:4, fat:5, carb:1, hasVariants:true, group:"食材", cat:"乳製品", sugar:0.3, fiber:0.0, salt:0.8 },
-    { key:"yogurt_v_parent", name:"ヨーグルト", unit:"1個", kcal:62, protein:4, fat:3, carb:5, hasVariants:true, group:"食材", cat:"乳製品", sugar:4.9, fiber:0.0, salt:0.1 },
-    { key:"milk_v_parent", name:"ミルク・植物性ミルク", unit:"200ml", kcal:130, protein:7, fat:7, carb:10, hasVariants:true, group:"食材", cat:"乳製品", sugar:9.6, fiber:0.0, salt:0.2 },
-    { key:"fruit_v_parent", name:"果物", unit:"1個", kcal:53, protein:0.8, fat:0.1, carb:13, hasVariants:true, group:"食材", cat:"果物", sugar:11.0, fiber:1.2, salt:0.0 },
-    { key:"oil_v_parent", name:"油脂", unit:"大さじ1", kcal:107, protein:0.0, fat:12, carb:0, hasVariants:true, group:"食材", cat:"調味料", sugar:0.0, fiber:0.0, salt:0.0 },
-    { key:"seasoning_jp_v_parent", name:"和洋中調味料", unit:"大さじ1", kcal:13, protein:0.5, fat:0.0, carb:2, hasVariants:true, group:"食材", cat:"調味料", sugar:1.0, fiber:0.0, salt:2.0 },
-    { key:"home_avocado", name:"アボカド", unit:"1/2個", kcal:120, protein:1.5, fat:11, carb:3, group:"食材", cat:"果物", sugar:0.9, fiber:5.3, salt:0.0 },
-    { key:"home_blueberry", name:"ブルーベリー", unit:"100g", kcal:50, protein:0.5, fat:0.3, carb:12, group:"食材", cat:"果物", sugar:9.6, fiber:3.3, salt:0.0 },
-    { key:"tea_v_parent", name:"お茶・ノンカフェイン", unit:"1杯/1本", kcal:0, protein:0, fat:0, carb:0, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:0.0, fiber:0.0, salt:0.0 },
-    { key:"coffee_v_parent", name:"コーヒー・カフェ系", unit:"1杯", kcal:5, protein:0, fat:0, carb:1, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:0.7, fiber:0.0, salt:0.0 },
-    { key:"cola_v_parent", name:"コーラ系", unit:"1本", kcal:215, protein:0, fat:0, carb:55, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:55.0, fiber:0.0, salt:0.0 },
-    { key:"juice_v_parent", name:"ジュース・果汁", unit:"200ml", kcal:84, protein:0.5, fat:0, carb:20, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:18.0, fiber:0.0, salt:0.0 },
-    { key:"sports_drink_v_parent", name:"スポーツドリンク", unit:"500ml", kcal:85, protein:0, fat:0, carb:21, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:21.0, fiber:0.0, salt:0.5 },
-    { key:"lactic_drink_v_parent", name:"乳酸菌・甘酒系", unit:"1本/1杯", kcal:50, protein:0.8, fat:0, carb:12, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:11.5, fiber:0.0, salt:0.0 },
-    { key:"energy_drink_v_parent", name:"エナジードリンク", unit:"1缶", kcal:113, protein:0.5, fat:0, carb:28, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:27.0, fiber:0.0, salt:0.1 },
-    { key:"choco_v_parent", name:"チョコ菓子", unit:"1食分", kcal:277, protein:3, fat:16, carb:31, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:29.0, fiber:1.2, salt:0.1 },
-    { key:"nut_v_parent", name:"ナッツ類", unit:"30g", kcal:180, protein:6, fat:16, carb:6, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:1.5, fiber:2.0, salt:0.1 },
-    { key:"snack_v_parent", name:"スナック菓子", unit:"1袋", kcal:230, protein:3, fat:12, carb:29, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:2.0, fiber:2.0, salt:0.6 },
-    { key:"wagashi_v_parent", name:"和菓子", unit:"1個", kcal:185, protein:3.5, fat:2, carb:39, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:35.0, fiber:0.7, salt:0.2 },
-    { key:"kashi_pan_v_parent", name:"菓子パン", unit:"1個", kcal:260, protein:6, fat:8, carb:40, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:18.0, fiber:1.2, salt:0.5 },
-    { key:"protein_powder", name:"プロテインパウダー", unit:"1杯", kcal:120, protein:24, fat:1, carb:3, hasVariants:true, group:"その他", cat:"サプリ・補助", sugar:2.0, fiber:0.0, salt:0.1 },
-    { key:"salad_chicken", name:"サラダチキン", unit:"1個", kcal:115, protein:24, fat:1, carb:1, hasVariants:true, group:"その他", cat:"サプリ・補助", sugar:0.5, fiber:0.0, salt:0.8 },
-    { key:"tuna_can", name:"ツナ缶", unit:"1缶", kcal:70, protein:16, fat:0.5, carb:0, hasVariants:true, group:"食材", cat:"魚", sugar:0.0, fiber:0.0, salt:0.4 },
-    { key:"canned_fish", name:"魚缶詰", unit:"1缶", kcal:190, protein:21, fat:11, carb:0, hasVariants:true, group:"食材", cat:"魚", sugar:0.0, fiber:0.0, salt:0.8 },
-    { key:"gyudon_chain", name:"牛丼チェーン", unit:"1杯", kcal:650, protein:22, fat:16, carb:98, hasVariants:true, type:"丼", group:"料理", cat:"主食", sugar:80.0, fiber:1.0, salt:2.8 },
-    { key:"protein_drink_bottle", name:"プロテインドリンク（ボトル）", unit:"1本", kcal:185, protein:18, fat:4, carb:22, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:18.0, fiber:0.0, salt:0.2 },
-    { key:"greek_yogurt", name:"ギリシャヨーグルト", unit:"1個", kcal:120, protein:10, fat:4, carb:10, hasVariants:true, group:"その他", cat:"サプリ・補助", sugar:9.0, fiber:0.0, salt:0.1 },
-    { key:"udon_v_parent", name:"うどん", unit:"1杯", kcal:350, protein:9, fat:1, carb:70, hasVariants:true, type:"麺", group:"料理", cat:"主食", sugar:52.0, fiber:1.3, salt:0.5 },
-    { key:"soba_v_parent", name:"そば", unit:"1杯", kcal:340, protein:14, fat:2, carb:65, hasVariants:true, type:"麺", group:"料理", cat:"主食", sugar:49.0, fiber:2.0, salt:0.5 },
-    { key:"curry_v_parent", name:"カレー", unit:"1皿", kcal:740, protein:18, fat:22, carb:106, hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:88.0, fiber:4.0, salt:2.5 },
-    { key:"omurice_v_parent", name:"オムライス", unit:"1皿", kcal:720, protein:20, fat:26, carb:95, hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:1.5, salt:2.0 },
-    { key:"donburi_v_parent", name:"丼（各種）", unit:"1杯", kcal:640, protein:22, fat:17, carb:88, hasVariants:true, type:"丼", group:"料理", cat:"主食", sugar:74.0, fiber:1.2, salt:2.0 },
-    { key:"sushi_v_parent", name:"寿司", unit:"1皿", kcal:550, protein:30, fat:8, carb:85, hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:72.0, fiber:1.0, salt:3.0 },
-    { key:"bento_v_parent", name:"お弁当", unit:"1個", kcal:620, protein:27, fat:19, carb:83, hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:70.0, fiber:2.0, salt:2.5 },
-    { key:"sandwich_v_parent", name:"サンドイッチ", unit:"1パック", kcal:330, protein:13, fat:15, carb:33, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:27.0, fiber:1.5, salt:1.5 },
-    { key:"burger_v_parent", name:"バーガー", unit:"1個", kcal:420, protein:18, fat:18, carb:46, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:38.0, fiber:1.5, salt:2.0 },
-    { key:"pizza_v_parent", name:"ピザ", unit:"1枚", kcal:250, protein:10, fat:10, carb:30, hasVariants:true, type:"粉もの", group:"料理", cat:"主食", sugar:25.0, fiber:1.2, salt:1.5 },
-    { key:"teishoku_v_parent", name:"定食", unit:"1食", kcal:720, protein:29, fat:25, carb:91, hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:2.5, salt:3.0 },
-    { key:"nabe_v_parent", name:"鍋", unit:"1人前", kcal:380, protein:26, fat:16, carb:28, hasVariants:true, group:"料理", cat:"主食", sugar:20.0, fiber:2.5, salt:3.0 },
-    { key:"toast_v_parent", name:"トースト", unit:"1枚", kcal:215, protein:5, fat:5, carb:38, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:30.0, fiber:1.5, salt:0.8 },
-    { key:"cereal_v_parent", name:"シリアル", unit:"50g", kcal:190, protein:5, fat:4, carb:34, hasVariants:true, group:"食材", cat:"炭水化物", sugar:28.0, fiber:3.0, salt:0.2 },
-    { key:"egg_dish_v_parent", name:"卵料理", unit:"1個", kcal:110, protein:8, fat:7, carb:1, hasVariants:true, group:"料理", cat:"主菜", sugar:1.5, fiber:0.0, salt:0.5 },
-    { key:"asian_noodle_v_parent", name:"アジア麺", unit:"1杯", kcal:500, protein:19, fat:16, carb:75, hasVariants:true, type:"麺", group:"料理", cat:"主食", sugar:60.0, fiber:2.0, salt:3.0 },
-    { key:"beer_v_parent", name:"ビール・発泡酒", unit:"350ml", kcal:140, protein:1, fat:0, carb:11, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:10.0, fiber:0.0, salt:0.0 },
-    { key:"wine_v_parent", name:"ワイン", unit:"120ml", kcal:84, protein:0.1, fat:0, carb:2, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:2.0, fiber:0.0, salt:0.0 },
-    { key:"latte_v_parent", name:"ラテ系", unit:"1杯", kcal:163, protein:6, fat:6, carb:22, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:18.0, fiber:0.0, salt:0.2 },
-    { key:"cake_v_parent", name:"ケーキ", unit:"1切れ", kcal:345, protein:5, fat:19, carb:39, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:36.0, fiber:0.5, salt:0.3 },
-    { key:"choco_v_parent", name:"チョコ菓子", unit:"1個", kcal:170, protein:3, fat:9, carb:22, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:42.0, fiber:1.5, salt:0.2 },
-    { key:"icecream_v_parent", name:"アイス", unit:"1個", kcal:185, protein:3, fat:8, carb:26, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:22.0, fiber:0.0, salt:0.2 },
+    // ===== 主食（米系）- 指定順 =====
+    { key:"rice_v_parent",     name:"ごはん・米",       unit:"1食分", kcal:250, protein:4,  fat:0.5, carb:55,  hasVariants:true, type:"米",   group:"料理", cat:"主食", sugar:54.0, fiber:0.3, salt:0.0 },
+    { key:"onigiri",           name:"おにぎり",   unit:"1個", kcal:180, protein:4.0,fat:1.5, carb:38,  hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:35.0, fiber:0.5, salt:0.6 },
+    { key:"bento_v_parent",    name:"お弁当",     unit:"1個", kcal:620, protein:27, fat:19,  carb:83,  hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:70.0, fiber:2.0, salt:2.5 },
+    { key:"gyudon_chain",      name:"牛丼",       unit:"1杯", kcal:650, protein:22, fat:16,  carb:98,  hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:80.0, fiber:1.0, salt:2.8 },
+    { key:"donburi_v_parent",  name:"丼（各種）", unit:"1杯", kcal:640, protein:22, fat:17,  carb:88,  hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:74.0, fiber:1.2, salt:2.0 },
+    { key:"teishoku_v_parent", name:"定食",       unit:"1食", kcal:720, protein:29, fat:25,  carb:91,  hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:2.5, salt:3.0 },
+    { key:"curry_v_parent",    name:"カレー",     unit:"1皿", kcal:740, protein:18, fat:22,  carb:106, hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:88.0, fiber:4.0, salt:2.5 },
+    { key:"sushi_v_parent",    name:"寿司",       unit:"1皿", kcal:550, protein:30, fat:8,   carb:85,  hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:72.0, fiber:1.0, salt:3.0 },
+    { key:"omurice_v_parent",  name:"オムライス", unit:"1皿", kcal:720, protein:20, fat:26,  carb:95,  hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:1.5, salt:2.0 },
+    { key:"chahan_v_parent",   name:"チャーハン", unit:"1皿", kcal:700, protein:18, fat:25,  carb:90,  hasVariants:true, type:"米", group:"料理", cat:"主食", sugar:75.0, fiber:1.5, salt:2.0 },
+    // ===== 麺系 =====
+    { key:"ramen_v_parent",    name:"ラーメン",         unit:"1杯",   kcal:580, protein:23, fat:18,  carb:72,  hasVariants:true, type:"麺",   group:"料理", cat:"主食", sugar:59.0, fiber:2.0, salt:5.5 },
+    { key:"udon_v_parent",     name:"うどん",           unit:"1杯",   kcal:350, protein:9,  fat:1,   carb:70,  hasVariants:true, type:"麺",   group:"料理", cat:"主食", sugar:52.0, fiber:1.3, salt:0.5 },
+    { key:"soba_v_parent",     name:"そば",             unit:"1杯",   kcal:340, protein:14, fat:2,   carb:65,  hasVariants:true, type:"麺",   group:"料理", cat:"主食", sugar:49.0, fiber:2.0, salt:0.5 },
+    { key:"pasta_v_parent",    name:"パスタ",           unit:"1皿",   kcal:700, protein:22, fat:22,  carb:95,  hasVariants:true, type:"麺",   group:"料理", cat:"主食", sugar:80.0, fiber:4.0, salt:2.5 },
+    { key:"asian_noodle_v_parent", name:"アジア麺",     unit:"1杯",   kcal:500, protein:19, fat:16,  carb:75,  hasVariants:true, type:"麺",   group:"料理", cat:"主食", sugar:60.0, fiber:2.0, salt:3.0 },
+    { key:"ramen_tantan",          name:"担々麺",       unit:"1杯",   kcal:780, protein:28, fat:32,  carb:85,  type:"麺",   group:"料理", cat:"主食", sugar:70.0, fiber:2.5, salt:5.5 },
+    { key:"tsukemen_solo",          name:"つけ麺",       unit:"1杯",   kcal:780, protein:28, fat:22,  carb:110, type:"麺",   group:"料理", cat:"主食", sugar:93.0, fiber:2.5, salt:5.5 },
+    // ===== パン系 =====
+    { key:"bread_v_parent",    name:"パン",         unit:"1枚",    kcal:160, protein:5,  fat:2,  carb:30, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:42.0, fiber:2.2, salt:0.8 },
+    { key:"toast_v_parent",    name:"トースト",     unit:"1枚",    kcal:215, protein:5,  fat:5,  carb:38, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:30.0, fiber:1.5, salt:0.8 },
+    { key:"kashi_pan_v_parent",name:"菓子パン",     unit:"1個",    kcal:260, protein:6,  fat:8,  carb:40, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:18.0, fiber:1.2, salt:0.5 },
+    { key:"sandwich_v_parent", name:"サンドイッチ", unit:"1パック",kcal:330, protein:13, fat:15, carb:33, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:27.0, fiber:1.5, salt:1.5 },
+    { key:"burger_v_parent",   name:"バーガー",     unit:"1個",    kcal:420, protein:18, fat:18, carb:46, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:38.0, fiber:1.5, salt:2.0 },
+    { key:"pizza_v_parent",    name:"ピザ",         unit:"1枚",    kcal:250, protein:10, fat:10, carb:30, hasVariants:true, type:"パン", group:"料理", cat:"主食", sugar:25.0, fiber:1.2, salt:1.5 },
+    // ===== その他料理 =====
+    { key:"mcdonalds_v_parent",  name:"マクドナルド", unit:"1食", kcal:380, protein:15, fat:17, carb:42, hasVariants:true, group:"料理", cat:"主食", sugar:35.0, fiber:1.5, salt:2.5 },
+    { key:"mos_v_parent",        name:"モスバーガー", unit:"1食", kcal:360, protein:16, fat:14, carb:42, hasVariants:true, group:"料理", cat:"主食", sugar:35.0, fiber:2.0, salt:1.8 },
+    { key:"subway_v_parent",     name:"サブウェイ",   unit:"1食", kcal:310, protein:22, fat:5,  carb:46, hasVariants:true, group:"料理", cat:"主食", sugar:38.0, fiber:2.0, salt:1.8 },
+    { key:"saizeriya_v_parent",  name:"サイゼリヤ",   unit:"1食", kcal:520, protein:16, fat:18, carb:72, hasVariants:true, group:"料理", cat:"主食", sugar:60.0, fiber:2.0, salt:2.0 },
+    { key:"gusto_v_parent",      name:"ガスト",       unit:"1食", kcal:480, protein:22, fat:30, carb:28, hasVariants:true, group:"料理", cat:"主食", sugar:22.0, fiber:1.5, salt:2.5 },
+    { key:"kfc_v_parent",        name:"KFC",          unit:"1食", kcal:320, protein:20, fat:18, carb:18, hasVariants:true, group:"料理", cat:"主食", sugar:15.0, fiber:0.8, salt:1.8 },
+    { key:"coco_v_parent",       name:"CoCo壱番屋",   unit:"1食", kcal:500, protein:14, fat:14, carb:80, hasVariants:true, group:"料理", cat:"主食", sugar:68.0, fiber:5.0, salt:2.5 },
+    { key:"tenka_v_parent",      name:"天下一品",     unit:"1杯", kcal:740, protein:28, fat:28, carb:88, hasVariants:true, group:"料理", cat:"主食", sugar:72.0, fiber:2.0, salt:7.0 },
+    { key:"nabe_v_parent",       name:"鍋",           unit:"1人前", kcal:380, protein:26, fat:16, carb:28, hasVariants:true, group:"料理", cat:"主食", sugar:20.0, fiber:2.5, salt:3.0 },
+    { key:"egg_dish_v_parent",  name:"卵料理",   unit:"1個", kcal:110, protein:8,  fat:7, carb:1, hasVariants:true, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:1.5, fiber:0.0, salt:0.5 },
+    { key:"tofu_dish_v_parent", name:"豆腐料理", unit:"1皿", kcal:140, protein:11, fat:7, carb:5, hasVariants:true, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:2.5, fiber:0.5, salt:0.7 },
+    { key:"cereal_v_parent",   name:"シリアル",         unit:"50g",   kcal:190, protein:5,  fat:4,   carb:34,  hasVariants:true, group:"食材", cat:"炭水化物", sugar:28.0, fiber:3.0, salt:0.2 },
+    // ===== 食材（乳製品・果物・調味料） =====
+    { key:"cheese_v_parent",   name:"チーズ",           unit:"1食分", kcal:60,  protein:4,  fat:5,   carb:1,   hasVariants:true, group:"食材", cat:"乳製品", sugar:0.3,  fiber:0.0, salt:0.8 },
+    { key:"yogurt_v_parent",   name:"ヨーグルト",       unit:"1個",   kcal:62,  protein:4,  fat:3,   carb:5,   hasVariants:true, group:"食材", cat:"乳製品", sugar:4.9,  fiber:0.0, salt:0.1 },
+    { key:"milk_v_parent",     name:"ミルク・植物性ミルク", unit:"200ml", kcal:130, protein:7, fat:7, carb:10, hasVariants:true, group:"食材", cat:"乳製品", sugar:9.6,  fiber:0.0, salt:0.2 },
+    { key:"fruit_v_parent",    name:"果物",             unit:"1個",   kcal:53,  protein:0.8,fat:0.1, carb:13,  hasVariants:true, group:"食材", cat:"果物",   sugar:11.0, fiber:1.2, salt:0.0 },
+    { key:"oil_v_parent",      name:"油脂",             unit:"大さじ1",kcal:107, protein:0.0,fat:12,  carb:0,   hasVariants:true, group:"食材", cat:"調味料", sugar:0.0,  fiber:0.0, salt:0.0 },
+    { key:"seasoning_jp_v_parent", name:"和洋中調味料", unit:"大さじ1",kcal:13, protein:0.5,fat:0.0, carb:2,   hasVariants:true, group:"食材", cat:"調味料", sugar:1.0,  fiber:0.0, salt:2.0 },
+    // ===== 飲み物 =====
+    { key:"tea_v_parent",          name:"お茶・ノンカフェイン", unit:"1杯/1本", kcal:0,   protein:0,   fat:0,  carb:0,  hasVariants:true, group:"飲み物", cat:"飲み物", sugar:0.0,  fiber:0.0, salt:0.0 },
+    { key:"coffee_v_parent",       name:"コーヒー・カフェ系",   unit:"1杯",     kcal:5,   protein:0,   fat:0,  carb:1,  hasVariants:true, group:"飲み物", cat:"飲み物", sugar:0.7,  fiber:0.0, salt:0.0 },
+    { key:"cola_v_parent",         name:"コーラ系",             unit:"1本",     kcal:215, protein:0,   fat:0,  carb:55, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:55.0, fiber:0.0, salt:0.0 },
+    { key:"juice_v_parent",        name:"ジュース・果汁",       unit:"200ml",   kcal:84,  protein:0.5, fat:0,  carb:20, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:18.0, fiber:0.0, salt:0.0 },
+    { key:"sports_drink_v_parent", name:"スポーツドリンク",     unit:"500ml",   kcal:85,  protein:0,   fat:0,  carb:21, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:21.0, fiber:0.0, salt:0.5 },
+    { key:"lactic_drink_v_parent", name:"乳酸菌・甘酒系",       unit:"1本/1杯", kcal:50,  protein:0.8, fat:0,  carb:12, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:11.5, fiber:0.0, salt:0.0 },
+    { key:"energy_drink_v_parent", name:"エナジードリンク",     unit:"1缶",     kcal:113, protein:0.5, fat:0,  carb:28, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:27.0, fiber:0.0, salt:0.1 },
+    { key:"beer_v_parent",         name:"ビール・発泡酒",       unit:"350ml",   kcal:140, protein:1,   fat:0,  carb:11, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:10.0, fiber:0.0, salt:0.0 },
+    { key:"wine_v_parent",         name:"ワイン",               unit:"120ml",   kcal:84,  protein:0.1, fat:0,  carb:2,  hasVariants:true, group:"飲み物", cat:"飲み物", sugar:2.0,  fiber:0.0, salt:0.0 },
+    { key:"latte_v_parent",        name:"ラテ系",               unit:"1杯",     kcal:163, protein:6,   fat:6,  carb:22, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:18.0, fiber:0.0, salt:0.2 },
+    { key:"protein_drink_bottle",  name:"プロテインドリンク（ボトル）", unit:"1本", kcal:185, protein:18, fat:4, carb:22, hasVariants:true, group:"飲み物", cat:"飲み物", sugar:18.0, fiber:0.0, salt:0.2 },
+    // ===== おやつ =====
+    { key:"choco_v_parent",    name:"チョコ菓子", unit:"1食分", kcal:277, protein:3,   fat:16, carb:31, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:29.0, fiber:1.2, salt:0.1 },
+    { key:"nut_v_parent",      name:"ナッツ類",   unit:"30g",   kcal:180, protein:6,   fat:16, carb:6,  hasVariants:true, group:"おやつ", cat:"おやつ", sugar:1.5,  fiber:2.0, salt:0.1 },
+    { key:"snack_v_parent",    name:"スナック菓子",unit:"1袋",  kcal:230, protein:3,   fat:12, carb:29, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:2.0,  fiber:2.0, salt:0.6 },
+    { key:"wagashi_v_parent",  name:"和菓子",     unit:"1個",   kcal:185, protein:3.5, fat:2,  carb:39, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:35.0, fiber:0.7, salt:0.2 },
+    { key:"yakigashi_v_parent",name:"焼き菓子",   unit:"1個",   kcal:200, protein:3,   fat:10, carb:26, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:16.0, fiber:0.6, salt:0.3 },
+    { key:"cake_v_parent",     name:"ケーキ",     unit:"1切れ", kcal:345, protein:5,   fat:19, carb:39, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:36.0, fiber:0.5, salt:0.3 },
+    { key:"icecream_v_parent", name:"アイス",     unit:"1個",   kcal:185, protein:3,   fat:8,  carb:26, hasVariants:true, group:"おやつ", cat:"おやつ", sugar:22.0, fiber:0.0, salt:0.2 },
+    // ===== その他 =====
+    { key:"protein_powder",    name:"プロテインパウダー", unit:"1杯", kcal:120, protein:24, fat:1, carb:3, hasVariants:true, group:"その他", cat:"サプリ・補助", sugar:2.0, fiber:0.0, salt:0.1 },
+    { key:"salad_chicken",     name:"サラダチキン",       unit:"1個", kcal:115, protein:24, fat:1, carb:1, hasVariants:true, group:"その他", cat:"サプリ・補助", sugar:0.5, fiber:0.0, salt:0.8 },
+    { key:"tuna_can",          name:"ツナ缶",             unit:"1缶", kcal:70,  protein:16, fat:0.5, carb:0, hasVariants:true, group:"食材", cat:"魚", sugar:0.0, fiber:0.0, salt:0.4 },
+    { key:"canned_fish",       name:"魚缶詰",             unit:"1缶", kcal:190, protein:21, fat:11, carb:0, hasVariants:true, group:"食材", cat:"魚", sugar:0.0, fiber:0.0, salt:0.8 },
+    { key:"greek_yogurt",      name:"ギリシャヨーグルト", unit:"1個", kcal:120, protein:10, fat:4, carb:10, hasVariants:true, group:"その他", cat:"サプリ・補助", sugar:9.0, fiber:0.0, salt:0.1 },
     { key:"protein_bar", name:"プロテインバー", unit:"1本", kcal:200, protein:15, fat:8, carb:18, group:"その他", cat:"サプリ・補助", sugar:14.0, fiber:2.0, salt:0.3 },
 
     // ===== 追加：コンビニ・市販食品 =====
     // おにぎり追加種類はONIGIRI_VARIANTSで管理
     { key:"conbini_pasta_napolitan", name:"ナポリタン（コンビニ）", unit:"1個", kcal:420, protein:12, fat:10, carb:68, type:"麺", group:"料理", cat:"主食", sugar:58.0, fiber:2.5, salt:2.5 },
-    { key:"conbini_bento_makunouchi", name:"幕の内弁当", unit:"1個", kcal:700, protein:25, fat:22, carb:95, type:"米", group:"料理", cat:"主食", sugar:80.0, fiber:2.0, salt:3.0 },
-    { key:"conbini_bento_diet", name:"ヘルシー弁当（コンビニ）", unit:"1個", kcal:450, protein:22, fat:10, carb:65, type:"米", group:"料理", cat:"主食", sugar:55.0, fiber:3.0, salt:2.0 },
     // サラダチキン種類はSALAD_CHICKEN_VARIANTSで管理
     { key:"conbini_boiled_egg_2", name:"ゆで卵（コンビニ・2個）", unit:"2個", kcal:160, protein:13, fat:11, carb:1, group:"料理", cat:"主菜", sugar:0.4, fiber:0.0, salt:0.4 },
     { key:"conbini_tofu_pack", name:"豆腐パック（小）", unit:"1個", kcal:75, protein:7, fat:4, carb:2, group:"食材", cat:"卵・大豆", sugar:1.0, fiber:0.4, salt:0.1 },
@@ -3311,10 +3313,10 @@
     { key:"conbini_chicken_soup", name:"鶏がらスープ（缶）", unit:"1缶", kcal:30, protein:2, fat:0.5, carb:4, group:"料理", cat:"汁物", sugar:2.0, fiber:0.0, salt:1.5 },
 
     // ===== 追加：自炊・家庭料理 =====
-    { key:"home_steamed_chicken", name:"蒸し鶏", unit:"100g", kcal:110, protein:24, fat:1, carb:0, group:"料理", cat:"主菜", sugar:0.0, fiber:0.0, salt:0.2 },
-    { key:"home_chicken_saute", name:"鶏むね肉ソテー", unit:"1枚", kcal:200, protein:40, fat:3, carb:1, group:"料理", cat:"主菜", sugar:0.5, fiber:0.0, salt:0.5 },
-    { key:"home_salmon_saute", name:"鮭のムニエル", unit:"1切れ", kcal:260, protein:24, fat:16, carb:4, group:"料理", cat:"主菜", sugar:1.5, fiber:0.0, salt:0.8 },
-    { key:"home_boiled_tofu", name:"湯豆腐", unit:"1人前", kcal:100, protein:9, fat:5, carb:3, group:"料理", cat:"主菜", sugar:1.0, fiber:0.4, salt:0.2 },
+    { key:"home_steamed_chicken", name:"蒸し鶏", unit:"100g", kcal:110, protein:24, fat:1, carb:0, type:"肉系", group:"料理", cat:"主菜", sugar:0.0, fiber:0.0, salt:0.2 },
+    { key:"home_chicken_saute", name:"鶏むね肉ソテー", unit:"1枚", kcal:200, protein:40, fat:3, carb:1, type:"肉系", group:"料理", cat:"主菜", sugar:0.5, fiber:0.0, salt:0.5 },
+    { key:"home_salmon_saute", name:"鮭のムニエル", unit:"1切れ", kcal:260, protein:24, fat:16, carb:4, type:"魚系", group:"料理", cat:"主菜", sugar:1.5, fiber:0.0, salt:0.8 },
+    { key:"home_boiled_tofu", name:"湯豆腐", unit:"1人前", kcal:100, protein:9, fat:5, carb:3, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:1.0, fiber:0.4, salt:0.2 },
     { key:"home_egg_white", name:"卵白（生）", unit:"1個分", kcal:16, protein:3.6, fat:0, carb:0.2, group:"食材", cat:"卵・大豆", sugar:0.2, fiber:0.0, salt:0.1 },
     { key:"home_chicken_liver", name:"鶏レバー", unit:"100g", kcal:111, protein:19, fat:3, carb:1, group:"食材", cat:"肉", sugar:0.5, fiber:0.0, salt:0.3 },
     // ツナ缶種類はTUNA_CAN_VARIANTSで管理
@@ -3322,8 +3324,6 @@
     { key:"home_sweet_potato", name:"さつまいも（蒸し）", unit:"100g", kcal:130, protein:1.5, fat:0.2, carb:31, group:"食材", cat:"炭水化物", sugar:26.0, fiber:2.2, salt:0.0 },
     { key:"home_oatmeal", name:"オートミール", unit:"40g", kcal:152, protein:5, fat:3, carb:27, group:"食材", cat:"炭水化物", sugar:18.0, fiber:3.0, salt:0.0 },
     { key:"home_brown_rice", name:"玄米ごはん", unit:"150g", kcal:248, protein:4, fat:1, carb:53, group:"食材", cat:"炭水化物", sugar:51.0, fiber:1.4, salt:0.0 },
-    { key:"home_avocado", name:"アボカド", unit:"1/2個", kcal:120, protein:1.5, fat:11, carb:3, group:"食材", cat:"果物", sugar:0.9, fiber:5.3, salt:0.0 },
-    { key:"home_blueberry", name:"ブルーベリー", unit:"100g", kcal:50, protein:0.5, fat:0.3, carb:12, group:"食材", cat:"果物", sugar:9.6, fiber:3.3, salt:0.0 },
     { key:"home_almond", name:"アーモンド", unit:"20粒", kcal:120, protein:4, fat:10, carb:4, group:"おやつ", cat:"おやつ", sugar:3.0, fiber:3.0, salt:0.0 },
     { key:"home_walnut", name:"くるみ", unit:"30g", kcal:200, protein:4, fat:19, carb:4, group:"おやつ", cat:"おやつ", sugar:2.5, fiber:2.0, salt:0.0 },
     { key:"home_cottage_cheese", name:"カッテージチーズ", unit:"100g", kcal:105, protein:13, fat:5, carb:2, group:"食材", cat:"乳製品", sugar:2.0, fiber:0.0, salt:0.5 },
@@ -3333,37 +3333,20 @@
     { key:"home_shabu_shabu", name:"しゃぶしゃぶ（豚）", unit:"1人前", kcal:400, protein:28, fat:20, carb:18, group:"料理", cat:"主食", sugar:5.0, fiber:1.5, salt:1.5 },
 
 
-    // ===== 外食チェーン（バリアント化） =====
-    { key:"mcdonalds_v_parent", name:"マクドナルド", unit:"1食", kcal:380, protein:15, fat:17, carb:42, hasVariants:true, group:"料理", cat:"主食", sugar:35.0, fiber:1.5, salt:2.5 },
-    { key:"mos_v_parent", name:"モスバーガー", unit:"1食", kcal:360, protein:16, fat:14, carb:42, hasVariants:true, group:"料理", cat:"主食", sugar:35.0, fiber:2.0, salt:1.8 },
-    { key:"kfc_v_parent", name:"KFC", unit:"1食", kcal:320, protein:20, fat:18, carb:18, hasVariants:true, group:"料理", cat:"主菜", sugar:15.0, fiber:0.8, salt:1.8 },
-    { key:"saizeriya_v_parent", name:"サイゼリヤ", unit:"1食", kcal:520, protein:16, fat:18, carb:72, hasVariants:true, group:"料理", cat:"主食", sugar:60.0, fiber:2.0, salt:2.0 },
-    { key:"coco_v_parent", name:"CoCo壱番屋", unit:"1食", kcal:500, protein:14, fat:14, carb:80, hasVariants:true, group:"料理", cat:"主食", sugar:68.0, fiber:5.0, salt:2.5 },
-    { key:"subway_v_parent", name:"サブウェイ", unit:"1食", kcal:310, protein:22, fat:5, carb:46, hasVariants:true, group:"料理", cat:"主食", sugar:38.0, fiber:2.0, salt:1.8 },
-    { key:"gusto_v_parent", name:"ガスト", unit:"1食", kcal:480, protein:22, fat:30, carb:28, hasVariants:true, group:"料理", cat:"主菜", sugar:22.0, fiber:1.5, salt:2.5 },
-    { key:"tenka_v_parent", name:"天下一品", unit:"1杯", kcal:740, protein:28, fat:28, carb:88, hasVariants:true, group:"料理", cat:"主食", sugar:72.0, fiber:2.0, salt:7.0 },
-
     // ===== お惣菜・お弁当（スーパー・コンビニ） =====
-    { key:"deli_karaage", name:"唐揚げ（惣菜）", unit:"3個(100g)", kcal:240, protein:16, fat:15, carb:12, group:"料理", cat:"主菜", sugar:2.0, fiber:0.3, salt:1.2 },
-    { key:"deli_korokke", name:"コロッケ（惣菜）", unit:"1個(70g)", kcal:160, protein:3, fat:9, carb:18, group:"料理", cat:"主菜", sugar:3.0, fiber:1.2, salt:0.8 },
-    { key:"deli_tonkatsu", name:"とんかつ（惣菜）", unit:"1枚(120g)", kcal:360, protein:18, fat:22, carb:22, group:"料理", cat:"主菜", sugar:2.0, fiber:1.0, salt:1.5 },
-    { key:"deli_chicken_nanban", name:"チキン南蛮（惣菜）", unit:"1食(150g)", kcal:320, protein:20, fat:18, carb:20, group:"料理", cat:"主菜", sugar:8.0, fiber:0.5, salt:2.0 },
-    { key:"deli_shogayaki", name:"生姜焼き（惣菜）", unit:"1食(120g)", kcal:280, protein:18, fat:16, carb:14, group:"料理", cat:"主菜", sugar:8.0, fiber:0.5, salt:2.0 },
-    { key:"deli_yakitori", name:"焼き鳥（惣菜）", unit:"2本(80g)", kcal:160, protein:14, fat:9, carb:6, group:"料理", cat:"主菜", sugar:4.0, fiber:0.2, salt:1.2 },
-    { key:"deli_shumai", name:"シュウマイ（惣菜）", unit:"3個(90g)", kcal:180, protein:9, fat:10, carb:15, group:"料理", cat:"主菜", sugar:3.0, fiber:0.8, salt:1.5 },
-    { key:"deli_gyoza_fried", name:"焼き餃子（惣菜）", unit:"5個(100g)", kcal:210, protein:8, fat:11, carb:22, group:"料理", cat:"主菜", sugar:3.0, fiber:1.5, salt:1.5 },
-    { key:"deli_tamagoyaki", name:"だし巻き卵（惣菜）", unit:"1本(100g)", kcal:140, protein:9, fat:9, carb:5, group:"料理", cat:"主菜", sugar:3.0, fiber:0.0, salt:1.0 },
+    { key:"deli_karaage", name:"唐揚げ（惣菜）", unit:"3個(100g)", kcal:240, protein:16, fat:15, carb:12, type:"肉系", group:"料理", cat:"主菜", sugar:2.0, fiber:0.3, salt:1.2 },
+    { key:"deli_korokke", name:"コロッケ（惣菜）", unit:"1個(70g)", kcal:160, protein:3, fat:9, carb:18, type:"肉系", group:"料理", cat:"主菜", sugar:3.0, fiber:1.2, salt:0.8 },
+    { key:"deli_tonkatsu", name:"とんかつ（惣菜）", unit:"1枚(120g)", kcal:360, protein:18, fat:22, carb:22, type:"肉系", group:"料理", cat:"主菜", sugar:2.0, fiber:1.0, salt:1.5 },
+    { key:"deli_chicken_nanban", name:"チキン南蛮（惣菜）", unit:"1食(150g)", kcal:320, protein:20, fat:18, carb:20, type:"肉系", group:"料理", cat:"主菜", sugar:8.0, fiber:0.5, salt:2.0 },
+    { key:"deli_shogayaki", name:"生姜焼き（惣菜）", unit:"1食(120g)", kcal:280, protein:18, fat:16, carb:14, type:"肉系", group:"料理", cat:"主菜", sugar:8.0, fiber:0.5, salt:2.0 },
+    { key:"deli_yakitori", name:"焼き鳥（惣菜）", unit:"2本(80g)", kcal:160, protein:14, fat:9, carb:6, type:"肉系", group:"料理", cat:"主菜", sugar:4.0, fiber:0.2, salt:1.2 },
+    { key:"deli_shumai", name:"シュウマイ（惣菜）", unit:"3個(90g)", kcal:180, protein:9, fat:10, carb:15, type:"肉系", group:"料理", cat:"主菜", sugar:3.0, fiber:0.8, salt:1.5 },
+    { key:"deli_gyoza_fried", name:"焼き餃子（惣菜）", unit:"5個(100g)", kcal:210, protein:8, fat:11, carb:22, type:"肉系", group:"料理", cat:"主菜", sugar:3.0, fiber:1.5, salt:1.5 },
+    { key:"deli_tamagoyaki", name:"だし巻き卵（惣菜）", unit:"1本(100g)", kcal:140, protein:9, fat:9, carb:5, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:3.0, fiber:0.0, salt:1.0 },
     { key:"deli_hijiki", name:"ひじきの煮物（惣菜）", unit:"1パック(80g)", kcal:60, protein:2, fat:2, carb:9, group:"料理", cat:"副菜", sugar:5.0, fiber:3.5, salt:1.2 },
     { key:"deli_kimpira", name:"きんぴらごぼう（惣菜）", unit:"1パック(80g)", kcal:80, protein:2, fat:3, carb:12, group:"料理", cat:"副菜", sugar:6.0, fiber:2.5, salt:1.0 },
     { key:"deli_nishime", name:"筑前煮（惣菜）", unit:"1パック(150g)", kcal:150, protein:6, fat:4, carb:22, group:"料理", cat:"副菜", sugar:14.0, fiber:3.0, salt:1.8 },
     { key:"deli_macaroni_salad", name:"マカロニサラダ（惣菜）", unit:"1パック(100g)", kcal:190, protein:3, fat:12, carb:18, group:"料理", cat:"副菜", sugar:4.0, fiber:0.8, salt:1.0 },
-    { key:"bento_nori", name:"のり弁当", unit:"1個", kcal:620, protein:18, fat:18, carb:92, group:"料理", cat:"主食", sugar:8.0, fiber:2.0, salt:3.0 },
-    { key:"bento_karaage", name:"唐揚げ弁当", unit:"1個", kcal:780, protein:28, fat:28, carb:98, group:"料理", cat:"主食", sugar:8.0, fiber:2.5, salt:3.5 },
-    { key:"bento_tonkatsu", name:"とんかつ弁当", unit:"1個", kcal:820, protein:28, fat:30, carb:102, group:"料理", cat:"主食", sugar:8.0, fiber:2.5, salt:3.5 },
-    { key:"bento_salmon", name:"鮭弁当", unit:"1個", kcal:620, protein:22, fat:14, carb:90, group:"料理", cat:"主食", sugar:6.0, fiber:2.0, salt:2.8 },
-    { key:"bento_makunouchi", name:"幕の内弁当", unit:"1個", kcal:700, protein:24, fat:20, carb:98, group:"料理", cat:"主食", sugar:10.0, fiber:3.0, salt:3.5 },
-    { key:"bento_diet", name:"ヘルシー弁当（コンビニ）", unit:"1個", kcal:450, protein:20, fat:10, carb:65, group:"料理", cat:"主食", sugar:8.0, fiber:4.0, salt:2.5 },
-
     // ===== 追加：サプリ・機能食品 =====
     { key:"supplement_bcaa", name:"BCAA（1杯）", unit:"1杯", kcal:20, protein:5, fat:0, carb:0, group:"その他", cat:"サプリ・補助", sugar:0.0, fiber:0.0, salt:0.0 },
     { key:"supplement_creatine", name:"クレアチン", unit:"5g", kcal:0, protein:0, fat:0, carb:0, group:"その他", cat:"サプリ・補助", sugar:0.0, fiber:0.0, salt:0.0 },
@@ -3385,47 +3368,47 @@
     { key:"washoku_teishoku_tofu", name:"豆腐ステーキ定食", unit:"1食", kcal:580, protein:22, fat:14, carb:82, type:"米", group:"料理", cat:"主食", sugar:68.0, fiber:2.5, salt:3.0 },
     { key:"washoku_onsen_tamago", name:"温泉卵", unit:"1個", kcal:78, protein:6.5, fat:5.4, carb:0.2, group:"料理", cat:"主菜", sugar:0.2, fiber:0.0, salt:0.3 },
     { key:"washoku_tamagoyaki", name:"卵焼き", unit:"2切れ", kcal:130, protein:9, fat:8, carb:5, group:"料理", cat:"主菜", sugar:4.0, fiber:0.0, salt:0.8 },
-    { key:"washoku_chikuwa", name:"ちくわ", unit:"2本", kcal:80, protein:8, fat:1, carb:10, group:"料理", cat:"主菜", sugar:9.0, fiber:0.0, salt:1.2 },
+    { key:"washoku_chikuwa", name:"ちくわ", unit:"2本", kcal:80, protein:8, fat:1, carb:10, type:"魚系", group:"料理", cat:"主菜", sugar:9.0, fiber:0.0, salt:1.2 },
     { key:"washoku_hijiki", name:"ひじきの煮物", unit:"1皿", kcal:70, protein:3, fat:2, carb:10, group:"料理", cat:"副菜", sugar:5.0, fiber:4.5, salt:1.0 },
     { key:"washoku_nimono", name:"筑前煮", unit:"1皿", kcal:180, protein:8, fat:5, carb:26, group:"料理", cat:"副菜", sugar:18.0, fiber:2.5, salt:2.0 },
     { key:"washoku_takenoko", name:"たけのこの煮物", unit:"1皿", kcal:60, protein:3, fat:1, carb:10, group:"料理", cat:"副菜", sugar:5.0, fiber:2.0, salt:1.2 },
     { key:"washoku_natto_gohan", name:"納豆ごはん", unit:"1杯", kcal:350, protein:12, fat:6, carb:61, type:"米", group:"料理", cat:"主食", sugar:48.0, fiber:4.0, salt:0.3 },
-    { key:"washoku_ikura_don", name:"いくら丼", unit:"1杯", kcal:620, protein:26, fat:10, carb:90, type:"丼", group:"料理", cat:"主食", sugar:76.0, fiber:1.0, salt:3.5 },
+    { key:"washoku_ikura_don", name:"いくら丼", unit:"1杯", kcal:620, protein:26, fat:10, carb:90, type:"米", group:"料理", cat:"主食", sugar:76.0, fiber:1.0, salt:3.5 },
     { key:"washoku_unaju", name:"うな重", unit:"1食", kcal:760, protein:26, fat:18, carb:108, type:"米", group:"料理", cat:"主食", sugar:90.0, fiber:1.0, salt:3.5 },
     { key:"washoku_hitsumabushi", name:"ひつまぶし", unit:"1食", kcal:730, protein:24, fat:18, carb:104, type:"米", group:"料理", cat:"主食", sugar:86.0, fiber:1.0, salt:3.0 },
-    { key:"washoku_tempura_set", name:"天ぷら盛り合わせ", unit:"1人前", kcal:520, protein:14, fat:28, carb:52, group:"料理", cat:"主菜", sugar:40.0, fiber:1.5, salt:2.5 },
-    { key:"washoku_oden_set", name:"おでん（盛り合わせ）", unit:"1人前", kcal:280, protein:14, fat:8, carb:36, group:"料理", cat:"主菜", sugar:25.0, fiber:2.5, salt:4.0 },
+    { key:"washoku_tempura_set", name:"天ぷら盛り合わせ", unit:"1人前", kcal:520, protein:14, fat:28, carb:52, type:"魚系", group:"料理", cat:"主菜", sugar:40.0, fiber:1.5, salt:2.5 },
+    { key:"washoku_oden_set", name:"おでん（盛り合わせ）", unit:"1人前", kcal:280, protein:14, fat:8, carb:36, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:25.0, fiber:2.5, salt:4.0 },
     { key:"washoku_sukiyaki", name:"すき焼き", unit:"1人前", kcal:620, protein:28, fat:30, carb:52, group:"料理", cat:"主菜", sugar:35.0, fiber:2.0, salt:3.5 },
     { key:"washoku_chankonabe", name:"ちゃんこ鍋", unit:"1人前", kcal:480, protein:35, fat:18, carb:42, group:"料理", cat:"主食", sugar:30.0, fiber:3.0, salt:3.5 },
 
     // ===== 洋食 =====
     { key:"caesar_salad",  name:"シーザーサラダ",           unit:"1皿",   kcal:280, protein:8,  fat:20, carb:16, group:"料理", cat:"副菜" },
     { key:"caprese",       name:"カプレーゼ",               unit:"1皿",   kcal:220, protein:10, fat:16, carb:6,  group:"料理", cat:"副菜" },
-    { key:"minestrone",    name:"ミネストローネ",           unit:"1杯",   kcal:120, protein:4,  fat:3,  carb:20, group:"料理", cat:"汁物" },
-    { key:"onion_soup",    name:"オニオングラタンスープ",   unit:"1杯",   kcal:210, protein:7,  fat:8,  carb:28, group:"料理", cat:"汁物" },
-    { key:"quiche",        name:"キッシュ",                 unit:"1切れ", kcal:340, protein:10, fat:22, carb:26, group:"料理", cat:"主食" },
-    { key:"steak_200",     name:"ステーキ（200g）",         unit:"1枚",   kcal:460, protein:40, fat:32, carb:0,  group:"料理", cat:"主菜" },
-    { key:"chicken_steak", name:"チキンステーキ",           unit:"1枚",   kcal:320, protein:36, fat:16, carb:4,  group:"料理", cat:"主菜", sugar:2.0, fiber:0.0, salt:1.0 },
+    { key:"quiche",        name:"キッシュ",                 unit:"1切れ", kcal:340, protein:10, fat:22, carb:26, type:"粉もの", group:"料理", cat:"主食" },
+    { key:"gratin",        name:"グラタン",                 unit:"1皿",   kcal:520, protein:18, fat:24, carb:54, type:"粉もの", group:"料理", cat:"主食", sugar:44.0, fiber:1.5, salt:1.8 },
+    { key:"doria",         name:"ドリア",                   unit:"1皿",   kcal:680, protein:20, fat:24, carb:92, type:"粉もの", group:"料理", cat:"主食", sugar:76.0, fiber:1.5, salt:2.0 },
+    { key:"steak_200",     name:"ステーキ（200g）",   unit:"1枚", kcal:460, protein:40, fat:32, carb:0,  type:"肉系", group:"料理", cat:"主菜", sugar:0.0, fiber:0.0, salt:1.0 },
+    { key:"chicken_steak", name:"チキンステーキ",     unit:"1枚", kcal:320, protein:36, fat:16, carb:4,  type:"肉系", group:"料理", cat:"主菜", sugar:2.0, fiber:0.0, salt:1.0 },
     { key:"risotto",       name:"リゾット",                 unit:"1皿",   kcal:560, protein:14, fat:16, carb:84, type:"米",   group:"料理", cat:"主食" },
-    { key:"pancake",       name:"パンケーキ（3枚）",        unit:"3枚",   kcal:480, protein:10, fat:18, carb:70, type:"粉もの", group:"料理", cat:"主食" },
-    { key:"waffle",        name:"ワッフル",                 unit:"1個",   kcal:320, protein:7,  fat:14, carb:42, type:"粉もの", group:"料理", cat:"主食" },
+    { key:"pancake", name:"パンケーキ（3枚）", unit:"3枚", kcal:480, protein:10, fat:18, carb:70, group:"おやつ", cat:"おやつ", sugar:42.0, fiber:1.5, salt:0.6 },
+    { key:"waffle",  name:"ワッフル",         unit:"1個", kcal:320, protein:7,  fat:14, carb:42, group:"おやつ", cat:"おやつ", sugar:22.0, fiber:1.0, salt:0.5 },
 
     // ===== アジア料理 =====
     { key:"asia_pad_thai", name:"パッタイ", unit:"1皿", kcal:580, protein:18, fat:18, carb:82, type:"麺", group:"料理", cat:"主食", sugar:68.0, fiber:2.5, salt:3.0 },
     { key:"asia_green_curry", name:"グリーンカレー", unit:"1皿", kcal:560, protein:18, fat:28, carb:58, type:"米", group:"料理", cat:"主食", sugar:45.0, fiber:3.0, salt:2.5 },
-    { key:"asia_tom_yum", name:"トムヤムクン", unit:"1杯", kcal:140, protein:12, fat:6, carb:12, group:"料理", cat:"汁物", sugar:5.0, fiber:1.0, salt:2.5 },
     { key:"asia_pho_chicken", name:"フォー（チキン）", unit:"1杯", kcal:420, protein:22, fat:6, carb:72, type:"麺", group:"料理", cat:"主食", sugar:60.0, fiber:1.5, salt:3.5 },
-    { key:"asia_banh_mi", name:"バインミー", unit:"1個", kcal:380, protein:16, fat:12, carb:52, type:"パン", group:"料理", cat:"主食", sugar:42.0, fiber:2.0, salt:2.0 },
-    { key:"asia_mapo_tofu", name:"麻婆豆腐", unit:"1皿", kcal:320, protein:16, fat:20, carb:18, group:"料理", cat:"主菜", sugar:10.0, fiber:1.5, salt:3.0 },
-    { key:"asia_gyoza_6", name:"餃子（6個）", unit:"6個", kcal:300, protein:12, fat:14, carb:32, type:"粉もの", group:"料理", cat:"主菜", sugar:25.0, fiber:1.5, salt:2.5 },
-    { key:"asia_spring_roll", name:"春巻き（2本）", unit:"2本", kcal:260, protein:8, fat:14, carb:28, type:"粉もの", group:"料理", cat:"主菜", sugar:22.0, fiber:1.5, salt:1.5 },
+    { key:"asia_mapo_tofu", name:"麻婆豆腐", unit:"1皿", kcal:320, protein:16, fat:20, carb:18, type:"肉系", group:"料理", cat:"主菜", sugar:10.0, fiber:1.5, salt:3.0 },
+    { key:"asia_gyoza_6",    name:"餃子（6個）",    unit:"6個", kcal:300, protein:12, fat:14, carb:32, type:"肉系", group:"料理", cat:"主菜", sugar:25.0, fiber:1.5, salt:2.5 },
+    { key:"asia_spring_roll",name:"春巻き（2本）",  unit:"2本", kcal:260, protein:8,  fat:14, carb:28, type:"肉系", group:"料理", cat:"主菜", sugar:22.0, fiber:1.5, salt:1.5 },
     { key:"asia_bibimbap", name:"ビビンバ", unit:"1杯", kcal:620, protein:20, fat:18, carb:90, type:"米", group:"料理", cat:"主食", sugar:75.0, fiber:3.0, salt:2.5 },
     { key:"asia_kimchi_jjigae", name:"キムチ鍋", unit:"1人前", kcal:380, protein:22, fat:16, carb:36, group:"料理", cat:"主食", sugar:18.0, fiber:3.5, salt:4.5 },
     { key:"asia_sundubu", name:"スンドゥブチゲ", unit:"1人前", kcal:280, protein:18, fat:14, carb:20, group:"料理", cat:"主食", sugar:10.0, fiber:2.0, salt:4.0 },
     { key:"asia_ebi_chahan", name:"エビチャーハン", unit:"1皿", kcal:680, protein:20, fat:22, carb:92, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:1.5, salt:2.5 },
-    { key:"asia_shrimp_chili", name:"エビチリ", unit:"1皿", kcal:260, protein:20, fat:12, carb:18, group:"料理", cat:"主菜", sugar:12.0, fiber:1.0, salt:3.0 },
-    { key:"asia_yasai_itame", name:"野菜炒め", unit:"1皿", kcal:200, protein:8, fat:12, carb:16, group:"料理", cat:"主菜", sugar:10.0, fiber:2.5, salt:2.0 },
+    { key:"asia_shrimp_chili", name:"エビチリ", unit:"1皿", kcal:260, protein:20, fat:12, carb:18, type:"魚系", group:"料理", cat:"主菜", sugar:12.0, fiber:1.0, salt:3.0 },
+    { key:"asia_yasai_itame", name:"野菜炒め", unit:"1皿", kcal:200, protein:8, fat:12, carb:16, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:10.0, fiber:2.5, salt:2.0 },
     { key:"asia_nasi_goreng", name:"ナシゴレン", unit:"1皿", kcal:620, protein:18, fat:22, carb:86, type:"米", group:"料理", cat:"主食", sugar:72.0, fiber:2.0, salt:3.0 },
+    { key:"taco_rice", name:"タコライス", unit:"1皿", kcal:780, protein:25, fat:32, carb:92, type:"米", group:"料理", cat:"主食", sugar:76.0, fiber:2.0, salt:2.5 },
+    { key:"gapao_rice", name:"ガパオライス", unit:"1皿", kcal:720, protein:24, fat:24, carb:92, type:"米", group:"料理", cat:"主食", sugar:76.0, fiber:1.5, salt:2.5 },
     { key:"asia_laksa", name:"ラクサ", unit:"1杯", kcal:580, protein:18, fat:24, carb:72, type:"麺", group:"料理", cat:"主食", sugar:58.0, fiber:2.5, salt:3.5 },
 
     // ===== スイーツ・デザート =====
@@ -3453,10 +3436,10 @@
     { key:"morning_toast_jam", name:"トースト＋ジャム", unit:"1枚", kcal:230, protein:5, fat:2, carb:48, type:"パン", group:"料理", cat:"主食", sugar:43.0, fiber:1.5, salt:0.5 },
     { key:"morning_ham_egg", name:"ハムエッグ", unit:"1皿", kcal:200, protein:14, fat:14, carb:2, group:"料理", cat:"主菜", sugar:1.0, fiber:0.0, salt:1.5 },
     { key:"morning_bacon_egg", name:"ベーコンエッグ", unit:"1皿", kcal:280, protein:14, fat:22, carb:1, group:"料理", cat:"主菜", sugar:0.5, fiber:0.0, salt:2.0 },
-    { key:"morning_acai_bowl", name:"アサイーボウル", unit:"1杯", kcal:320, protein:6, fat:8, carb:56, group:"料理", cat:"主食", sugar:48.0, fiber:4.0, salt:0.2 },
-    { key:"morning_yogurt_granola", name:"ヨーグルト＋グラノーラ", unit:"1杯", kcal:280, protein:8, fat:8, carb:42, group:"料理", cat:"主食", sugar:38.0, fiber:2.0, salt:0.2 },
-    { key:"morning_banana_oatmeal", name:"バナナオートミール", unit:"1杯", kcal:300, protein:8, fat:5, carb:58, group:"料理", cat:"主食", sugar:50.0, fiber:4.0, salt:0.1 },
-    { key:"morning_protein_pancake", name:"プロテインパンケーキ", unit:"3枚", kcal:360, protein:22, fat:8, carb:48, type:"粉もの", group:"料理", cat:"主食", sugar:38.0, fiber:2.0, salt:0.8 },
+    { key:"morning_acai_bowl",       name:"アサイーボウル",         unit:"1杯", kcal:320, protein:6, fat:8, carb:56, group:"おやつ", cat:"おやつ", sugar:48.0, fiber:4.0, salt:0.2 },
+    { key:"morning_yogurt_granola",  name:"ヨーグルト＋グラノーラ", unit:"1杯", kcal:280, protein:8, fat:8, carb:42, group:"おやつ", cat:"おやつ", sugar:38.0, fiber:2.0, salt:0.2 },
+    { key:"morning_banana_oatmeal",  name:"バナナオートミール",      unit:"1杯", kcal:300, protein:8, fat:5, carb:58, group:"おやつ", cat:"おやつ", sugar:50.0, fiber:4.0, salt:0.1 },
+    { key:"morning_protein_pancake", name:"プロテインパンケーキ", unit:"3枚", kcal:360, protein:22, fat:8, carb:48, group:"その他", cat:"サプリ・補助", sugar:38.0, fiber:2.0, salt:0.8 },
 
     // ===== お酒・アルコール類 =====
     { key:"alcohol_beer_medium", name:"生ビール（中ジョッキ）", unit:"500ml", kcal:200, protein:1.5, fat:0, carb:15, group:"飲み物", cat:"飲み物", sugar:13.0, fiber:0.0, salt:0.0 },
@@ -3643,14 +3626,25 @@
     { key:"bread_financier", name:"フィナンシェ", unit:"1個(35g)", kcal:154, protein:3, fat:9, carb:17, group:"おやつ", cat:"おやつ", sugar:10.0, fiber:0.3, salt:0.1 },
   ];
 
+  const CHAHAN_VARIANTS = [
+    { key:"fried_rice",        name:"チャーハン",     unit:"1皿", kcal:700, protein:18, fat:25, carb:90, type:"米", group:"料理", cat:"主食", sugar:75.0, fiber:1.5, salt:2.0 },
+    { key:"asia_ebi_chahan",   name:"エビチャーハン", unit:"1皿", kcal:680, protein:20, fat:22, carb:92, type:"米", group:"料理", cat:"主食", sugar:78.0, fiber:1.5, salt:2.5 },
+    { key:"frozen_fried_rice", name:"冷凍チャーハン", unit:"1食", kcal:430, protein:11, fat:16, carb:62, type:"米", group:"食材", cat:"炭水化物", sugar:3.5, fiber:1.5, salt:2.0 },
+    { key:"asia_bibimbap",     name:"ビビンバ",       unit:"1杯", kcal:620, protein:20, fat:18, carb:90, type:"米", group:"料理", cat:"主食", sugar:75.0, fiber:3.0, salt:2.5 },
+    { key:"taco_rice",         name:"タコライス",     unit:"1皿", kcal:780, protein:25, fat:32, carb:92, type:"米", group:"料理", cat:"主食", sugar:76.0, fiber:2.0, salt:2.5 },
+    { key:"gapao_rice",        name:"ガパオライス",   unit:"1皿", kcal:720, protein:24, fat:24, carb:92, type:"米", group:"料理", cat:"主食", sugar:76.0, fiber:1.5, salt:2.5 },
+    { key:"asia_nasi_goreng",  name:"ナシゴレン",     unit:"1皿", kcal:620, protein:18, fat:22, carb:86, type:"米", group:"料理", cat:"主食", sugar:72.0, fiber:2.0, salt:3.0 },
+  ];
+
   const RAMEN_VARIANTS = [
     { key:"ramen_shoyu", name:"醤油ラーメン", unit:"1杯", kcal:580, protein:23, fat:18, carb:72, type:"麺", group:"料理", cat:"主食", sugar:59.0, fiber:2.0, salt:5.5 },
     { key:"ramen_miso",  name:"味噌ラーメン", unit:"1杯", kcal:650, protein:25, fat:24, carb:75, type:"麺", group:"料理", cat:"主食" },
     { key:"ramen_shio",  name:"塩ラーメン", unit:"1杯", kcal:540, protein:22, fat:16, carb:70, type:"麺", group:"料理", cat:"主食" },
+    { key:"ramen_tonkotsu", name:"豚骨ラーメン", unit:"1杯", kcal:680, protein:26, fat:28, carb:76, type:"麺", group:"料理", cat:"主食", sugar:62.0, fiber:1.5, salt:5.5 },
     { key:"ramen_tonkotsu_light", name:"豚骨ラーメン（あっさり）", unit:"1杯", kcal:620, protein:24, fat:20, carb:74, type:"麺", group:"料理", cat:"主食", sugar:60.0, fiber:1.8, salt:5.0 },
-    { key:"ramen_mazesoba", name:"まぜそば", unit:"1杯", kcal:820, protein:30, fat:32, carb:98, type:"麺", group:"料理", cat:"主食", sugar:82.0, fiber:2.5, salt:4.5 },
-    { key:"ramen_tsukemen", name:"つけ麺", unit:"1杯", kcal:780, protein:28, fat:22, carb:110, type:"麺", group:"料理", cat:"主食", sugar:93.0, fiber:2.5, salt:5.5 },
-    { key:"ramen_jiro",  name:"二郎系ラーメン", unit:"1杯", kcal:950, protein:40, fat:45, carb:95, type:"麺", group:"料理", cat:"主食" }
+    { key:"ramen_ie",    name:"家系ラーメン", unit:"1杯", kcal:850, protein:32, fat:38, carb:88, type:"麺", group:"料理", cat:"主食", sugar:72.0, fiber:2.0, salt:6.5 },
+    { key:"ramen_large", name:"ラーメン（大盛）", unit:"1杯", kcal:780, protein:28, fat:24, carb:105, type:"麺", group:"料理", cat:"主食" },
+    { key:"ramen_jiro",  name:"二郎系ラーメン", unit:"1杯", kcal:950, protein:40, fat:45, carb:95, type:"麺", group:"料理", cat:"主食" },
   ];
 
   const ONIGIRI_VARIANTS = [
@@ -3662,14 +3656,16 @@
   ];
 
   const PASTA_VARIANTS = [
-    { key:"pasta_meat", name:"パスタ（ミートソース）", unit:"1皿", kcal:700, protein:22, fat:22, carb:95, type:"麺", group:"料理", cat:"主食", sugar:80.0, fiber:4.0, salt:2.5 },
-    { key:"pasta_cream", name:"パスタ（クリーム）", unit:"1皿", kcal:850, protein:20, fat:40, carb:95, type:"麺", group:"料理", cat:"主食", sugar:78.0, fiber:2.5, salt:2.0 },
-    { key:"pasta_pepe", name:"パスタ（ペペロンチーノ）", unit:"1皿", kcal:750, protein:18, fat:28, carb:105, type:"麺", group:"料理", cat:"主食", sugar:88.0, fiber:3.0, salt:1.5 }
+    { key:"pasta_meat",           name:"パスタ（ミートソース）",   unit:"1皿", kcal:700, protein:22, fat:22, carb:95,  type:"麺", group:"料理", cat:"主食", sugar:80.0, fiber:4.0, salt:2.5 },
+    { key:"pasta_cream",          name:"パスタ（クリーム）",       unit:"1皿", kcal:850, protein:20, fat:40, carb:95,  type:"麺", group:"料理", cat:"主食", sugar:78.0, fiber:2.5, salt:2.0 },
+    { key:"pasta_pepe",           name:"パスタ（ペペロンチーノ）", unit:"1皿", kcal:750, protein:18, fat:28, carb:105, type:"麺", group:"料理", cat:"主食", sugar:88.0, fiber:3.0, salt:1.5 },
+    { key:"conbini_pasta_napolitan",name:"ナポリタン",             unit:"1皿", kcal:420, protein:12, fat:10, carb:68,  type:"麺", group:"料理", cat:"主食", sugar:58.0, fiber:2.5, salt:2.5 },
   ];
 
   const GYUDON_VARIANTS = [
-    { key:"gyudon_small", name:"牛丼（並）", unit:"1杯", kcal:650, protein:22, fat:18, carb:94, type:"丼", group:"料理", cat:"主食", sugar:78.0, fiber:1.0, salt:2.5 },
-    { key:"gyudon_large", name:"牛丼（大盛）", unit:"1杯", kcal:830, protein:28, fat:24, carb:115, type:"丼", group:"料理", cat:"主食", sugar:96.0, fiber:1.5, salt:3.0 }
+    { key:"gyudon_small", name:"牛丼（並）",   unit:"1杯", kcal:650,  protein:22, fat:18, carb:94,  type:"米", group:"料理", cat:"主食", sugar:78.0,  fiber:1.0, salt:2.5 },
+    { key:"gyudon_large", name:"牛丼（大盛）", unit:"1杯", kcal:830,  protein:28, fat:24, carb:115, type:"米", group:"料理", cat:"主食", sugar:96.0,  fiber:1.5, salt:3.0 },
+    { key:"gyudon_toku",  name:"牛丼（特盛）", unit:"1杯", kcal:1020, protein:36, fat:30, carb:138, type:"米", group:"料理", cat:"主食", sugar:115.0, fiber:2.0, salt:3.5 },
   ];
 
   const SALAD_CHICKEN_VARIANTS = [
@@ -3746,9 +3742,9 @@
   ];
 
   const GYUDON_CHAIN_VARIANTS = [
-    { key:"yoshinoya_gyudon_v", name:"吉野家 牛丼（並）", unit:"1杯", kcal:652, protein:22, fat:17, carb:98, type:"丼", group:"料理", cat:"主食", sugar:80.0, fiber:1.0, salt:2.8 },
-    { key:"sukiya_gyudon_v", name:"すき家 牛丼（並）", unit:"1杯", kcal:671, protein:22, fat:18, carb:100, type:"丼", group:"料理", cat:"主食", sugar:82.0, fiber:1.0, salt:3.0 },
-    { key:"matsuya_gyudon_v", name:"松屋 牛めし（並）", unit:"1杯", kcal:637, protein:22, fat:14, carb:98, type:"丼", group:"料理", cat:"主食", sugar:80.0, fiber:1.0, salt:2.5 }
+    { key:"gyudon_small", name:"牛丼（並）",   unit:"1杯", kcal:650,  protein:22, fat:18, carb:94,  type:"米", group:"料理", cat:"主食", sugar:78.0,  fiber:1.0, salt:2.5 },
+    { key:"gyudon_large", name:"牛丼（大盛）", unit:"1杯", kcal:830,  protein:28, fat:24, carb:115, type:"米", group:"料理", cat:"主食", sugar:96.0,  fiber:1.5, salt:3.0 },
+    { key:"gyudon_toku",  name:"牛丼（特盛）", unit:"1杯", kcal:1020, protein:36, fat:30, carb:138, type:"米", group:"料理", cat:"主食", sugar:115.0, fiber:2.0, salt:3.5 },
   ];
 
   const PROTEIN_POWDER_VARIANTS = [
@@ -3771,10 +3767,60 @@
     { key:"v_udon_tempura", name:"天ぷらうどん",     unit:"1杯", kcal:520, protein:12, fat:18, carb:74, type:"麺", group:"料理", cat:"主食", sugar:60.0, fiber:1.5, salt:3.5 },
     { key:"v_udon_kitsune", name:"きつねうどん",     unit:"1杯", kcal:430, protein:13, fat:9,  carb:72, type:"麺", group:"料理", cat:"主食", sugar:58.0, fiber:1.5, salt:3.0 }
   ];
+  const SALAD_VARIANTS = [
+    { key:"salad",              name:"サラダ",               unit:"1皿",  kcal:60,  protein:2,   fat:3,  carb:8,  group:"料理", cat:"副菜", sugar:5.0,  fiber:1.5, salt:0.3 },
+    { key:"broccoli_salad",    name:"ブロッコリーサラダ",   unit:"1皿",  kcal:90,  protein:4,   fat:5,  carb:9,  group:"料理", cat:"副菜", sugar:4.0,  fiber:3.0, salt:0.5 },
+    { key:"seaweed_salad",     name:"海藻サラダ",           unit:"1皿",  kcal:40,  protein:2,   fat:1,  carb:7,  group:"料理", cat:"副菜", sugar:4.0,  fiber:2.0, salt:0.8 },
+    { key:"caesar_salad",      name:"シーザーサラダ",       unit:"1皿",  kcal:280, protein:8,   fat:20, carb:16, group:"料理", cat:"副菜" },
+    { key:"caprese",           name:"カプレーゼ",           unit:"1皿",  kcal:220, protein:10,  fat:16, carb:6,  group:"料理", cat:"副菜" },
+    { key:"conbini_salad",     name:"コンビニサラダ",       unit:"1袋",  kcal:80,  protein:3,   fat:3,  carb:10, group:"料理", cat:"副菜", sugar:5.0,  fiber:1.5, salt:0.3 },
+    { key:"conbini_wakame_salad",name:"わかめとツナのサラダ",unit:"1袋", kcal:90,  protein:8,   fat:3,  carb:8,  group:"料理", cat:"副菜", sugar:4.0,  fiber:1.5, salt:1.0 },
+  ];
+  const POTATO_SALAD_VARIANTS = [
+    { key:"potato_salad",      name:"ポテトサラダ",         unit:"100g", kcal:150, protein:3,   fat:9,  carb:15, group:"料理", cat:"副菜", sugar:12.0, fiber:1.2, salt:1.0 },
+    { key:"macaroni_salad",    name:"マカロニサラダ",       unit:"100g", kcal:170, protein:4,   fat:10, carb:18, group:"料理", cat:"副菜", sugar:15.0, fiber:1.0, salt:1.0 },
+    { key:"coleslaw",          name:"コールスロー",         unit:"100g", kcal:120, protein:2,   fat:7,  carb:13, group:"料理", cat:"副菜", sugar:10.0, fiber:1.2, salt:0.8 },
+    { key:"deli_macaroni_salad",name:"マカロニサラダ（惣菜）",unit:"1パック",kcal:190,protein:3,fat:12,carb:18, group:"料理", cat:"副菜", sugar:4.0,  fiber:0.8, salt:1.0 },
+  ];
+  const WASHOKU_SIDE_VARIANTS = [
+    { key:"kinpira",           name:"きんぴらごぼう",       unit:"1皿",  kcal:120, protein:2,   fat:5,  carb:18, group:"料理", cat:"副菜", sugar:14.0, fiber:3.5, salt:1.5 },
+    { key:"ohitashi",          name:"おひたし",             unit:"1皿",  kcal:35,  protein:2,   fat:0.5,carb:4,  group:"料理", cat:"副菜", sugar:2.0,  fiber:1.5, salt:0.5 },
+    { key:"deli_hijiki",       name:"ひじきの煮物",         unit:"1パック",kcal:60, protein:2,   fat:2,  carb:9,  group:"料理", cat:"副菜", sugar:5.0,  fiber:3.5, salt:1.2 },
+    { key:"deli_kimpira",      name:"きんぴらごぼう（惣菜）",unit:"1パック",kcal:80,protein:2,  fat:3,  carb:12, group:"料理", cat:"副菜", sugar:6.0,  fiber:2.5, salt:1.0 },
+    { key:"deli_nishime",      name:"筑前煮",               unit:"1パック",kcal:150,protein:6,  fat:4,  carb:22, group:"料理", cat:"副菜", sugar:14.0, fiber:3.0, salt:1.8 },
+    { key:"conbini_mozuku",    name:"もずく酢",             unit:"1カップ",kcal:15,protein:0.3, fat:0,  carb:4,  group:"料理", cat:"副菜", sugar:3.0,  fiber:1.5, salt:0.8 },
+    { key:"kimchi",            name:"キムチ",               unit:"100g", kcal:60,  protein:3,   fat:1,  carb:10, group:"料理", cat:"副菜", sugar:5.0,  fiber:1.5, salt:2.5 },
+  ];
+
+  const MISO_VARIANTS = [
+    { key:"misoshiru",         name:"味噌汁",             unit:"1杯", kcal:60,  protein:3, fat:2,   carb:7,  group:"料理", cat:"汁物", sugar:3.0, fiber:0.8, salt:1.5 },
+    { key:"miso_soup",         name:"味噌汁（軽め）",     unit:"1杯", kcal:50,  protein:3, fat:1.5, carb:6,  group:"料理", cat:"汁物", sugar:2.5, fiber:0.6, salt:1.2 },
+    { key:"home_miso_homemade",name:"具だくさん味噌汁",   unit:"1杯", kcal:90,  protein:5, fat:3,   carb:11, group:"料理", cat:"汁物", sugar:4.0, fiber:1.5, salt:1.8 },
+    { key:"tonjiru",           name:"豚汁",               unit:"1杯", kcal:180, protein:8, fat:10,  carb:14, group:"料理", cat:"汁物", sugar:6.0, fiber:2.0, salt:1.8 },
+  ];
+  const INSTANT_SOUP_VARIANTS = [
+    { key:"instant_soup_miso",    name:"インスタント味噌汁",     unit:"1食", kcal:40,  protein:2,   fat:1,   carb:5,  group:"料理", cat:"汁物", sugar:2.0, fiber:0.5, salt:1.8 },
+    { key:"instant_soup_corn",    name:"インスタントコーンスープ",unit:"1食", kcal:70,  protein:1,   fat:2,   carb:12, group:"料理", cat:"汁物", sugar:8.0, fiber:0.5, salt:0.8 },
+    { key:"instant_soup_potage",  name:"インスタントポタージュ",  unit:"1食", kcal:65,  protein:1.5, fat:2,   carb:11, group:"料理", cat:"汁物", sugar:6.0, fiber:0.8, salt:0.8 },
+    { key:"instant_soup_egg",     name:"インスタント卵スープ",    unit:"1食", kcal:35,  protein:2,   fat:1,   carb:5,  group:"料理", cat:"汁物", sugar:1.5, fiber:0.2, salt:1.5 },
+    { key:"instant_soup_wakame",  name:"インスタントわかめスープ",unit:"1食", kcal:20,  protein:1,   fat:0.5, carb:3,  group:"料理", cat:"汁物", sugar:1.0, fiber:0.8, salt:1.5 },
+    { key:"instant_soup_chuka",   name:"インスタント中華スープ",  unit:"1食", kcal:25,  protein:1,   fat:0.5, carb:4,  group:"料理", cat:"汁物", sugar:1.5, fiber:0.3, salt:1.8 },
+  ];
+
+  const SOUP_CAN_VARIANTS = [
+    { key:"conbini_corn_soup",    name:"コーンスープ（缶）",       unit:"1缶",     kcal:130, protein:2, fat:4, carb:22, group:"料理", cat:"汁物", sugar:18.0, fiber:0.8, salt:1.2 },
+    { key:"conbini_chicken_soup", name:"鶏がらスープ（缶）",       unit:"1缶",     kcal:30,  protein:2, fat:0.5,carb:4,  group:"料理", cat:"汁物", sugar:2.0,  fiber:0.0, salt:1.5 },
+    { key:"retort_soup_corn",     name:"コーンスープ（レトルト）", unit:"1袋(160ml)",kcal:128,protein:2, fat:4, carb:20, group:"料理", cat:"汁物", sugar:12.0, fiber:0.8, salt:1.2 },
+    { key:"retort_soup_pumpkin",  name:"かぼちゃスープ（レトルト）",unit:"1袋(160ml)",kcal:112,protein:2,fat:4,carb:17, group:"料理", cat:"汁物", sugar:10.0, fiber:1.5, salt:1.0 },
+  ];
+
   const SOBA_VARIANTS = [
     { key:"v_soba_kake",    name:"そば（かけ）",     unit:"1杯", kcal:340, protein:14, fat:2,  carb:65, type:"麺", group:"料理", cat:"主食" },
     { key:"v_soba_zaru",    name:"ざるそば",         unit:"1枚", kcal:320, protein:12, fat:2,  carb:62, type:"麺", group:"料理", cat:"主食" },
-    { key:"v_soba_tempura", name:"天ぷらそば",       unit:"1杯", kcal:540, protein:14, fat:18, carb:78, type:"麺", group:"料理", cat:"主食", sugar:63.0, fiber:2.5, salt:3.5 }
+    { key:"v_soba_tempura", name:"天ぷらそば",       unit:"1杯", kcal:540, protein:14, fat:18, carb:78, type:"麺", group:"料理", cat:"主食", sugar:63.0, fiber:2.5, salt:3.5 },
+    { key:"ramen_mazesoba", name:"まぜそば",         unit:"1杯", kcal:820, protein:30, fat:32, carb:98, type:"麺", group:"料理", cat:"主食", sugar:82.0, fiber:2.5, salt:4.5 },
+    { key:"v_soba_abura",   name:"油そば",           unit:"1杯", kcal:750, protein:26, fat:28, carb:95, type:"麺", group:"料理", cat:"主食", sugar:78.0, fiber:2.0, salt:4.0 },
+    { key:"yakisoba",       name:"焼きそば",         unit:"1皿", kcal:600, protein:18, fat:20, carb:85, type:"麺", group:"料理", cat:"主食", sugar:70.0, fiber:3.0, salt:2.5 },
   ];
   const CURRY_VARIANTS = [
     { key:"v_curry_normal",  name:"カレーライス",   unit:"1皿", kcal:740,  protein:18, fat:22, carb:106, type:"米", group:"料理", cat:"主食" },
@@ -3782,38 +3828,49 @@
     { key:"v_curry_dry",     name:"ドライカレー",   unit:"1皿", kcal:740,  protein:22, fat:24, carb:100, type:"米", group:"料理", cat:"主食" },
     { key:"v_curry_katsu",   name:"カツカレー",     unit:"1皿", kcal:1050, protein:30, fat:40, carb:125, type:"米", group:"料理", cat:"主食" },
     { key:"v_curry_green",   name:"グリーンカレー", unit:"1皿", kcal:560,  protein:18, fat:28, carb:58,  type:"米", group:"料理", cat:"主食" },
-    { key:"v_curry_coco",    name:"CoCo壱カレー",   unit:"1皿", kcal:500,  protein:14, fat:14, carb:80,  type:"米", group:"料理", cat:"主食" }
+    { key:"hayashi_rice",    name:"ハヤシライス",   unit:"1皿", kcal:780,  protein:20, fat:26, carb:108, type:"米", group:"料理", cat:"主食", sugar:90.0, fiber:2.0, salt:2.8 },
+    { key:"v_curry_coco",    name:"CoCo壱カレー",   unit:"1皿", kcal:500,  protein:14, fat:14, carb:80,  type:"米", group:"料理", cat:"主食" },
   ];
   const OMURICE_VARIANTS = [
     { key:"v_omu_ketchup",  name:"オムライス（ケチャップ）",   unit:"1皿", kcal:720, protein:20, fat:24, carb:95,  type:"米", group:"料理", cat:"主食" },
-    { key:"v_omu_demi",     name:"オムライス（デミグラス）",   unit:"1皿", kcal:780, protein:22, fat:28, carb:102, type:"米", group:"料理", cat:"主食" }
+    { key:"v_omu_demi",     name:"オムライス（デミグラス）",   unit:"1皿", kcal:780, protein:22, fat:28, carb:102, type:"米", group:"料理", cat:"主食" },
   ];
   const DONBURI_VARIANTS = [
-    { key:"v_don_oyako",    name:"親子丼",   unit:"1杯", kcal:680,  protein:28, fat:18, carb:92,  type:"丼", group:"料理", cat:"主食" },
-    { key:"v_don_katsu",    name:"カツ丼",   unit:"1杯", kcal:920,  protein:32, fat:36, carb:108, type:"丼", group:"料理", cat:"主食" },
-    { key:"v_don_ten",      name:"天丼",     unit:"1杯", kcal:860,  protein:20, fat:32, carb:112, type:"丼", group:"料理", cat:"主食" },
-    { key:"v_don_kaisen",   name:"海鮮丼",   unit:"1杯", kcal:620,  protein:30, fat:10, carb:92,  type:"丼", group:"料理", cat:"主食" },
-    { key:"v_don_buta",     name:"豚丼",     unit:"1杯", kcal:690,  protein:22, fat:22, carb:90,  type:"丼", group:"料理", cat:"主食" },
-    { key:"v_don_yakitori", name:"焼き鳥丼", unit:"1杯", kcal:650,  protein:28, fat:18, carb:88,  type:"丼", group:"料理", cat:"主食", sugar:74.0, fiber:1.0, salt:2.5 },
-    { key:"v_don_ikura",    name:"いくら丼", unit:"1杯", kcal:620,  protein:26, fat:10, carb:90,  type:"丼", group:"料理", cat:"主食" },
-    { key:"v_don_una",      name:"うな重",   unit:"1食", kcal:760,  protein:26, fat:18, carb:108, type:"米", group:"料理", cat:"主食" }
+    { key:"v_don_oyako",      name:"親子丼",     unit:"1杯", kcal:680,  protein:28, fat:18, carb:92,  type:"米", group:"料理", cat:"主食" },
+    { key:"v_don_katsu",      name:"カツ丼",     unit:"1杯", kcal:920,  protein:32, fat:36, carb:108, type:"米", group:"料理", cat:"主食" },
+    { key:"v_don_ten",        name:"天丼",       unit:"1杯", kcal:860,  protein:20, fat:32, carb:112, type:"米", group:"料理", cat:"主食" },
+    { key:"v_don_kaisen",     name:"海鮮丼",     unit:"1杯", kcal:620,  protein:30, fat:10, carb:92,  type:"米", group:"料理", cat:"主食" },
+    { key:"v_don_buta",       name:"豚丼",       unit:"1杯", kcal:690,  protein:22, fat:22, carb:90,  type:"米", group:"料理", cat:"主食" },
+    { key:"v_don_yakitori",   name:"焼き鳥丼",   unit:"1杯", kcal:650,  protein:28, fat:18, carb:88,  type:"米", group:"料理", cat:"主食", sugar:74.0, fiber:1.0, salt:2.5 },
+    { key:"v_don_ikura",      name:"いくら丼",   unit:"1杯", kcal:620,  protein:26, fat:10, carb:90,  type:"米", group:"料理", cat:"主食" },
+    { key:"v_don_una",        name:"うな重",     unit:"1食", kcal:760,  protein:26, fat:18, carb:108, type:"米", group:"料理", cat:"主食" },
+    { key:"v_don_hitsumabushi",name:"ひつまぶし",unit:"1食", kcal:820,  protein:28, fat:20, carb:118, type:"米", group:"料理", cat:"主食", sugar:95.0, fiber:1.0, salt:3.0 },
   ];
   const SUSHI_VARIANTS = [
+    { key:"v_sushi_5",  name:"寿司（5貫）",  unit:"1皿", kcal:275, protein:15, fat:4,  carb:43,  type:"米", group:"料理", cat:"主食", sugar:36.0, fiber:0.5, salt:1.5 },
     { key:"v_sushi_10", name:"寿司（10貫）", unit:"1皿", kcal:550, protein:30, fat:8,  carb:85,  type:"米", group:"料理", cat:"主食", sugar:72.0, fiber:1.0, salt:3.0 },
-    { key:"v_sushi_15", name:"寿司（15貫）", unit:"1皿", kcal:770, protein:38, fat:10, carb:118, type:"米", group:"料理", cat:"主食", sugar:100.0, fiber:1.5, salt:4.0 }
+    { key:"v_sushi_15", name:"寿司（15貫）", unit:"1皿", kcal:770, protein:38, fat:10, carb:118, type:"米", group:"料理", cat:"主食", sugar:100.0, fiber:1.5, salt:4.0 },
   ];
   const BENTO_VARIANTS = [
-    { key:"v_bento_chicken",   name:"チキン弁当",    unit:"1個", kcal:650, protein:30, fat:20, carb:85, type:"米", group:"料理", cat:"主食" },
-    { key:"v_bento_fish",      name:"焼き魚弁当",    unit:"1個", kcal:600, protein:28, fat:18, carb:80, type:"米", group:"料理", cat:"主食" },
-    { key:"v_bento_makunouchi",name:"幕の内弁当",    unit:"1個", kcal:700, protein:25, fat:22, carb:95, type:"米", group:"料理", cat:"主食" },
-    { key:"v_bento_diet",      name:"ヘルシー弁当",  unit:"1個", kcal:450, protein:22, fat:10, carb:65, type:"米", group:"料理", cat:"主食" }
+    { key:"v_bento_nori",       name:"のり弁当",          unit:"1個", kcal:620, protein:18, fat:18, carb:92, type:"米", group:"料理", cat:"主食" },
+    { key:"v_bento_chicken",    name:"唐揚げ弁当",        unit:"1個", kcal:780, protein:28, fat:28, carb:98, type:"米", group:"料理", cat:"主食" },
+    { key:"v_bento_tonkatsu",   name:"とんかつ弁当",      unit:"1個", kcal:820, protein:28, fat:30, carb:102, type:"米", group:"料理", cat:"主食" },
+    { key:"v_bento_salmon",     name:"鮭弁当",            unit:"1個", kcal:620, protein:22, fat:14, carb:90, type:"米", group:"料理", cat:"主食" },
+    { key:"v_bento_makunouchi", name:"幕の内弁当",        unit:"1個", kcal:700, protein:24, fat:20, carb:98, type:"米", group:"料理", cat:"主食" },
+    { key:"v_bento_diet",       name:"ヘルシー弁当",      unit:"1個", kcal:450, protein:20, fat:10, carb:65, type:"米", group:"料理", cat:"主食" },
+    { key:"conbini_bento_chicken",    name:"チキン弁当（コンビニ）",  unit:"1個", kcal:650, protein:30, fat:20, carb:85, type:"米", group:"料理", cat:"主食" },
+    { key:"conbini_bento_fish",       name:"焼き魚弁当（コンビニ）", unit:"1個", kcal:600, protein:28, fat:18, carb:80, type:"米", group:"料理", cat:"主食" },
+    { key:"conbini_bento_makunouchi", name:"幕の内弁当（コンビニ）", unit:"1個", kcal:700, protein:25, fat:22, carb:95, type:"米", group:"料理", cat:"主食" },
+    { key:"conbini_bento_diet",       name:"ヘルシー弁当（コンビニ）",unit:"1個", kcal:450, protein:20, fat:10, carb:65, type:"米", group:"料理", cat:"主食" },
   ];
   const SANDWICH_VARIANTS = [
     { key:"v_sand_egg",   name:"サンドイッチ（たまご）",unit:"1パック", kcal:320, protein:12, fat:16, carb:30, type:"パン", group:"料理", cat:"主食" },
     { key:"v_sand_ham",   name:"サンドイッチ（ハム）",  unit:"1パック", kcal:300, protein:13, fat:12, carb:32, type:"パン", group:"料理", cat:"主食" },
     { key:"v_sand_tamago",name:"たまごサンド",          unit:"1パック", kcal:360, protein:13, fat:18, carb:34, type:"パン", group:"料理", cat:"主食" },
     { key:"v_sand_katsu", name:"カツサンド",            unit:"1パック", kcal:520, protein:20, fat:24, carb:54, type:"パン", group:"料理", cat:"主食", sugar:44.0, fiber:2.0, salt:2.0 },
-    { key:"v_sand_club",  name:"クラブサンドイッチ",    unit:"1個",    kcal:520, protein:24, fat:24, carb:52, type:"パン", group:"料理", cat:"主食" }
+    { key:"v_sand_club",  name:"クラブサンドイッチ",    unit:"1個",     kcal:520, protein:24, fat:24, carb:52, type:"パン", group:"料理", cat:"主食" },
+    { key:"hot_dog",      name:"ホットドッグ",          unit:"1本",     kcal:380, protein:12, fat:18, carb:40, type:"パン", group:"料理", cat:"主食", sugar:34.0, fiber:1.5, salt:2.0 },
+    { key:"asia_banh_mi", name:"バインミー",            unit:"1個",     kcal:380, protein:16, fat:12, carb:52, type:"パン", group:"料理", cat:"主食", sugar:42.0, fiber:2.0, salt:2.0 },
   ];
   const BURGER_VARIANTS = [
     { key:"v_burger_single",  name:"ハンバーガー",          unit:"1個",   kcal:420, protein:18, fat:18, carb:46, type:"パン", group:"料理", cat:"主食" },
@@ -3843,20 +3900,30 @@
     { key:"v_nabe_sukiyaki", name:"すき焼き",      unit:"1人前", kcal:620, protein:28, fat:30, carb:52, group:"料理", cat:"主菜", sugar:35.0, fiber:2.0, salt:3.5 }
   ];
   const TOAST_VARIANTS = [
-    { key:"v_toast_butter", name:"トースト＋バター", unit:"1枚", kcal:210, protein:5, fat:8,  carb:30, type:"パン", group:"料理", cat:"主食", sugar:25.0, fiber:1.5, salt:0.9 },
-    { key:"v_toast_jam",    name:"トースト＋ジャム", unit:"1枚", kcal:230, protein:5, fat:2,  carb:48, type:"パン", group:"料理", cat:"主食" },
-    { key:"v_toast_french", name:"フレンチトースト", unit:"2枚", kcal:380, protein:12,fat:16, carb:46, type:"パン", group:"料理", cat:"主食", sugar:38.0, fiber:1.2, salt:0.8 }
+    { key:"v_toast_butter", name:"トースト＋バター",  unit:"1枚", kcal:210, protein:5,  fat:8,  carb:30, type:"パン", group:"料理", cat:"主食", sugar:25.0, fiber:1.5, salt:0.9 },
+    { key:"v_toast_jam",    name:"トースト＋ジャム",  unit:"1枚", kcal:230, protein:5,  fat:2,  carb:48, type:"パン", group:"料理", cat:"主食", sugar:42.0, fiber:1.5, salt:0.8 },
+    { key:"toast_pizza",    name:"ピザトースト",      unit:"1枚", kcal:320, protein:12, fat:14, carb:36, type:"パン", group:"料理", cat:"主食", sugar:30.0, fiber:1.5, salt:1.5 },
+    { key:"v_toast_french", name:"フレンチトースト",  unit:"2枚", kcal:380, protein:12, fat:16, carb:46, type:"パン", group:"料理", cat:"主食", sugar:38.0, fiber:1.2, salt:0.8 },
   ];
   const CEREAL_VARIANTS = [
     { key:"v_cereal_granola",  name:"グラノーラ",     unit:"50g", kcal:220, protein:5, fat:8,   carb:34, group:"食材", cat:"炭水化物" },
     { key:"v_cereal_corn",     name:"コーンフレーク", unit:"40g", kcal:150, protein:3, fat:0.5, carb:34, group:"食材", cat:"炭水化物" },
     { key:"v_cereal_muesli",   name:"ミューズリー",   unit:"50g", kcal:190, protein:6, fat:4,   carb:34, group:"食材", cat:"炭水化物" }
   ];
+  const TOFU_DISH_VARIANTS = [
+    { key:"tofu_steak",      name:"豆腐ステーキ", unit:"1皿",   kcal:180, protein:14, fat:10, carb:8, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:4.0, fiber:0.5, salt:1.2 },
+    { key:"home_boiled_tofu",name:"湯豆腐",       unit:"1人前", kcal:100, protein:9,  fat:5,  carb:3, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:1.0, fiber:0.4, salt:0.2 },
+    { key:"hiyayakko",       name:"冷奴",         unit:"1皿",   kcal:90,  protein:8,  fat:5,  carb:2, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:1.2, fiber:0.4, salt:0.3 },
+    { key:"v_tofu_mapo",     name:"麻婆豆腐風",   unit:"1皿",   kcal:200, protein:10, fat:12, carb:10, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:5.0, fiber:1.0, salt:2.0 },
+    { key:"v_tofu_agedashi", name:"揚げ出し豆腐", unit:"1皿",   kcal:180, protein:8,  fat:10, carb:14, type:"卵・野菜系", group:"料理", cat:"主菜", sugar:4.0, fiber:0.5, salt:1.5 },
+  ];
+
   const EGG_DISH_VARIANTS = [
     { key:"v_egg_boiled",      name:"ゆで卵",            unit:"1個",  kcal:80,  protein:6.5, fat:5.5, carb:0.5, group:"料理", cat:"主菜" },
     { key:"v_egg_fried",       name:"目玉焼き",          unit:"1個",  kcal:90,  protein:6.5, fat:7,   carb:0.2, group:"食材", cat:"卵・大豆" },
     { key:"v_egg_scrambled",   name:"スクランブルエッグ",unit:"1皿",  kcal:180, protein:12,  fat:14,  carb:1,   group:"食材", cat:"卵・大豆" },
     { key:"v_egg_tamagoyaki",  name:"卵焼き",            unit:"2切れ",kcal:130, protein:9,   fat:8,   carb:5,   group:"料理", cat:"主菜" },
+    { key:"deli_tamagoyaki",   name:"だし巻き卵",        unit:"1本",  kcal:140, protein:9,   fat:9,   carb:5,   type:"卵・野菜系", group:"料理", cat:"主菜", sugar:3.0, fiber:0.0, salt:1.0 },
     { key:"v_egg_onsen",       name:"温泉卵",            unit:"1個",  kcal:78,  protein:6.5, fat:5.4, carb:0.2, group:"料理", cat:"主菜" },
     { key:"v_egg_ham",         name:"ハムエッグ",        unit:"1皿",  kcal:200, protein:14,  fat:14,  carb:2,   group:"料理", cat:"主菜" },
     { key:"v_egg_bacon",       name:"ベーコンエッグ",    unit:"1皿",  kcal:280, protein:14,  fat:22,  carb:1,   group:"料理", cat:"主菜" },
@@ -3865,7 +3932,7 @@
   const ASIAN_NOODLE_VARIANTS = [
     { key:"v_asian_pho",     name:"フォー（チキン）",unit:"1杯", kcal:420, protein:22, fat:6,  carb:72, type:"麺", group:"料理", cat:"主食" },
     { key:"v_asian_padthai", name:"パッタイ",        unit:"1皿", kcal:580, protein:18, fat:18, carb:82, type:"麺", group:"料理", cat:"主食", sugar:68.0, fiber:2.5, salt:3.0 },
-    { key:"v_asian_laksa",   name:"ラクサ",          unit:"1杯", kcal:580, protein:18, fat:24, carb:72, type:"麺", group:"料理", cat:"主食" }
+    { key:"v_asian_laksa",   name:"ラクサ",          unit:"1杯", kcal:580, protein:18, fat:24, carb:72, type:"麺", group:"料理", cat:"主食" },
   ];
   const BEER_VARIANTS = [
     { key:"v_beer_can",     name:"缶ビール（350ml）",     unit:"1缶",  kcal:140, protein:1,   fat:0, carb:11, group:"飲み物", cat:"飲み物" },
@@ -3882,6 +3949,26 @@
     { key:"v_latte_matcha",  name:"抹茶ラテ",     unit:"1杯", kcal:180, protein:6, fat:6, carb:26, group:"飲み物", cat:"飲み物" },
     { key:"v_latte_hojicha", name:"ほうじ茶ラテ", unit:"1杯", kcal:160, protein:5, fat:5, carb:24, group:"飲み物", cat:"飲み物", sugar:20.0, fiber:0.0, salt:0.2 }
   ];
+  const OKONOMIYAKI_VARIANTS = [
+    { key:"okonomiyaki_kansai",   name:"お好み焼き（関西風）",  unit:"1枚", kcal:620, protein:20, fat:26, carb:72, type:"粉もの", group:"料理", cat:"主食", sugar:58.0, fiber:2.0, salt:2.5 },
+    { key:"okonomiyaki_hiroshima",name:"お好み焼き（広島風）",  unit:"1枚", kcal:720, protein:24, fat:22, carb:95, type:"粉もの", group:"料理", cat:"主食", sugar:78.0, fiber:3.0, salt:2.8 },
+    { key:"okonomiyaki_negiyaki", name:"ねぎ焼き",              unit:"1枚", kcal:480, protein:14, fat:18, carb:62, type:"粉もの", group:"料理", cat:"主食", sugar:50.0, fiber:1.5, salt:2.0 },
+    { key:"okonomiyaki_seafood",  name:"お好み焼き（海鮮）",   unit:"1枚", kcal:580, protein:24, fat:20, carb:70, type:"粉もの", group:"料理", cat:"主食", sugar:56.0, fiber:2.0, salt:2.5 },
+  ];
+
+  const YAKIGASHI_VARIANTS = [
+    { key:"bread_cinnamon_roll", name:"シナモンロール",     unit:"1個(100g)", kcal:335, protein:6, fat:13, carb:49, group:"おやつ", cat:"おやつ", sugar:20.0, fiber:1.5, salt:0.5 },
+    { key:"bread_donut_plain",   name:"ドーナツ（プレーン）",unit:"1個(60g)", kcal:216, protein:3, fat:11, carb:27, group:"おやつ", cat:"おやつ", sugar:10.0, fiber:0.8, salt:0.3 },
+    { key:"bread_donut_choco",   name:"ドーナツ（チョコ）", unit:"1個(65g)", kcal:249, protein:3, fat:14, carb:29, group:"おやつ", cat:"おやつ", sugar:15.0, fiber:1.0, salt:0.3 },
+    { key:"bread_jam_donut",     name:"ジャムドーナツ",     unit:"1個(70g)", kcal:230, protein:4, fat:10, carb:32, group:"おやつ", cat:"おやつ", sugar:16.0, fiber:0.8, salt:0.3 },
+    { key:"bread_eclair",        name:"エクレア",           unit:"1個(70g)", kcal:189, protein:4, fat:10, carb:22, group:"おやつ", cat:"おやつ", sugar:14.0, fiber:0.5, salt:0.2 },
+    { key:"bread_madeleine",     name:"マドレーヌ",         unit:"1個(40g)", kcal:161, protein:2, fat:8,  carb:20, group:"おやつ", cat:"おやつ", sugar:12.0, fiber:0.3, salt:0.2 },
+    { key:"bread_financier",     name:"フィナンシェ",       unit:"1個(35g)", kcal:154, protein:3, fat:9,  carb:17, group:"おやつ", cat:"おやつ", sugar:10.0, fiber:0.3, salt:0.1 },
+    { key:"v_yakigashi_cookie",  name:"クッキー（5枚）",    unit:"5枚(50g)", kcal:240, protein:3, fat:12, carb:32, group:"おやつ", cat:"おやつ", sugar:18.0, fiber:0.5, salt:0.3 },
+    { key:"v_yakigashi_scone",   name:"スコーン",           unit:"1個(70g)", kcal:220, protein:4, fat:10, carb:29, group:"おやつ", cat:"おやつ", sugar:8.0,  fiber:1.2, salt:0.5 },
+    { key:"v_yakigashi_brownie", name:"ブラウニー",         unit:"1個(60g)", kcal:240, protein:3, fat:13, carb:30, group:"おやつ", cat:"おやつ", sugar:22.0, fiber:1.0, salt:0.2 },
+  ];
+
   const CAKE_VARIANTS = [
     { key:"v_cake_short",    name:"ショートケーキ", unit:"1切れ", kcal:320, protein:5, fat:14, carb:44, group:"おやつ", cat:"おやつ" },
     { key:"v_cake_cheese",   name:"チーズケーキ",   unit:"1切れ", kcal:380, protein:7, fat:24, carb:34, group:"おやつ", cat:"おやつ" },
@@ -3921,8 +4008,6 @@
     { key:"drink_canned_coffee_sweet", name:"缶コーヒー（加糖）", unit:"1缶(185ml)", kcal:74, protein:0.6, fat:0.6, carb:15, group:"飲み物", cat:"飲み物", sugar:14.0, fiber:0.0, salt:0.1 },
     { key:"drink_milk_coffee", name:"カフェオレ（市販）", unit:"200ml", kcal:96, protein:3, fat:4, carb:13, group:"飲み物", cat:"飲み物", sugar:12.0, fiber:0.0, salt:0.2 },
     { key:"latte", name:"カフェラテ", unit:"1杯(350ml)", kcal:150, protein:7, fat:6, carb:17, group:"飲み物", cat:"飲み物", sugar:15.0, fiber:0.0, salt:0.2 },
-    { key:"v_latte_matcha", name:"抹茶ラテ", unit:"1杯(350ml)", kcal:180, protein:6, fat:6, carb:26, group:"飲み物", cat:"飲み物", sugar:22.0, fiber:0.5, salt:0.2 },
-    { key:"v_latte_hojicha", name:"ほうじ茶ラテ", unit:"1杯(350ml)", kcal:160, protein:5, fat:5, carb:24, group:"飲み物", cat:"飲み物", sugar:20.0, fiber:0.0, salt:0.2 },
   ];
   const JUICE_VARIANTS = [
     { key:"drink_orange_100", name:"オレンジジュース（100%）", unit:"200ml", kcal:84, protein:1, fat:0.2, carb:20, group:"飲み物", cat:"飲み物", sugar:18.5, fiber:0.2, salt:0.0 },
@@ -3977,37 +4062,43 @@
     { key:"sweets_mochi_ice", name:"もちアイス", unit:"1個", kcal:190, protein:2, fat:5, carb:34, group:"おやつ", cat:"おやつ", sugar:28.0, fiber:0.3, salt:0.1 },
   ];
   const KASHI_PAN_VARIANTS = [
-    { key:"bread_melon_pan", name:"メロンパン", unit:"1個(90g)", kcal:338, protein:7, fat:11, carb:53, group:"おやつ", cat:"おやつ", sugar:26.0, fiber:1.2, salt:0.5 },
-    { key:"bread_cream_pan", name:"クリームパン", unit:"1個(80g)", kcal:214, protein:6, fat:6, carb:35, group:"おやつ", cat:"おやつ", sugar:16.0, fiber:0.8, salt:0.4 },
-    { key:"bread_anpan", name:"あんパン", unit:"1個(95g)", kcal:260, protein:7, fat:4, carb:50, group:"おやつ", cat:"おやつ", sugar:27.0, fiber:1.8, salt:0.4 },
-    { key:"bread_curry_pan", name:"カレーパン（揚げ）", unit:"1個(100g)", kcal:290, protein:7, fat:14, carb:35, group:"おやつ", cat:"おやつ", sugar:5.0, fiber:2.0, salt:1.0 },
-    { key:"bread_chocolate_cornet", name:"チョココロネ", unit:"1個(85g)", kcal:263, protein:6, fat:11, carb:36, group:"おやつ", cat:"おやつ", sugar:15.0, fiber:1.2, salt:0.5 },
-    { key:"bread_cinnamon_roll", name:"シナモンロール", unit:"1個(100g)", kcal:335, protein:6, fat:13, carb:49, group:"おやつ", cat:"おやつ", sugar:20.0, fiber:1.5, salt:0.5 },
-    { key:"bread_danish", name:"デニッシュペストリー", unit:"1個(80g)", kcal:308, protein:5, fat:17, carb:35, group:"おやつ", cat:"おやつ", sugar:12.0, fiber:1.0, salt:0.5 },
-    { key:"bread_donut_plain", name:"ドーナツ（プレーン）", unit:"1個(60g)", kcal:216, protein:3, fat:11, carb:27, group:"おやつ", cat:"おやつ", sugar:10.0, fiber:0.8, salt:0.3 },
-    { key:"bread_donut_choco", name:"ドーナツ（チョコ）", unit:"1個(65g)", kcal:249, protein:3, fat:14, carb:29, group:"おやつ", cat:"おやつ", sugar:15.0, fiber:1.0, salt:0.3 },
-    { key:"bread_eclair", name:"エクレア", unit:"1個(70g)", kcal:189, protein:4, fat:10, carb:22, group:"おやつ", cat:"おやつ", sugar:14.0, fiber:0.5, salt:0.2 },
-    { key:"bread_madeleine", name:"マドレーヌ", unit:"1個(40g)", kcal:161, protein:2, fat:8, carb:20, group:"おやつ", cat:"おやつ", sugar:12.0, fiber:0.3, salt:0.2 },
-    { key:"bread_financier", name:"フィナンシェ", unit:"1個(35g)", kcal:154, protein:3, fat:9, carb:17, group:"おやつ", cat:"おやつ", sugar:10.0, fiber:0.3, salt:0.1 },
+    { key:"croissant",              name:"クロワッサン",         unit:"1個(50g)",  kcal:220, protein:4, fat:12, carb:24, group:"おやつ", cat:"おやつ", sugar:20.0, fiber:1.0, salt:0.8 },
+    { key:"bread_melon_pan",        name:"メロンパン",           unit:"1個(90g)",  kcal:338, protein:7, fat:11, carb:53, group:"おやつ", cat:"おやつ", sugar:26.0, fiber:1.2, salt:0.5 },
+    { key:"bread_cream_pan",        name:"クリームパン",         unit:"1個(80g)",  kcal:214, protein:6, fat:6,  carb:35, group:"おやつ", cat:"おやつ", sugar:16.0, fiber:0.8, salt:0.4 },
+    { key:"bread_anpan",            name:"あんパン",             unit:"1個(95g)",  kcal:260, protein:7, fat:4,  carb:50, group:"おやつ", cat:"おやつ", sugar:27.0, fiber:1.8, salt:0.4 },
+    { key:"bread_curry_pan",        name:"カレーパン（揚げ）",   unit:"1個(100g)", kcal:290, protein:7, fat:14, carb:35, group:"おやつ", cat:"おやつ", sugar:5.0,  fiber:2.0, salt:1.0 },
+    { key:"bread_chocolate_cornet", name:"チョココロネ",         unit:"1個(85g)",  kcal:263, protein:6, fat:11, carb:36, group:"おやつ", cat:"おやつ", sugar:15.0, fiber:1.2, salt:0.5 },
+    { key:"bread_danish",           name:"デニッシュ",           unit:"1個(80g)",  kcal:308, protein:5, fat:17, carb:35, group:"おやつ", cat:"おやつ", sugar:12.0, fiber:1.0, salt:0.5 },
+    { key:"bread_pretzel_sweet",    name:"プレッツェル（甘）",   unit:"1個(50g)",  kcal:195, protein:4, fat:5,  carb:34, group:"おやつ", cat:"おやつ", sugar:8.0,  fiber:1.0, salt:0.4 },
+    { key:"bread_choco_croissant",  name:"チョコクロワッサン",   unit:"1個(75g)",  kcal:295, protein:5, fat:16, carb:34, group:"おやつ", cat:"おやつ", sugar:14.0, fiber:1.2, salt:0.4 },
+    { key:"bread_custard_danish",   name:"カスタードデニッシュ", unit:"1個(85g)",  kcal:280, protein:5, fat:13, carb:36, group:"おやつ", cat:"おやつ", sugar:16.0, fiber:0.8, salt:0.4 },
+    { key:"bread_cheese_danish",    name:"チーズデニッシュ",     unit:"1個(80g)",  kcal:265, protein:6, fat:14, carb:30, group:"おやつ", cat:"おやつ", sugar:8.0,  fiber:0.8, salt:0.6 },
+    { key:"bread_apple_danish",     name:"アップルデニッシュ",   unit:"1個(90g)",  kcal:270, protein:4, fat:12, carb:37, group:"おやつ", cat:"おやつ", sugar:18.0, fiber:1.2, salt:0.4 },
+    { key:"bread_adzuki_danish",    name:"あんデニッシュ",       unit:"1個(90g)",  kcal:290, protein:5, fat:11, carb:43, group:"おやつ", cat:"おやつ", sugar:22.0, fiber:1.5, salt:0.4 },
+    { key:"bread_bagel_plain",      name:"プレーンベーグル",     unit:"1個(95g)",  kcal:245, protein:8, fat:2,  carb:48, group:"おやつ", cat:"おやつ", sugar:5.0,  fiber:2.0, salt:0.8 },
   ];
 
   const RICE_VARIANTS = [
     { key:"rice", name:"白ごはん", unit:"150g", kcal:250, protein:4, fat:0.5, carb:55, group:"食材", cat:"炭水化物", sugar:54.0, fiber:0.3, salt:0.0 },
     { key:"home_brown_rice", name:"玄米ごはん", unit:"150g", kcal:248, protein:4, fat:1, carb:53, group:"食材", cat:"炭水化物", sugar:51.0, fiber:1.4, salt:0.0 },
     { key:"rice_mixed", name:"もち麦ごはん", unit:"150g", kcal:240, protein:4, fat:0.5, carb:52, group:"食材", cat:"炭水化物", sugar:0.5, fiber:2.5, salt:0.0 },
+    { key:"takikomi_gohan", name:"炊き込みご飯", unit:"150g", kcal:260, protein:6, fat:3, carb:52, group:"料理", cat:"主食", type:"米", sugar:4.0, fiber:1.0, salt:1.2 },
+    { key:"ochazuke", name:"お茶漬け", unit:"1杯", kcal:200, protein:5, fat:1, carb:43, group:"料理", cat:"主食", type:"米", sugar:36.0, fiber:0.5, salt:1.5 },
+    { key:"washoku_natto_gohan", name:"納豆ご飯", unit:"1杯", kcal:350, protein:12, fat:6, carb:61, group:"料理", cat:"主食", type:"米", sugar:48.0, fiber:4.0, salt:0.3 },
     { key:"mochi", name:"切り餅", unit:"1個(50g)", kcal:112, protein:2, fat:0.3, carb:25, group:"食材", cat:"炭水化物", sugar:0.5, fiber:0.3, salt:0.0 },
     { key:"rice_cake", name:"玄米餅", unit:"1個(50g)", kcal:104, protein:2.5, fat:0.5, carb:22, group:"食材", cat:"炭水化物", sugar:0.3, fiber:0.8, salt:0.0 },
     { key:"quinoa", name:"キヌア（炊いたもの）", unit:"100g", kcal:120, protein:4, fat:2, carb:22, group:"食材", cat:"炭水化物", sugar:0.5, fiber:2.8, salt:0.0 },
   ];
   const BREAD_VARIANTS = [
-    { key:"bread", name:"食パン", unit:"1枚(60g)", kcal:160, protein:5, fat:2, carb:30, group:"食材", cat:"炭水化物", sugar:42.0, fiber:2.2, salt:0.8 },
-    { key:"bread_french", name:"フランスパン", unit:"1切れ(60g)", kcal:166, protein:6, fat:1, carb:34, group:"食材", cat:"炭水化物", sugar:1.5, fiber:1.5, salt:0.9 },
-    { key:"bread_rye", name:"ライ麦パン", unit:"1枚(60g)", kcal:148, protein:5, fat:1, carb:30, group:"食材", cat:"炭水化物", sugar:1.0, fiber:4.5, salt:0.8 },
-    { key:"bread_whole", name:"全粒粉パン", unit:"1枚(60g)", kcal:149, protein:6, fat:2, carb:28, group:"食材", cat:"炭水化物", sugar:1.5, fiber:4.0, salt:0.8 },
-    { key:"bread_english", name:"イングリッシュマフィン", unit:"1個(60g)", kcal:153, protein:6, fat:2, carb:29, group:"食材", cat:"炭水化物", sugar:2.0, fiber:1.5, salt:0.7 },
-    { key:"bread_naan", name:"ナン", unit:"1枚(90g)", kcal:235, protein:8, fat:3, carb:45, group:"食材", cat:"炭水化物", sugar:3.0, fiber:2.0, salt:0.8 },
-    { key:"bread_pita", name:"ピタパン", unit:"1枚(60g)", kcal:165, protein:6, fat:1, carb:33, group:"食材", cat:"炭水化物", sugar:1.0, fiber:1.5, salt:0.6 },
-    { key:"bread_focaccia", name:"フォカッチャ", unit:"1切れ(80g)", kcal:220, protein:6, fat:8, carb:32, group:"食材", cat:"炭水化物", sugar:1.5, fiber:1.5, salt:0.8 },
+    { key:"bread",         name:"食パン",               unit:"1枚(60g)",  kcal:160, protein:5, fat:2, carb:30, group:"食材", cat:"炭水化物", sugar:42.0, fiber:2.2, salt:0.8 },
+    { key:"bread_french",  name:"フランスパン",         unit:"1切れ(60g)",kcal:166, protein:6, fat:1, carb:34, group:"食材", cat:"炭水化物", sugar:1.5,  fiber:1.5, salt:0.9 },
+    { key:"bread_rye",     name:"ライ麦パン",           unit:"1枚(60g)",  kcal:148, protein:5, fat:1, carb:30, group:"食材", cat:"炭水化物", sugar:1.0,  fiber:4.5, salt:0.8 },
+    { key:"bread_whole",   name:"全粒粉パン",           unit:"1枚(60g)",  kcal:149, protein:6, fat:2, carb:28, group:"食材", cat:"炭水化物", sugar:1.5,  fiber:4.0, salt:0.8 },
+    { key:"bagel",         name:"ベーグル",             unit:"1個",       kcal:250, protein:9, fat:2, carb:50, group:"食材", cat:"炭水化物", sugar:46.0, fiber:2.2, salt:0.8 },
+    { key:"bread_english", name:"イングリッシュマフィン",unit:"1個(60g)", kcal:153, protein:6, fat:2, carb:29, group:"食材", cat:"炭水化物", sugar:2.0,  fiber:1.5, salt:0.7 },
+    { key:"bread_naan",    name:"ナン",                 unit:"1枚(90g)",  kcal:235, protein:8, fat:3, carb:45, group:"食材", cat:"炭水化物", sugar:3.0,  fiber:2.0, salt:0.8 },
+    { key:"bread_pita",    name:"ピタパン",             unit:"1枚(60g)",  kcal:165, protein:6, fat:1, carb:33, group:"食材", cat:"炭水化物", sugar:1.0,  fiber:1.5, salt:0.6 },
+    { key:"bread_focaccia",name:"フォカッチャ",         unit:"1切れ(80g)",kcal:220, protein:6, fat:8, carb:32, group:"食材", cat:"炭水化物", sugar:1.5,  fiber:1.5, salt:0.8 },
   ];
   const NOODLE_VARIANTS = [
     { key:"pasta_dry", name:"パスタ（乾麺）", unit:"100g", kcal:378, protein:13, fat:2, carb:75, group:"食材", cat:"炭水化物", sugar:2.5, fiber:2.7, salt:0.0 },
@@ -4026,11 +4117,9 @@
     { key:"home_cottage_cheese", name:"カッテージチーズ", unit:"100g", kcal:105, protein:13, fat:5, carb:2, group:"食材", cat:"乳製品", sugar:2.0, fiber:0.0, salt:0.5 },
   ];
   const YOGURT_VARIANTS = [
-    { key:"yogurt_plain", name:"プレーンヨーグルト", unit:"1個(100g)", kcal:62, protein:4, fat:3, carb:5, group:"食材", cat:"乳製品", sugar:4.9, fiber:0.0, salt:0.1 },
-    { key:"yogurt_flavored", name:"加糖ヨーグルト", unit:"1個(100g)", kcal:95, protein:3, fat:2, carb:16, group:"食材", cat:"乳製品", sugar:14.2, fiber:0.0, salt:0.1 },
-    { key:"yogurt", name:"ヨーグルト（汎用）", unit:"1個(100g)", kcal:80, protein:4, fat:3, carb:10, group:"食材", cat:"乳製品", sugar:9.5, fiber:0.0, salt:0.1 },
-    { key:"v_gy_sweet", name:"ギリシャヨーグルト（加糖）", unit:"1個", kcal:140, protein:10, fat:4, carb:16, group:"食材", cat:"乳製品", sugar:14.0, fiber:0.0, salt:0.1 },
-    { key:"v_gy_plain", name:"ギリシャヨーグルト（無糖）", unit:"1個", kcal:100, protein:10, fat:4, carb:5, group:"食材", cat:"乳製品", sugar:4.0, fiber:0.0, salt:0.1 },
+    { key:"yogurt_plain",   name:"プレーンヨーグルト", unit:"1個(100g)", kcal:62,  protein:4, fat:3, carb:5,  group:"食材", cat:"乳製品", sugar:4.9,  fiber:0.0, salt:0.1 },
+    { key:"yogurt_flavored",name:"加糖ヨーグルト",     unit:"1個(100g)", kcal:95,  protein:3, fat:2, carb:16, group:"食材", cat:"乳製品", sugar:14.2, fiber:0.0, salt:0.1 },
+    { key:"yogurt",         name:"ヨーグルト（汎用）", unit:"1個(100g)", kcal:80,  protein:4, fat:3, carb:10, group:"食材", cat:"乳製品", sugar:9.5,  fiber:0.0, salt:0.1 },
   ];
   const MILK_VARIANTS = [
     { key:"milk", name:"牛乳", unit:"200ml", kcal:130, protein:7, fat:7, carb:10, group:"食材", cat:"乳製品", sugar:9.6, fiber:0.0, salt:0.2 },
@@ -4271,10 +4360,12 @@
 
   const VARIANT_GROUPS = {
     ramen:              { label:"ラーメンの種類",           items: RAMEN_VARIANTS },
+    ramen_v_parent:     { label:"ラーメンの種類",           items: RAMEN_VARIANTS },
     udon_v_parent:      { label:"うどんの種類",             items: UDON_VARIANTS },
     soba_v_parent:      { label:"そばの種類",               items: SOBA_VARIANTS },
     onigiri:            { label:"おにぎりの種類",           items: ONIGIRI_VARIANTS },
     spaghetti:          { label:"パスタの種類",             items: PASTA_VARIANTS },
+    pasta_v_parent:     { label:"パスタの種類",             items: PASTA_VARIANTS },
     curry_v_parent:     { label:"カレーの種類",             items: CURRY_VARIANTS },
     omurice_v_parent:   { label:"オムライスの種類",         items: OMURICE_VARIANTS },
     donburi_v_parent:   { label:"丼の種類",                 items: DONBURI_VARIANTS },
@@ -4294,9 +4385,17 @@
     subway_v_parent:     { label:"サブウェイのメニュー",    items: SUBWAY_VARIANTS },
     gusto_v_parent:      { label:"ガストのメニュー",        items: GUSTO_VARIANTS },
     tenka_v_parent:      { label:"天下一品のメニュー",      items: TENKA_VARIANTS },
+    chahan_v_parent:    { label:"チャーハンの種類",         items: CHAHAN_VARIANTS },
     gyudon_chain:       { label:"牛丼チェーンを選ぶ",       items: GYUDON_CHAIN_VARIANTS },
     toast_v_parent:     { label:"トーストの種類",           items: TOAST_VARIANTS },
     cereal_v_parent:    { label:"シリアルの種類",           items: CEREAL_VARIANTS },
+    miso_v_parent:         { label:"味噌汁の種類",           items: MISO_VARIANTS },
+    instant_soup_v_parent: { label:"インスタントスープの種類",items: INSTANT_SOUP_VARIANTS },
+    soup_can_v_parent:     { label:"スープの種類",           items: SOUP_CAN_VARIANTS },
+    salad_v_parent:        { label:"サラダの種類",           items: SALAD_VARIANTS },
+    potato_salad_v_parent: { label:"ポテサラ系の種類",       items: POTATO_SALAD_VARIANTS },
+    washoku_side_v_parent: { label:"和惣菜の種類",           items: WASHOKU_SIDE_VARIANTS },
+    tofu_dish_v_parent: { label:"豆腐料理の種類",           items: TOFU_DISH_VARIANTS },
     egg_dish_v_parent:  { label:"卵料理の種類",             items: EGG_DISH_VARIANTS },
     asian_noodle_v_parent:{ label:"アジア麺の種類",         items: ASIAN_NOODLE_VARIANTS },
     beer_v_parent:      { label:"ビールの種類",             items: BEER_VARIANTS },
@@ -4318,6 +4417,8 @@
     nut_v_parent:           { label:"ナッツの種類",           items: NUT_VARIANTS },
     snack_v_parent:         { label:"スナック菓子の種類",     items: SNACK_CHIP_VARIANTS },
     wagashi_v_parent:       { label:"和菓子の種類",           items: WAGASHI_VARIANTS },
+    okonomiyaki_v_parent:   { label:"お好み焼きの種類",       items: OKONOMIYAKI_VARIANTS },
+    yakigashi_v_parent:     { label:"焼き菓子の種類",         items: YAKIGASHI_VARIANTS },
     kashi_pan_v_parent:     { label:"菓子パンの種類",         items: KASHI_PAN_VARIANTS },
     rice_v_parent:          { label:"ごはん・米の種類",       items: RICE_VARIANTS },
     bread_v_parent:         { label:"パンの種類",             items: BREAD_VARIANTS },
@@ -4358,11 +4459,14 @@
       SUSHI_VARIANTS, BENTO_VARIANTS, SANDWICH_VARIANTS, BURGER_VARIANTS,
       PIZZA_VARIANTS, TEISHOKU_VARIANTS, NABE_VARIANTS,
       GYUDON_VARIANTS, GYUDON_CHAIN_VARIANTS,
+      CHAHAN_VARIANTS,
       MCDONALDS_VARIANTS, MOS_VARIANTS, KFC_VARIANTS, SAIZERIYA_VARIANTS,
       COCO_VARIANTS, SUBWAY_VARIANTS, GUSTO_VARIANTS, TENKA_VARIANTS,
-      TOAST_VARIANTS, CEREAL_VARIANTS, EGG_DISH_VARIANTS, ASIAN_NOODLE_VARIANTS,
+      TOAST_VARIANTS, CEREAL_VARIANTS, TOFU_DISH_VARIANTS, EGG_DISH_VARIANTS, ASIAN_NOODLE_VARIANTS,
+      SALAD_VARIANTS, POTATO_SALAD_VARIANTS, WASHOKU_SIDE_VARIANTS,
+      MISO_VARIANTS, INSTANT_SOUP_VARIANTS, SOUP_CAN_VARIANTS,
       BEER_VARIANTS, WINE_VARIANTS, LATTE_VARIANTS,
-      CAKE_VARIANTS, CHOCO_VARIANTS, ICECREAM_VARIANTS,
+      YAKIGASHI_VARIANTS, OKONOMIYAKI_VARIANTS, CAKE_VARIANTS, CHOCO_VARIANTS, ICECREAM_VARIANTS,
       SALAD_CHICKEN_VARIANTS, TUNA_CAN_VARIANTS, CANNED_FISH_VARIANTS,
       GREEK_YOGURT_VARIANTS, PROTEIN_POWDER_VARIANTS, PROTEIN_DRINK_VARIANTS,
       COLA_VARIANTS, ENERGY_DRINK_VARIANTS, INSTANT_NOODLE_VARIANTS,
@@ -4418,6 +4522,204 @@
   function saveUsageStore(obj){ localStorage.setItem(USAGE_KEY, JSON.stringify(obj)); }
   function touchUsage(key){ const store = loadUsageStore(); store[key] = (store[key] || 0) + 1; saveUsageStore(store); }
 
+  function getFoodEmoji(d){
+    const key = d.key || "";
+    const cat = d.cat || "";
+    const grp = d.group || "";
+    const name = d.name || "";
+
+    // 外食チェーン
+    if (["mcdonalds_v_parent","mos_v_parent","kfc_v_parent","saizeriya_v_parent",
+         "coco_v_parent","subway_v_parent","gusto_v_parent","tenka_v_parent","gyudon_chain"].includes(key)) return "🏪";
+    // ごはん・米系の特定キー
+    if (key === "rice_v_parent") return "🍚";
+    if (key === "onigiri") return "🍙";
+    if (key === "chahan_v_parent") return "🍳";
+    // パン系の特定キー
+    if (key === "bread_v_parent" || key === "toast_v_parent" || key === "kashi_pan_v_parent") return "🍞";
+    // パスタ系の特定キー
+    if (key === "pasta_v_parent" || key === "spaghetti") return "🍝";
+
+    // 飲み物
+    if (grp === "飲み物" || cat === "飲み物"){
+      if (key.includes("beer") || key.includes("wine") || key.includes("sake") ||
+          key.includes("chuhai") || key.includes("highball") || key.includes("shochu") ||
+          key.includes("umeshu") || key.includes("happoshu") || key.includes("nonalco")) return "🍺";
+      if (key.includes("energy") || key.includes("redbull") || key.includes("monster")) return "⚡";
+      if (key.includes("sports") || key.includes("pocari") || key.includes("aquarius") ||
+          key.includes("amino") || key.includes("calpis") && !key.includes("lactic")) return "💧";
+      if (key.includes("coffee") || key.includes("latte") || key.includes("cafe") ||
+          key.includes("espresso") || cat === "カフェ") return "☕";
+      if (key.includes("juice") || key.includes("orange") || key.includes("apple_100") ||
+          key.includes("grape_100") || key.includes("vegetable") || key.includes("tomato_juice")) return "🧃";
+      if (key.includes("lactic") || key.includes("yakult") || key.includes("amazake") ||
+          key.includes("smoothie") || key.includes("protein_milk")) return "🥛";
+      if (key.includes("cola")) return "🥤";
+      return "🍵"; // お茶・水系
+    }
+
+    // おやつ
+    if (grp === "おやつ" || cat === "おやつ"){
+      if (key.includes("choco") || key.includes("chocolate") || name.includes("チョコ")) return "🍫";
+      if (key.includes("nut") || key.includes("almond") || key.includes("walnut") ||
+          key.includes("peanut") || key.includes("cashew") || key.includes("macadamia") ||
+          key.includes("seed")) return "🥜";
+      if (key.includes("chips") || key.includes("popcorn") || key.includes("pretzel") ||
+          key.includes("tortilla") || key.includes("rice_cracker") || key.includes("snack")) return "🍿";
+      if (key.includes("dorayaki") || key.includes("daifuku") || key.includes("taiyaki") ||
+          key.includes("anmitsu") || key.includes("warabimochi") || key.includes("mochi_ice") ||
+          key.includes("wagashi")) return "🍡";
+      if (key.includes("melon_pan") || key.includes("cream_pan") || key.includes("anpan") ||
+          key.includes("curry_pan") || key.includes("cornet") || key.includes("cinnamon") ||
+          key.includes("danish") || key.includes("donut") || key.includes("eclair") ||
+          key.includes("madeleine") || key.includes("financier") || key.includes("kashi_pan")) return "🥐";
+      if (key.includes("cake") || key.includes("shortcake") || key.includes("cheesecake") ||
+          key.includes("tiramisu") || key.includes("montblanc") || key.includes("crepe")) return "🎂";
+      if (key.includes("ice") || key.includes("soft_cream")) return "🍦";
+      if (key.includes("pudding")) return "🍮";
+      if (key.includes("gummy") || key.includes("candy") || key.includes("caramel") ||
+          key.includes("marshmallow") || key.includes("hard_candy")) return "🍬";
+      if (key.includes("dried") || key.includes("raisin")) return "🍇";
+      return "🍫";
+    }
+
+    // 食材・料理
+    // 肉類
+    if (cat === "肉"){
+      if (key.includes("chicken") || key.includes("鶏") || name.includes("鶏")) return "🐔";
+      if (key.includes("pork") || key.includes("豚") || name.includes("豚")) return "🐷";
+      if (key.includes("beef") || key.includes("牛") || name.includes("牛")) return "🐄";
+      return "🥩"; // 加工肉・その他
+    }
+
+    // 魚介類
+    if (cat === "魚"){
+      if (key.includes("roe") || key.includes("ikura") || key.includes("tarako") ||
+          key.includes("mentaiko") || key.includes("uni") || key.includes("surume") ||
+          key.includes("fish_roe")) return "🫧";
+      if (key.includes("scallop") || key.includes("clam") || key.includes("oyster") ||
+          key.includes("crab") || key.includes("shrimp") || key.includes("lobster") ||
+          key.includes("squid") || key.includes("octopus") || key.includes("seafood")) return "🦐";
+      if (key.includes("tuna") || key.includes("yellowtail") || key.includes("mackerel") ||
+          key.includes("sardine") || key.includes("horse_mackerel") || key.includes("saury") ||
+          key.includes("fish_blue")) return "🐠";
+      return "🐟"; // 白身魚・その他
+    }
+
+    // 野菜
+    if (cat === "野菜"){
+      if (key.includes("mushroom") || name.includes("きのこ") || name.includes("しいたけ") ||
+          name.includes("えのき") || name.includes("しめじ") || name.includes("エリンギ")) return "🍄";
+      if (key.includes("tomato") || key.includes("eggplant") || key.includes("pumpkin") ||
+          key.includes("bell_pepper") || key.includes("cucumber") || key.includes("zucchini") ||
+          key.includes("corn") || key.includes("moyashi") || key.includes("vegfruit")) return "🍅";
+      if (key.includes("daikon") || key.includes("carrot") || key.includes("onion") ||
+          key.includes("potato") || key.includes("sweet_potato") || key.includes("taro") ||
+          key.includes("yam") || key.includes("burdock") || key.includes("lotus") ||
+          key.includes("vegroot")) return "🥕";
+      return "🥬"; // 葉物・その他
+    }
+
+    // 卵・大豆
+    if (cat === "卵・大豆"){
+      if (key.includes("egg") || key.includes("tamago") || name.includes("卵")) return "🥚";
+      if (key.includes("natto")) return "🫘";
+      if (key.includes("bean") || key.includes("lentil") || key.includes("chickpea") ||
+          key.includes("edamame")) return "🫘";
+      return "🫙"; // 豆腐系
+    }
+
+    // 炭水化物
+    if (cat === "炭水化物"){
+      if (key.includes("rice") || key.includes("mochi") || key.includes("quinoa")) return "🍚";
+      if (key.includes("bread") || key.includes("naan") || key.includes("pita") ||
+          key.includes("focaccia") || key.includes("pretzel_large") || key.includes("waffle") ||
+          key.includes("pancake")) return "🍞";
+      if (key.includes("pasta") || key.includes("soba") || key.includes("udon") ||
+          key.includes("ramen") || key.includes("noodle")) return "🍝";
+      if (key.includes("cereal") || key.includes("granola") || key.includes("oatmeal")) return "🥣";
+      return "🍚";
+    }
+
+    // 乳製品
+    if (cat === "乳製品"){
+      if (key.includes("cheese")) return "🧀";
+      if (key.includes("yogurt") || key.includes("greek_yogurt")) return "🍶";
+      if (key.includes("ice_cream") || key.includes("vanilla")) return "🍦";
+      return "🥛";
+    }
+
+    // 果物
+    if (cat === "果物"){
+      if (key.includes("banana")) return "🍌";
+      if (key.includes("apple")) return "🍎";
+      if (key.includes("strawberry")) return "🍓";
+      if (key.includes("grape")) return "🍇";
+      if (key.includes("mandarin") || key.includes("mikan")) return "🍊";
+      if (key.includes("peach") || key.includes("momo")) return "🍑";
+      if (key.includes("watermelon")) return "🍉";
+      if (key.includes("melon")) return "🍈";
+      if (key.includes("cherry")) return "🍒";
+      if (key.includes("pineapple")) return "🍍";
+      if (key.includes("mango")) return "🥭";
+      if (key.includes("kiwi")) return "🥝";
+      if (key.includes("avocado")) return "🥑";
+      if (key.includes("lemon") || key.includes("grapefruit")) return "🍋";
+      if (key.includes("blueberry")) return "🫐";
+      return "🍎";
+    }
+
+    // 調味料
+    if (cat === "調味料"){
+      if (key.includes("oil") || key.includes("butter")) return "🫒";
+      if (key.includes("soy_sauce")) return "🫙";
+      if (key.includes("honey")) return "🍯";
+      if (key.includes("jam")) return "🫐";
+      return "🧂";
+    }
+
+    // 料理系
+    if (grp === "料理"){
+      if (cat === "主食"){
+        // 個別食品の細かい設定
+        if (name.includes("おにぎり")) return "🍙";
+        if (name.includes("ハヤシ")) return "🍛";
+        if (name.includes("焼肉") || key.includes("yakiniku")) return "🍖";
+        if (name.includes("食パン") || key.includes("shokupan")) return "🍞";
+        if (name.includes("クロワッサン") || key.includes("croissant")) return "🍞";
+        if (name.includes("ベーグル") || key.includes("bagel")) return "🍞";
+        if (name.includes("トースト") || key.includes("toast")) return "🍞";
+        if (name.includes("パンケーキ") || name.includes("ホットケーキ") || key.includes("pancake")) return "🍰";
+        if (name.includes("ワッフル") || key.includes("waffle")) return "🍰";
+        if (name.includes("プロテインパンケーキ") || key.includes("protein_pancake")) return "🍰";
+        if (name.includes("キッシュ") || key.includes("quiche")) return "🍕";
+        if (name.includes("キムチ鍋") || key.includes("kimchi")) return "🍲";
+        if (name.includes("スンドゥブ") || key.includes("sundubu")) return "🍲";
+        if (name.includes("ナポリタン") || key.includes("napoli")) return "🍝";
+        if (name.includes("焼きそば") || key.includes("yakisoba")) return "🍝";
+        // 汎用マッピング
+        if (key.includes("ramen") || key.includes("udon") || key.includes("soba") ||
+            key.includes("pasta") || key.includes("noodle") || d.type === "麺") return "🍜";
+        if (key.includes("sushi")) return "🍣";
+        if (key.includes("curry") || name.includes("カレー")) return "🍛";
+        if (key.includes("don") || key.includes("丼") || d.type === "丼") return "🍚";
+        if (key.includes("burger") || key.includes("sandwich") || d.type === "パン") return "🍔";
+        if (key.includes("pizza") || d.type === "粉もの") return "🍕";
+        if (key.includes("bento") || name.includes("弁当")) return "🍱";
+        return "🍽️";
+      }
+      if (cat === "主菜") return "🍳";
+      if (cat === "副菜") return "🥗";
+      if (cat === "汁物") return "🍲";
+      return "🍽️";
+    }
+
+    // サプリ
+    if (cat === "サプリ・補助") return "💊";
+
+    return "🍽️";
+  }
+
   function createFoodCard(d, horizontal=false){
     if (d.hasVariants && VARIANT_GROUPS[d.key]) return createVariantSelectCard(d, horizontal);
     const wrap = document.createElement("div");
@@ -4431,7 +4733,7 @@
     if (d.fiber != null) microParts.push(`繊${Math.round(d.fiber)}g`);
     if (d.salt  != null) microParts.push(`塩${d.salt % 1 === 0 ? d.salt : d.salt.toFixed(1)}g`);
     const microText = microParts.length ? `<span style="color:var(--muted);font-size:11px;"> / ${microParts.join(" ")}</span>` : "";
-    wrap.innerHTML = `<div class="name">${d.isCustom ? "🥘 " : ""}${d.name}</div><div class="meta">${d.unit} / ${Math.round(d.kcal)} kcal（普通）${d.type ? ` / ${d.type}` : ""}${microText}</div>`;
+    wrap.innerHTML = `<div class="name">${d.isCustom ? "🥘 " : getFoodEmoji(d) + " "}${d.name}</div><div class="meta">${d.unit} / ${Math.round(d.kcal)} kcal（普通）${d.type ? ` / ${d.type}` : ""}${microText}</div>`;
     const fav = document.createElement("button");
     fav.className = "favBtn" + (isFavorite(d.key) ? " active" : "");
     fav.textContent = isFavorite(d.key) ? "★" : "☆";
@@ -4445,7 +4747,7 @@
     const wrap = document.createElement("div");
     wrap.className = "foodCard";
     if (horizontal){ wrap.style.minWidth = "260px"; wrap.style.flex = "0 0 auto"; }
-    wrap.innerHTML = `<div class="name">${d.name}</div><div class="meta">種類を選んで追加</div>`;
+    wrap.innerHTML = `<div class="name">${getFoodEmoji(d)} ${d.name}</div><div class="meta">種類を選んで追加</div>`;
     const select = document.createElement("select");
     select.className = "variantSelect";
     group.items.forEach((item, idx) => {
@@ -4544,8 +4846,9 @@
       "home_tuna_can_v","home_tuna_can_oil_v",
       // 魚缶詰バリアント
       "home_sardine_can_v","home_mackerel_can_v","home_mackerel_can_miso",
-      // 牛丼チェーンバリアント
+      // 牛丼チェーンバリアント（特盛追加・チェーン統合）
       "yoshinoya_gyudon_v","sukiya_gyudon_v","matsuya_gyudon_v",
+      "gyudon_small","gyudon_large","gyudon_toku",
       // プロテインパウダーバリアント
       "protein_v","supplement_whey_iso_v","supplement_casein_v","supplement_soy_protein_v",
       // プロテインドリンクバリアント
@@ -4554,16 +4857,18 @@
       "v_udon_kake","v_udon_cold","v_udon_tempura","v_udon_kitsune",
       // そばバリアント
       "v_soba_kake","v_soba_zaru","v_soba_tempura",
-      // カレーバリアント
-      "v_curry_normal","v_curry_keema","v_curry_dry","v_curry_katsu","v_curry_green","v_curry_coco",
+      // カレーバリアント（ハヤシライス・グリーンカレー統合）
+      "v_curry_normal","v_curry_keema","v_curry_dry","v_curry_katsu","v_curry_green","v_curry_coco","hayashi_rice",
       // オムライスバリアント
       "v_omu_ketchup","v_omu_demi",
       // 丼バリアント
       "v_don_oyako","v_don_katsu","v_don_ten","v_don_kaisen","v_don_buta","v_don_yakitori","v_don_ikura","v_don_una",
-      // 寿司バリアント
-      "v_sushi_10","v_sushi_15",
-      // お弁当バリアント
-      "v_bento_chicken","v_bento_fish","v_bento_makunouchi","v_bento_diet",
+      // 寿司バリアント（5貫追加）
+      "v_sushi_5","v_sushi_10","v_sushi_15",
+      // お弁当バリアント（全統合）
+      "v_bento_nori","v_bento_chicken","v_bento_tonkatsu","v_bento_salmon",
+      "v_bento_fish","v_bento_makunouchi","v_bento_diet",
+      "conbini_bento_chicken","conbini_bento_fish","conbini_bento_makunouchi","conbini_bento_diet",
       // サンドイッチバリアント
       "v_sand_egg","v_sand_ham","v_sand_tamago","v_sand_katsu","v_sand_club",
       // バーガーバリアント
@@ -4575,7 +4880,10 @@
       // 鍋バリアント
       "v_nabe_chicken","v_nabe_shabu","v_nabe_kimchi","v_nabe_sundubu","v_nabe_chanko","v_nabe_sukiyaki",
       // トーストバリアント
-      "v_toast_butter","v_toast_jam","v_toast_french",
+      "v_toast_butter","v_toast_jam","v_toast_french","toast_pizza",
+      // 菓子パン追加分
+      "bread_jam_donut","bread_pretzel_sweet","bread_choco_croissant",
+      "bread_custard_danish","bread_cheese_danish","bread_apple_danish","bread_adzuki_danish","bread_bagel_plain",
       // シリアルバリアント
       "v_cereal_granola","v_cereal_corn","v_cereal_muesli",
       // 卵料理バリアント
@@ -4602,7 +4910,28 @@
       "matsuya_set","karaage_set","hamburg_set",
       "cold_udon","tempura_udon","kitsune_udon","zaru_soba","tempura_soba",
       "keema_curry","dry_curry","fried_chicken_curry","rice_omelet_demi","rice_omelet_ketchup",
-      "conbini_bento_chicken","conbini_bento_fish","conbini_bento_makunouchi","conbini_bento_diet",
+      "donburi","yakiniku_rice","hayashi_rice","asia_green_curry",
+      "ramen_ie","ramen_tonkotsu","ramen_large","ramen",
+      "ramen_mazesoba","v_soba_abura",
+      "yakisoba","tsukemen","abura_soba","mazesoba","conbini_pasta_salad",
+      "asia_pad_thai","asia_pho_chicken","asia_laksa",
+      "gyudon","fried_rice","asia_ebi_chahan","frozen_fried_rice",
+      "asia_bibimbap","taco_rice","gapao_rice","asia_nasi_goreng","v_don_hitsumabushi",
+      "washoku_hitsumabushi","asia_kimchi_jjigae","asia_sundubu","izakaya_food",
+      "home_boiled_tofu","tofu_steak","deli_tamagoyaki",
+      "v_tofu_mapo","v_tofu_agedashi",
+      // 副菜バリアント子キー
+      "salad","broccoli_salad","seaweed_salad","caesar_salad","caprese","conbini_salad","conbini_wakame_salad","conbini_pasta_salad",
+      "potato_salad","macaroni_salad","coleslaw","deli_macaroni_salad",
+      "kinpira","ohitashi","deli_hijiki","deli_kimpira","deli_nishime","conbini_mozuku","kimchi",
+      "conbini_hiyayakko_pack","hiyayakko",
+      // 汁物バリアント子キー
+      "misoshiru","miso_soup","home_miso_homemade","tonjiru","frozen_soup_miso",
+      "conbini_corn_soup","conbini_chicken_soup","retort_soup_corn","retort_soup_pumpkin",
+      "instant_soup_miso","instant_soup_corn","instant_soup_potage","instant_soup_egg","instant_soup_wakame","instant_soup_chuka",
+      "conbini_soup_chicken",
+      "washoku_hijiki","washoku_nimono","washoku_takenoko",
+      "spaghetti","conbini_pasta_napolitan","yakisoba","pasta_meat","pasta_cream","pasta_pepe",
       "conbini_sandwich_egg","conbini_sandwich_ham","egg_sandwich","cutlet_sandwich",
       "mcdonalds_fillet","mcdonalds_grilled","mos_burger","mos_rice_burger",
       "kfc_original","saizeriya_salad","saizeriya_doria","coco_curry_200g",
@@ -4671,7 +5000,11 @@
       "tofu_firm","tofu_soft","tofu","abura_age","atsuage","ganmodoki","kinugoshi_tofu","processed_tofu","okara","conbini_tofu_pack",
       "natto_pack","natto","conbini_natto_set",
       "edamame_frozen","home_edamame_boiled","lentil","chickpea","kidney_bean","black_bean","mixed_bean","can_mixed_bean","can_chickpea",
-      // 炭水化物バリアント子キー
+      // お好み焼きバリアント子キー
+      "okonomiyaki","okonomiyaki_kansai","okonomiyaki_hiroshima","okonomiyaki_negiyaki","okonomiyaki_seafood",
+      "bagel","croissant","bread_bagel_plain","bread_meal","hot_dog","asia_banh_mi",
+      "bento_nori","bento_karaage","bento_tonkatsu","bento_salmon","bento_makunouchi","bento_diet",
+      "takikomi_gohan","ochazuke","washoku_natto_gohan",
       "rice","home_brown_rice","rice_mixed","mochi","rice_cake","quinoa",
       "bread","bread_french","bread_rye","bread_whole","bread_english","bread_naan","bread_pita","bread_focaccia",
       "pasta_dry","soba_dry","udon_dry","ramen_dry","udon_ingredient","soba_ingredient",
@@ -4710,6 +5043,7 @@
       "bread_melon_pan","bread_cream_pan","bread_anpan","bread_curry_pan","bread_chocolate_cornet",
       "bread_cinnamon_roll","bread_danish","bread_donut_plain","bread_donut_choco",
       "bread_eclair","bread_madeleine","bread_financier",
+      "bread_jam_donut","v_yakigashi_cookie","v_yakigashi_scone","v_yakigashi_brownie",
       // 旧汎用おやつエントリ
       "chocolate","cookie","icecream","gummy","beer",
     ]);
@@ -5160,14 +5494,14 @@ ${weekData.map(d=>d.count>0?`${d.date}: ${d.kcal}kcal P${d.protein}g F${d.fat}g 
         subInner.className = "catInner";
 
         if (groupName === "料理" && catName === "主食") {
-          const buckets = { "米":[], "パン":[], "麺":[], "粉もの":[], "丼":[], "その他":[] };
+          const buckets = { "米":[], "パン":[], "麺":[], "粉もの":[], "外食":[] };
           items.forEach(d => {
-            const type = d.type || "その他";
+            const type = d.type || "外食";
             if (buckets[type]) buckets[type].push(d);
-            else buckets["その他"].push(d);
+            else buckets["外食"].push(d);
           });
           const accordionWraps = [];
-          ["米","パン","麺","粉もの","丼","その他"].forEach(type => {
+          ["米","パン","麺","粉もの","外食"].forEach(type => {
             const bucket = buckets[type];
             if (!bucket.length) return;
             const typeWrap = document.createElement("details");
@@ -5191,6 +5525,36 @@ ${weekData.map(d=>d.count>0?`${d.date}: ${d.kcal}kcal P${d.protein}g F${d.fat}g 
             typeWrap.appendChild(typeInner);
             subInner.appendChild(typeWrap);
             accordionWraps.push(typeWrap);
+          });
+        } else if (groupName === "料理" && catName === "主菜") {
+          const buckets = { "肉系":[], "魚系":[], "卵・野菜系":[] };
+          items.forEach(d => {
+            if (buckets[d.type]) buckets[d.type].push(d);
+            else buckets["卵・野菜系"].push(d);
+          });
+          const accordionWraps2 = [];
+          ["肉系","魚系","卵・野菜系"].forEach(type => {
+            const bucket = buckets[type];
+            if (!bucket.length) return;
+            const typeWrap = document.createElement("details");
+            typeWrap.className = "catWrap";
+            const typeSummary = document.createElement("summary");
+            typeSummary.innerHTML = `<span style="font-weight:700">${type}</span><span class="countText">${bucket.length}件</span><span class="summaryArrow">＋</span>`;
+            typeWrap.addEventListener("toggle", () => {
+              if (typeWrap.open) accordionWraps2.forEach(other => { if (other !== typeWrap) other.open = false; });
+              const arrow = typeSummary.querySelector(".summaryArrow");
+              if (arrow) arrow.textContent = typeWrap.open ? "−" : "＋";
+            });
+            typeWrap.appendChild(typeSummary);
+            const typeInner = document.createElement("div");
+            typeInner.className = "catInner";
+            const grid = document.createElement("div");
+            grid.className = "foodGrid";
+            bucket.forEach(d => grid.appendChild(createFoodCard(d)));
+            typeInner.appendChild(grid);
+            typeWrap.appendChild(typeInner);
+            subInner.appendChild(typeWrap);
+            accordionWraps2.push(typeWrap);
           });
         } else {
           const grid = document.createElement("div");
