@@ -14,25 +14,85 @@
   <!-- iOS アイコン -->
   <link rel="apple-touch-icon" id="appleTouchIcon">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root{
+      /* クリア：白ベース×インディゴ */
       --bg:#f2f2f7;
       --card:#ffffff;
       --sub:#f2f2f7;
       --line:#e5e5ea;
       --line2:#f0f0f5;
-      --text:#222;
-      --text-main:#222;
-      --text-sub:#666;
-      --muted:#666;
-      --accent:#4aa3ff;
-      --danger:#ff6b6b;
-      --success:#52c27d;
-      --warn:#f3b949;
-      --shadow:0 8px 24px rgba(0,0,0,.06);
-      --radius:18px;
+      --text:#1c1c1e;
+      --text-main:#1c1c1e;
+      --text-sub:#6e6e73;
+      --muted:#8e8e93;
+      --accent:#5E6AD2;
+      --accent2:#FF9500;
+      --accent3:#007AFF;
+      --accent4:#FFCC00;
+      --danger:#FF3B30;
+      --success:#34C759;
+      --warn:#FF9500;
+      --shadow:0 4px 20px rgba(0,0,0,.08);
+      --shadow-sm:0 2px 10px rgba(0,0,0,.05);
+      --radius:20px;
+      --hero-grad-start:#4D5BC0;
+      --hero-grad-end:#6E7EE0;
+      --hero-shadow:rgba(94,106,210,.30);
+      --radius-sm:12px;
       --headerH:68px;\n      --headerH: calc(56px + env(safe-area-inset-top));
-      --tabH:78px;
+      --tabH:82px;
+    }
+
+    /* テーマ: ミヤマ北欧 */
+    [data-color="miyama"]{
+      --bg:#F5F0E8;
+      --card:#FDFAF4;
+      --sub:#EDE8DE;
+      --line:#DDD8CE;
+      --line2:#E8E3D8;
+      --text:#2C2825;
+      --text-main:#2C2825;
+      --text-sub:#7A6F64;
+      --muted:#9E9286;
+      --accent:#7BAE8F;
+      --accent2:#E8907A;
+      --accent3:#A9C3D6;
+      --accent4:#E4B567;
+      --danger:#D97B6C;
+      --success:#7BAE8F;
+      --warn:#E4B567;
+      --shadow:0 4px 20px rgba(44,40,37,.08);
+      --shadow-sm:0 2px 10px rgba(44,40,37,.06);
+      --hero-grad-start:#6A9E7E;
+      --hero-grad-end:#8BBFA0;
+      --hero-shadow:rgba(107,158,126,.35);
+    }
+    [data-color="miyama"][data-theme="dark"]{
+      --bg:#1E1C19;
+      --card:#2A2720;
+      --sub:#242018;
+      --line:#3A3630;
+      --line2:#302C26;
+      --text:#F0EBE0;
+      --text-main:#F0EBE0;
+      --text-sub:#A09080;
+      --muted:#7A6F64;
+      --accent:#8DC4A0;
+      --accent2:#E8907A;
+      --accent3:#A9C3D6;
+      --accent4:#E4B567;
+      --danger:#D97B6C;
+      --success:#8DC4A0;
+      --warn:#E4B567;
+      --shadow:0 4px 20px rgba(0,0,0,.3);
+      --shadow-sm:0 2px 10px rgba(0,0,0,.2);
+      --hero-grad-start:#5A8E6E;
+      --hero-grad-end:#70A080;
+      --hero-shadow:rgba(80,140,100,.4);
     }
 
     /* テーマ: ディープオレンジ×アイボリー×くすみシアン */
@@ -48,6 +108,9 @@
       --muted:#7a5a35;
       --accent:#e85d1a;
       --shadow:0 8px 24px rgba(100,60,0,.08);
+      --hero-grad-start:#d44e10;
+      --hero-grad-end:#f07040;
+      --hero-shadow:rgba(210,80,20,.35);
     }
     [data-color="orange"][data-theme="dark"]{
       --bg:#1e1408;
@@ -76,6 +139,9 @@
       --muted:#3a6080;
       --accent:#1a7fd4;
       --shadow:0 8px 24px rgba(0,60,120,.08);
+      --hero-grad-start:#1568b8;
+      --hero-grad-end:#2E90E0;
+      --hero-shadow:rgba(20,100,200,.35);
     }
     [data-color="blue"][data-theme="dark"]{
       --bg:#081828;
@@ -104,6 +170,9 @@
       --muted:#4a6a45;
       --accent:#3d8c40;
       --shadow:0 8px 24px rgba(30,80,30,.08);
+      --hero-grad-start:#2E7030;
+      --hero-grad-end:#50A054;
+      --hero-shadow:rgba(40,110,40,.35);
     }
     [data-color="natural"][data-theme="dark"]{
       --bg:#0e1e10;
@@ -132,6 +201,9 @@
       --muted:#555555;
       --accent:#1a1a1a;
       --shadow:0 8px 24px rgba(0,0,0,.10);
+      --hero-grad-start:#333333;
+      --hero-grad-end:#555555;
+      --hero-shadow:rgba(0,0,0,.30);
     }
     [data-color="gray"][data-theme="dark"]{
       --bg:#1a1a1a;
@@ -145,9 +217,35 @@
       --muted:#888888;
       --accent:#dddddd;
       --shadow:0 8px 24px rgba(0,0,0,.4);
+      --hero-grad-start:#2A2A2A;
+      --hero-grad-end:#444444;
+      --hero-shadow:rgba(0,0,0,.5);
     }
 
     [data-theme="dark"]{
+      --bg:#1E1C19;
+      --card:#2A2720;
+      --sub:#242018;
+      --line:#3A3630;
+      --line2:#302C26;
+      --text:#F0EBE0;
+      --text-main:#F0EBE0;
+      --text-sub:#A09080;
+      --muted:#7A6F64;
+      --accent:#8DC4A0;
+      --accent2:#E8907A;
+      --accent3:#A9C3D6;
+      --accent4:#E4B567;
+      --danger:#D97B6C;
+      --success:#8DC4A0;
+      --warn:#E4B567;
+      --shadow:0 4px 20px rgba(0,0,0,.3);
+      --shadow-sm:0 2px 10px rgba(0,0,0,.2);
+      --hero-grad-start:#5A8E6E;
+      --hero-grad-end:#70A080;
+      --hero-shadow:rgba(80,140,100,.4);
+    }
+    [data-theme="dark"]:not([data-color]){
       --bg:#1c1c1e;
       --card:#2c2c2e;
       --sub:#3a3a3c;
@@ -156,12 +254,16 @@
       --text:#f2f2f7;
       --text-main:#f2f2f7;
       --text-sub:#aeaeb2;
-      --muted:#aeaeb2;
-      --accent:#4aa3ff;
-      --danger:#ff6b6b;
-      --success:#52c27d;
-      --warn:#f3b949;
-      --shadow:0 8px 24px rgba(0,0,0,.3);
+      --muted:#8e8e93;
+      --accent:#30D158;
+      --danger:#FF453A;
+      --success:#30D158;
+      --warn:#FF9F0A;
+      --shadow:0 4px 20px rgba(0,0,0,.3);
+      --shadow-sm:0 2px 10px rgba(0,0,0,.2);
+      --hero-grad-start:#3D4BAA;
+      --hero-grad-end:#5566CC;
+      --hero-shadow:rgba(60,75,170,.4);
     }
 
     *, *::before, *::after {
@@ -175,7 +277,7 @@
       padding: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -193,7 +295,7 @@
       height: var(--headerH);
       background: color-mix(in srgb, var(--bg) 92%, transparent);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);      display:flex;
+      border-bottom: 1px solid var(--line);display:flex;
       align-items:center;
       justify-content:space-between;
       padding: calc(12px + env(safe-area-inset-top)) 16px 8px;
@@ -207,8 +309,10 @@
 
     .appTitle{
       font-size: 20px;
-      font-weight: 800;
+      font-weight: 900;
       line-height:1.2;
+      font-family: "DM Serif Display", "Noto Sans JP", serif;
+      letter-spacing: -0.3px;
     }
 
     .appSub{
@@ -259,12 +363,30 @@
     }
 
     .heroCard{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 16px;
-      box-shadow: var(--shadow);
-      margin-bottom: 14px;
+      background: linear-gradient(135deg, var(--hero-grad-start) 0%, var(--hero-grad-end) 100%);
+      border: none;
+      border-radius: 28px;
+      padding: 20px;
+      box-shadow: 0 8px 32px var(--hero-shadow);
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .heroCard::before{
+      content:'';
+      position:absolute;
+      top:-40px; right:-40px;
+      width:160px; height:160px;
+      background: rgba(255,255,255,.08);
+      border-radius: 50%;
+    }
+    .heroCard::after{
+      content:'';
+      position:absolute;
+      bottom:-60px; left:-20px;
+      width:200px; height:200px;
+      background: rgba(255,255,255,.05);
+      border-radius: 50%;
     }
 
     .heroTop{
@@ -275,15 +397,20 @@
     }
 
     .heroKcal{
-      font-size: 32px;
-      font-weight: 800;
+      font-size: 42px;
+      font-weight: 900;
       line-height:1;
-      margin-top: 8px;
+      margin-top: 6px;
+      font-family: "DM Serif Display", serif;
+      letter-spacing: -1.5px;
+      color: #fff;
     }
 
     .heroLabel{
-      font-size: 13px;
-      color: var(--muted);
+      font-size: 12px;
+      color: rgba(255,255,255,.75);
+      font-weight: 500;
+      letter-spacing: 0.3px;
     }
 
     .heroRemain{
@@ -291,23 +418,27 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 999px;
-      background: var(--card);
-      border:1px solid var(--line);
+      background: rgba(255,255,255,.22);
+      border:1px solid rgba(255,255,255,.3);
       font-size: 13px;
       font-weight: 700;
+      color: #fff;
+      backdrop-filter: blur(8px);
     }
 
     .miniBadge{
-      padding: 8px 10px;
+      padding: 8px 12px;
       border-radius: 14px;
-      background: var(--card);
-      border:1px solid var(--line);
+      background: rgba(255,255,255,.22);
+      border:1px solid rgba(255,255,255,.35);
       font-size: 12px;
-      color: var(--muted);
+      color: rgba(255,255,255,.9);
       min-width: 88px;
       text-align:center;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
     }
 
     .grid2{
@@ -321,17 +452,19 @@
     }
 
     .card{
-      background: var(--card);
-      border:1px solid var(--line);
+      background: linear-gradient(160deg, var(--card) 0%, color-mix(in srgb, var(--card) 90%, var(--sub)) 100%);
+      border:1.5px solid var(--line);
       border-radius: var(--radius);
-      padding: 14px;
-      box-shadow: var(--shadow);
+      padding: 16px;
+      box-shadow: 0 2px 16px rgba(44,40,37,.07);
     }
 
     .sectionTitle{
-      font-size: 17px;
-      font-weight: 800;
+      font-size: 16px;
+      font-weight: 700;
       margin: 0 0 12px;
+      letter-spacing: -0.2px;
+      color: var(--text-main);
     }
 
     .small{
@@ -348,13 +481,18 @@
 
     input[type="text"], input[type="number"], input[type="date"], select {
       width:100%;
-      border:1px solid var(--line);
-      border-radius: 14px;
+      border:1.5px solid var(--line);
+      border-radius: 16px;
       background: var(--card);
       padding: 12px 14px;
       font-size: 16px;
       color: var(--text);
       outline: none;
+      font-family: "Noto Sans JP", sans-serif;
+      transition: border-color .2s;
+    }
+    input[type="text"]:focus, input[type="number"]:focus, select:focus {
+      border-color: var(--accent);
     }
 
     .searchInput{
@@ -379,6 +517,7 @@
       background: var(--accent);
       color:#fff;
       border-color: var(--accent);
+      font-weight: 700;
     }
 
     .dangerBtn{
@@ -399,15 +538,20 @@
 
     .quickBtn{
       border:none;
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius: 18px;
+      background: linear-gradient(145deg, var(--card), var(--sub));
+      border:1.5px solid var(--line);
+      border-radius: 22px;
       padding: 14px 10px;
-      box-shadow: var(--shadow);
-      font-size: 14px;
+      box-shadow: 0 2px 12px rgba(44,40,37,.08);
+      font-size: 13px;
       font-weight:700;
-      min-height: 66px;
+      min-height: 68px;
       cursor:pointer;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .quickBtn:active{
+      transform: scale(0.96);
+      box-shadow: none;
     }
 
     .meter{
@@ -421,7 +565,7 @@
     .meterBar{
       height:100%;
       width:0%;
-      background: linear-gradient(90deg, var(--accent), #7ac2ff);
+      background: linear-gradient(90deg, var(--accent), #A8CEBC);
       transition: width .25s ease;
       border-radius:999px;
     }
@@ -439,20 +583,38 @@
 
     .stat{
       background: var(--card);
-      border:1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px;
+      border:1.5px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 12px;
+      position: relative;
+      overflow: hidden;
     }
+    .stat::before{
+      content:'';
+      position:absolute;
+      top:0; left:0; right:0;
+      height:3px;
+      border-radius: 18px 18px 0 0;
+    }
+    .stat:nth-child(1)::before{ background: #A9C3D6; }
+    .stat:nth-child(2)::before{ background: #E8907A; }
+    .stat:nth-child(3)::before{ background: #E4B567; }
+    .stat:nth-child(4)::before{ background: #95C8B7; }
 
     .statLabel{
-      font-size: 12px;
+      font-size: 11px;
       color: var(--muted);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
     }
 
     .statValue{
-      font-size: 18px;
-      font-weight: 800;
+      font-size: 22px;
+      font-weight: 900;
+      font-family: "DM Serif Display", serif;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
     }
 
     .recentRow{
@@ -484,10 +646,11 @@
     }
 
     .foodCard .name{
-      font-weight:800;
+      font-weight:700;
       margin-bottom: 6px;
       padding-right: 34px;
       line-height:1.35;
+      letter-spacing: -0.2px;
     }
 
     .foodCard .meta{
@@ -534,11 +697,12 @@
     .variantAddBtn{ width:100%; }
 
     details.groupWrap{
-      background: var(--sub);
-      border:1px solid var(--line);
-      border-radius: 18px;
-      padding: 12px;
+      background: var(--card);
+      border:1.5px solid var(--line);
+      border-radius: 20px;
+      padding: 14px;
       margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
     }
 
     details.groupWrap > summary,
@@ -560,8 +724,56 @@
     }
 
     .summaryTitle{
-      font-weight: 800;
-      font-size: 18px;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.3px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .summaryTitle::before{
+      content:'';
+      display:block;
+      width:4px;
+      height:18px;
+      border-radius:999px;
+      background: var(--accent);
+      flex-shrink:0;
+    }
+
+    /* カテゴリアイコン */
+    .catIllust{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      background: linear-gradient(145deg, var(--sub), var(--card));
+      border:1.5px solid var(--line);
+      flex-shrink:0;
+      color: var(--accent);
+    }
+    .catIllust svg{
+      width:22px;
+      height:22px;
+    }
+    .summaryTitle .catIllust{
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      color: var(--accent);
+    }
+    .summaryTitle .catIllust svg{
+      width:20px;
+      height:20px;
+    }
+    .catLabel{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      font-size:14px;
     }
 
     .countText{
@@ -579,11 +791,11 @@
     .groupInner{ margin-top: 10px; }
 
     details.catWrap{
-      background:var(--card);
-      border:1px solid var(--line2);
+      background:var(--sub);
+      border:1px solid var(--line);
       border-radius: 16px;
-      padding: 10px;
-      margin-top: 10px;
+      padding: 10px 12px;
+      margin-top: 8px;
     }
 
     .catInner{ margin-top: 10px; }
@@ -685,15 +897,16 @@
       right: 12px;
       bottom: calc(10px + env(safe-area-inset-bottom));
       z-index: 60;
-      background: color-mix(in srgb, var(--card) 96%, transparent);
-      backdrop-filter: blur(18px);
-      border:1px solid rgba(0,0,0,.08);
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.10);
+      background: color-mix(in srgb, var(--card) 97%, transparent);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border:1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 8px 32px rgba(44,40,37,.12);
       padding: 8px;
       display:grid;
       grid-template-columns: repeat(4, 1fr);
-      gap:8px;
+      gap:6px;
     }
 
     [data-theme="dark"] .appHeader{
@@ -730,38 +943,40 @@
       border:none;
       background:transparent;
       padding: 10px 6px;
-      border-radius: 16px;
+      border-radius: 20px;
       cursor:pointer;
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      gap:4px;
+      gap:3px;
       color:var(--muted);
-      font-size:11px;
+      font-size:10px;
       font-weight:700;
+      letter-spacing: 0.2px;
+      transition: all .2s ease;
     }
 
     .tabBtn.active{
-      background:#ffffff;
-      color:var(--accent) !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      background: var(--accent);
+      color:#fff !important;
+      box-shadow: 0 4px 14px rgba(123,174,143,.35);
     }
 
     [data-theme="dark"] .tabBtn.active{
-      background:#3a3a3c;
-      color:var(--accent) !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+      background: var(--accent);
+      color:#fff !important;
+      box-shadow: 0 4px 14px rgba(141,196,160,.3);
     }
 
-    .tabIcon{ font-size:18px; line-height:1; }
+    .tabIcon{ font-size:18px; line-height:1; display:flex; align-items:center; justify-content:center; }
 
     .toast{
       position: fixed;
       left: 50%;
       bottom: calc(var(--tabH) + env(safe-area-inset-bottom) + 20px);
       transform: translateX(-50%) translateY(12px);
-      background: rgba(34,34,34,.94);
+      background: rgba(44,40,37,.95);
       color:#fff;
       padding: 12px 16px;
       border-radius: 999px;
@@ -1604,41 +1819,49 @@
             <div style="display:flex;gap:4px;">
               <div style="width:14px;height:14px;border-radius:50%;background:#f2f2f7;border:1.5px solid #e5e5ea;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#ffffff;border:1.5px solid #e5e5ea;"></div>
-              <div style="width:14px;height:14px;border-radius:50%;background:#4aa3ff;"></div>
+              <div style="width:14px;height:14px;border-radius:50%;background:#5E6AD2;"></div>
             </div>
-            <span style="font-size:11px;color:#444;font-weight:700;">デフォルト</span>
+            <span style="font-size:11px;color:#444;font-weight:700;">クリア</span>
           </button>
-          <button onclick="setColorTheme('orange')" id="themeOrange" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#faf4ea;display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <button onclick="setColorTheme('miyama')" id="themeMiyama" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#F5F0E8;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;">
+            <div style="display:flex;gap:4px;">
+              <div style="width:14px;height:14px;border-radius:50%;background:#F5F0E8;border:1.5px solid #DDD8CE;"></div>
+              <div style="width:14px;height:14px;border-radius:50%;background:#FDFAF4;border:1.5px solid #DDD8CE;"></div>
+              <div style="width:14px;height:14px;border-radius:50%;background:#7BAE8F;"></div>
+            </div>
+            <span style="font-size:11px;color:#7A6F64;font-weight:700;">ミヤマ北欧</span>
+          </button>
+          <button onclick="setColorTheme('orange')" id="themeOrange" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#faf4ea;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;">
             <div style="display:flex;gap:4px;">
               <div style="width:14px;height:14px;border-radius:50%;background:#ede4d4;border:1.5px solid #9ecece;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#f7f0e4;border:1.5px solid #9ecece;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#e85d1a;"></div>
             </div>
-            <span style="font-size:11px;color:#7a5a35;font-weight:700;">オレンジ 🔒</span>
+            <span style="font-size:11px;color:#7a5a35;font-weight:700;">テラコッタ</span>
           </button>
-          <button onclick="setColorTheme('blue')" id="themeBlue" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#daeaf6;display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <button onclick="setColorTheme('blue')" id="themeBlue" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#daeaf6;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;">
             <div style="display:flex;gap:4px;">
               <div style="width:14px;height:14px;border-radius:50%;background:#daeaf6;border:1.5px solid #b0c8e0;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#f0f7fd;border:1.5px solid #b0c8e0;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#1a7fd4;"></div>
             </div>
-            <span style="font-size:11px;color:#3a6080;font-weight:700;">ブルー 🔒</span>
+            <span style="font-size:11px;color:#3a6080;font-weight:700;">オーシャン</span>
           </button>
-          <button onclick="setColorTheme('natural')" id="themeNatural" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#deebd8;display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <button onclick="setColorTheme('natural')" id="themeNatural" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#deebd8;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;">
             <div style="display:flex;gap:4px;">
               <div style="width:14px;height:14px;border-radius:50%;background:#deebd8;border:1.5px solid #a8c4a0;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#f5f8f2;border:1.5px solid #a8c4a0;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#3d8c40;"></div>
             </div>
-            <span style="font-size:11px;color:#4a6a45;font-weight:700;">ナチュラル 🔒</span>
+            <span style="font-size:11px;color:#4a6a45;font-weight:700;">フォレスト</span>
           </button>
-          <button onclick="setColorTheme('gray')" id="themeGray" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#e0e0e0;display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <button onclick="setColorTheme('gray')" id="themeGray" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#e0e0e0;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;">
             <div style="display:flex;gap:4px;">
               <div style="width:14px;height:14px;border-radius:50%;background:#e0e0e0;border:1.5px solid #999;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#f4f4f4;border:1.5px solid #999;"></div>
               <div style="width:14px;height:14px;border-radius:50%;background:#1a1a1a;"></div>
             </div>
-            <span style="font-size:11px;color:#444;font-weight:700;">グレー 🔒</span>
+            <span style="font-size:11px;color:#444;font-weight:700;">スレート</span>
           </button>
         </div>
       </div>
@@ -1771,10 +1994,22 @@
   </div>
 
   <nav class="tabBar">
-    <button class="tabBtn active" data-tab="home" onclick="switchTab('home')"><span class="tabIcon">🏠</span><span>ホーム</span></button>
-    <button class="tabBtn" data-tab="food" onclick="switchTab('food')"><span class="tabIcon">🍚</span><span>食品</span></button>
-    <button class="tabBtn" data-tab="log" onclick="switchTab('log')"><span class="tabIcon">📝</span><span>記録</span></button>
-    <button class="tabBtn" data-tab="weight" onclick="switchTab('weight')"><span class="tabIcon">⚖️</span><span>体重</span></button>
+    <button class="tabBtn active" data-tab="home" onclick="switchTab('home')">
+      <span class="tabIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></span>
+      <span>ホーム</span>
+    </button>
+    <button class="tabBtn" data-tab="food" onclick="switchTab('food')">
+      <span class="tabIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span>
+      <span>食品</span>
+    </button>
+    <button class="tabBtn" data-tab="log" onclick="switchTab('log')">
+      <span class="tabIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg></span>
+      <span>記録</span>
+    </button>
+    <button class="tabBtn" data-tab="weight" onclick="switchTab('weight')">
+      <span class="tabIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3c0 .9.4 1.7 1 2.3L7 20h10l-3-12.7c.6-.6 1-1.4 1-2.3a3 3 0 0 0-3-3z"/><line x1="5" y1="20" x2="19" y2="20"/></svg></span>
+      <span>体重</span>
+    </button>
   </nav>
 
   <div class="toast" id="toast"></div>
@@ -5235,6 +5470,205 @@
     instant_noodle_v_parent:{ label:"カップ麺の種類",         items: INSTANT_NOODLE_VARIANTS },
   };
 
+
+  // ===== カテゴリアイコン（手書き線画SVG）=====
+  function getGroupIcon(name) {
+    const icons = {
+      "料理": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 10c0-2 2-6 10-6s10 4 10 6"/>
+        <path d="M4 10h24v2c0 8-4 13-12 13S4 20 4 12z"/>
+        <path d="M12 22v4M20 22v4M10 26h12"/>
+      </svg>`,
+      "食材": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 4 C10 4 6 8 6 13c0 6 4 10 10 10s10-4 10-10c0-5-4-9-10-9z"/>
+        <path d="M16 4v4M12 6l1 3M20 6l-1 3"/>
+        <path d="M10 16c1-2 3-3 6-3s5 1 6 3"/>
+      </svg>`,
+      "飲み物": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 8h16l-2 16H10z"/>
+        <path d="M8 8l-2-4h20l-2 4"/>
+        <path d="M24 14h3l1 6h-4"/>
+        <path d="M12 14c1 2 2 3 4 3s3-1 4-3"/>
+      </svg>`,
+      "おやつ": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="16" cy="16" r="10"/>
+        <path d="M16 6c0 0 2 3 2 6s-2 6-2 6-2-3-2-6 2-6 2-6z"/>
+        <path d="M6 16c0 0 3-2 6-2s6 2 6 2-3 2-6 2-6-2-6-2z"/>
+        <circle cx="16" cy="16" r="2"/>
+      </svg>`,
+      "その他": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="16" cy="16" r="10"/>
+        <circle cx="16" cy="16" r="1.5" fill="currentColor"/>
+        <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+        <circle cx="22" cy="16" r="1.5" fill="currentColor"/>
+      </svg>`,
+      "カスタム": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 4l2 8h8l-6.5 5 2.5 8L16 20l-6.5 5 2.5-8L6 12h8z"/>
+      </svg>`,
+    };
+    return icons[name] || icons["その他"];
+  }
+
+  function getCatIcon(name) {
+    const icons = {
+      // 料理
+      "主食": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="16" cy="20" rx="10" ry="4"/>
+        <path d="M6 20v-6c0-3 4-6 10-6s10 3 10 6v6"/>
+        <path d="M10 12c1-1 3-2 6-2"/>
+      </svg>`,
+      "主菜": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 22h20M8 22 C8 16 12 11 16 11S24 16 24 22"/>
+        <path d="M13 11c0-2 1-5 3-5s3 3 3 5"/>
+        <path d="M16 6v2"/>
+      </svg>`,
+      "主菜（肉）": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 22 C8 20 8 17 10 15 L18 7 C20 5 23 5 25 7S27 12 25 14 L17 22 C15 24 12 24 10 22z"/>
+        <circle cx="8" cy="24" r="3"/>
+        <circle cx="24" cy="8" r="3"/>
+        <circle cx="26" cy="22" r="2.5"/>
+        <circle cx="10" cy="8" r="2.5"/>
+      </svg>`,
+      "主菜（魚）": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M26 16 C22 10 14 8 8 12c-2 1.3-2 2.7 0 4 6 4 14 2 18-4z"/>
+        <path d="M26 16 C24 13 24 19 26 16z"/>
+        <circle cx="11" cy="15" r="1" fill="currentColor"/>
+        <path d="M15 12c1 1 2 2.5 1 4M19 11c1 1.5 2 3.5 0 5"/>
+      </svg>`,
+      "主菜（卵・豆腐）": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 6 C10 6 7 12 7 17c0 4 4 8 9 8s9-4 9-8c0-5-3-11-9-11z"/>
+        <circle cx="16" cy="17" r="4"/>
+      </svg>`,
+      "副菜": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 22 C8 16 11 10 16 10S24 16 24 22z"/>
+        <path d="M6 22h20"/>
+        <path d="M12 10 C10 6 12 4 14 5M16 10 C16 6 18 4 20 5"/>
+        <path d="M10 16c2-1 4-1 6 0s4 1 6 0"/>
+      </svg>`,
+      "汁物": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 13h18l-2 10H9z"/>
+        <path d="M5 13h22"/>
+        <path d="M11 9 C11 6 13 5 13 7M16 8 C16 5 18 4 18 7M21 9 C21 6 23 5 23 7"/>
+        <path d="M11 18c1.5 1 3.5 1 5 0"/>
+      </svg>`,
+      // 食材
+      "肉": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 C26 6 28 10 26 14 C30 16 30 22 24 22 C22 26 18 27 14 25 C10 28 6 26 6 22 C2 20 2 14 8 12 C8 8 12 6 16 7"/>
+        <circle cx="16" cy="15" r="3"/>
+      </svg>`,
+      "魚": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M26 16 C22 10 14 8 8 12c-2 1.3-2 2.7 0 4 6 4 14 2 18-4z"/>
+        <path d="M26 16 C24 13 24 19 26 16z"/>
+        <circle cx="11" cy="15" r="1" fill="currentColor"/>
+      </svg>`,
+      "卵・大豆": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 5 C10 5 7 11 7 16c0 5 4 9 9 9s9-4 9-9c0-5-3-11-9-11z"/>
+        <circle cx="16" cy="16" r="3.5"/>
+      </svg>`,
+      "野菜": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 26 C16 26 7 20 7 13c0-4 4-7 9-7s9 3 9 7c0 7-9 13-9 13z"/>
+        <path d="M16 12v14"/>
+        <path d="M12 16 C13 15 15 15 16 16M16 16 C17 15 19 15 20 16"/>
+      </svg>`,
+      "炭水化物": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 24 L10 8h12l4 16z"/>
+        <path d="M8 24h16"/>
+        <path d="M10 15h12M11 11h10"/>
+      </svg>`,
+      "乳製品": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 6h10l2 5H9z"/>
+        <path d="M9 11l-2 14h18l-2-14z"/>
+        <path d="M13 17c1 2 5 2 6 0"/>
+        <path d="M14 11v3M18 11v3"/>
+      </svg>`,
+      "果物": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="16" cy="18" r="9"/>
+        <path d="M16 9 C16 5 20 3 22 5M16 9 C14 5 18 2 20 4"/>
+        <path d="M10 14c1-1 3-2 5-2M17 14c2 0 4 1 5 2"/>
+      </svg>`,
+      "調味料": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 4h6v5l3 3v14H10V12l3-3z"/>
+        <path d="M10 12h12"/>
+        <path d="M14 4h4M15 17v4M17 17v4M13 17v4"/>
+      </svg>`,
+      // 飲み物
+      "飲み物": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 8h16l-2 16H10z"/>
+        <path d="M8 8L6 4h20l-2 4"/>
+        <path d="M24 14h3l1 6h-4"/>
+        <path d="M12 15c1 2 2 3 4 3s3-1 4-3"/>
+      </svg>`,
+      // おやつ
+      "おやつ": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 14 C10 10 12 7 16 7S22 10 22 14v2H10z"/>
+        <path d="M8 16h16v2c0 3-2 5-8 5s-8-2-8-5z"/>
+        <path d="M16 7v-3M13 8l-1-3M19 8l1-3"/>
+      </svg>`,
+      // その他・サプリ
+      "サプリ・補助": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 6h8v4l2 2v10l-2 2H12l-2-2V12l2-2z"/>
+        <path d="M12 10h8"/>
+        <path d="M16 14v6M13 17h6"/>
+      </svg>`,
+      "カスタム食品": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 4l2 8h8l-6.5 5 2.5 8L16 20l-6.5 5 2.5-8L6 12h8z"/>
+      </svg>`,
+      // 外食サブ
+      "外食": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="12" width="24" height="14" rx="2"/>
+        <path d="M4 16h24"/>
+        <path d="M8 8h16M10 4h12"/>
+        <path d="M12 20h8"/>
+      </svg>`,
+      "その他": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="16" cy="16" r="10"/>
+        <circle cx="16" cy="16" r="1.5" fill="currentColor"/>
+        <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+        <circle cx="22" cy="16" r="1.5" fill="currentColor"/>
+      </svg>`,
+      // 米・パン・麺・粉もの
+      "米": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="16" cy="20" rx="10" ry="4"/>
+        <path d="M6 20v-4c0-3 4-6 10-6s10 3 10 6v4"/>
+        <ellipse cx="16" cy="16" rx="6" ry="2.5"/>
+      </svg>`,
+      "パン": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 14 C6 8 10 6 16 6S26 8 26 14v10H6z"/>
+        <path d="M6 18h20"/>
+        <path d="M10 12c1-2 3-3 6-3"/>
+      </svg>`,
+      "麺": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 22h20"/>
+        <path d="M8 18 C8 10 12 8 16 8S24 10 24 18"/>
+        <path d="M10 18 C10 13 12 11 16 11S22 13 22 18"/>
+        <path d="M12 18 C12 15 14 14 16 14S20 15 20 18"/>
+      </svg>`,
+      "粉もの": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 22 L10 10h12l5 12z"/>
+        <path d="M5 22h22"/>
+        <path d="M12 16 C13 13 15 12 16 12S19 13 20 16"/>
+        <path d="M9 19 C11 17 14 16 16 16S21 17 23 19"/>
+      </svg>`,
+      // 肉系サブ
+      "肉系": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 22 C8 20 8 17 10 15 L18 7 C20 5 23 5 25 7S27 12 25 14 L17 22 C15 24 12 24 10 22z"/>
+        <circle cx="8" cy="24" r="3"/>
+        <circle cx="24" cy="8" r="3"/>
+        <circle cx="26" cy="22" r="2.5"/>
+        <circle cx="10" cy="8" r="2.5"/>
+      </svg>`,
+      "魚系": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M26 16 C22 10 14 8 8 12c-2 1.3-2 2.7 0 4 6 4 14 2 18-4z"/>
+        <path d="M26 16 C24 13 24 19 26 16z"/>
+        <circle cx="11" cy="15" r="1" fill="currentColor"/>
+      </svg>`,
+      "卵・野菜系": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 5 C10 5 7 11 7 16c0 5 4 9 9 9s9-4 9-9c0-5-3-11-9-11z"/>
+        <circle cx="16" cy="16" r="3.5"/>
+      </svg>`,
+    };
+    return icons[name] || `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="16" cy="16" r="10"/></svg>`;
+  }
   function buildDishMap(){
     const map = {};
     for (const d of DISHES) map[d.key] = d;
@@ -6290,20 +6724,182 @@ ${weekData.map(d=>d.count>0?`${d.date}: ${d.kcal}kcal P${d.protein}g F${d.fat}g 
     };
 
     const customFoods = loadCustomFoods();
-    const allDishes = [...DISHES, ...customFoods];
+    // 通常表示はDISHES、検索時はDISH_MAP全体（バリアント含む）を対象
+    const allDishes = f
+      ? [...Object.values(DISH_MAP), ...customFoods]
+      : [...DISHES, ...customFoods];
+
+    // ===== キーワード辞書（実際の食品キー → 検索ワード） =====
+    const SEARCH_KEYWORDS = {
+      // パスタ系
+      "pasta_pepe":       ["ペペロンチーノ","ぺぺろんちーの","ニンニクパスタ"],
+      "yo_carbonara":     ["カルボナーラ","くりーむぱすた","卵パスタ"],
+      "yo_bolognese":     ["ボロネーゼ","ミートソース","みーとそーす","肉パスタ"],
+      "yo_napolitan":     ["ナポリタン","なぽりたん","ケチャップパスタ"],
+      "yo_vongole":       ["ボンゴレ","あさりパスタ","クラムパスタ"],
+      "yo_genovese":      ["ジェノベーゼ","バジルパスタ","バジルソース"],
+      "yo_arabiata":      ["アラビアータ","トマトパスタ","辛いパスタ"],
+      "pasta_cream":      ["クリームパスタ","ホワイトソース"],
+      "pasta_meat":       ["ミートパスタ","肉パスタ","ボロネーゼ","ミートソース"],
+      "conbini_pasta_napolitan": ["コンビニパスタ","ナポリタン"],
+      "pasta_v_parent":   ["パスタ","スパゲッティ","スパゲティ"],
+      // ラーメン系
+      "ramen_tonkotsu":   ["豚骨ラーメン","とんこつ","博多ラーメン","九州ラーメン"],
+      "ramen_shoyu":      ["醤油ラーメン","しょうゆラーメン","東京ラーメン"],
+      "ramen_miso":       ["味噌ラーメン","みそラーメン","札幌ラーメン"],
+      "ramen_shio":       ["塩ラーメン","しおラーメン"],
+      "ramen_tantan":     ["担々麺","たんたんめん","ごまラーメン"],
+      "ch_reiimen":       ["冷麺","れいめん","韓国冷麺"],
+      "ramen_mazesoba":   ["まぜそば","混ぜそば"],
+      "mazesoba":         ["まぜそば","油そば"],
+      "abura_soba":       ["油そば","あぶらそば"],
+      "ramen":            ["ラーメン","らーめん","中華麺"],
+      // うどん・そば系
+      "kitsune_udon":     ["きつねうどん","きつね","油揚げうどん"],
+      "cold_udon":        ["冷やしうどん","ざるうどん","ぶっかけ"],
+      "tempura_udon":     ["天ぷらうどん","てんうどん"],
+      "tempura_soba":     ["天ぷらそば","てんそば"],
+      "marugame_niku_udon":["肉うどん","丸亀","にくうどん"],
+      "nakau_udon_niku":  ["肉うどん","なか卯"],
+      // 寿司系
+      "sushi_v_parent":   ["寿司","すし","握り","スシ"],
+      "sushi_set":        ["寿司セット","にぎりセット","盛り合わせ"],
+      "chirashi_sushi":   ["ちらし寿司","ちらし","散らし"],
+      // 丼系
+      "gyudon":           ["牛丼","ぎゅうどん","吉野家","すき家","松屋"],
+      "katsudon":         ["カツ丼","かつどん","ヒレカツ丼"],
+      "yakitori_bowl":    ["焼き鳥丼","やきとり丼"],
+      // カレー系
+      "curry_rice":       ["カレーライス","カレー","curry","カレーごはん"],
+      "coco_curry_200g":  ["ココイチ","CoCo壱","ビーフカレー"],
+      "dry_curry":        ["ドライカレー","キーマカレー","キーマ"],
+      "fried_chicken_curry":["チキンカレー","からあげカレー"],
+      // 中華系
+      "ch_mapo_tofu":     ["麻婆豆腐","マーボー","まーぼどうふ","マーボー豆腐"],
+      "bamiyan_mapo_tofu":["麻婆豆腐","マーボー"],
+      "ch_ebi_chili":     ["エビチリ","海老チリ","えびちり"],
+      "ch_ebi_mayo":      ["エビマヨ","海老マヨ"],
+      "ch_harumaki":      ["春巻き","はるまき"],
+      "ch_chinjao_rosu":  ["チンジャオロース","青椒肉絲","ピーマン炒め"],
+      "ch_subuta":        ["酢豚","すぶた","甘酢肉"],
+      "ch_tantanmen":     ["担々麺","たんたんめん"],
+      "ch_tenshinhan":    ["天津飯","てんしんはん"],
+      "ch_ankake_chahan": ["あんかけチャーハン","あんかけ"],
+      "ch_jajamen":       ["ジャージャー麺","じゃじゃめん"],
+      "deli_gyoza_fried": ["焼き餃子","やき餃子","ぎょうざ"],
+      "frozen_gyoza":     ["冷凍餃子","ぎょうざ"],
+      "bamiyan_gyoza":    ["餃子","バーミヤン"],
+      // 焼き物・揚げ物系
+      "karaage":          ["唐揚げ","からあげ","から揚げ","フライドチキン"],
+      "deli_karaage":     ["唐揚げ","惣菜からあげ"],
+      "frozen_karaage":   ["冷凍唐揚げ","からあげ"],
+      "chicken_bone_karaage":["骨付き唐揚げ","手羽"],
+      "deli_tonkatsu":    ["とんかつ","惣菜トンカツ"],
+      "yo_cream_croquette":["クリームコロッケ","ホワイトコロッケ"],
+      "deli_korokke":     ["コロッケ","ポテトコロッケ"],
+      "yo_fish_fry":      ["フィッシュフライ","魚フライ","白身フライ"],
+      "yo_shrimp_gratin": ["エビグラタン","グラタン","シュリンプグラタン"],
+      // お好み焼き・焼きそば系
+      "okonomiyaki_kansai":["お好み焼き","おこのみやき","大阪風"],
+      "okonomiyaki_hiroshima":["広島風お好み焼き","広島焼き"],
+      "okonomiyaki_seafood":["シーフードお好み焼き"],
+      "okonomiyaki_negiyaki":["ねぎ焼き","ねぎやき"],
+      // ピザ系
+      "pizza_slice":      ["ピザ","ぴざ","チーズピザ"],
+      "frozen_pizza_margherita":["マルゲリータ","冷凍ピザ"],
+      // ハンバーグ・洋食系
+      "yo_hamburg_demi":  ["ハンバーグ","はんばーぐ","デミグラス"],
+      "yo_roast_beef":    ["ローストビーフ","ろーすとびーふ"],
+      "yo_steak_200g":    ["ステーキ","ビーフステーキ","牛ステーキ"],
+      "yo_chicken_piccata":["ピカタ","チキンピカタ"],
+      "yo_paella":        ["パエリア","ぱえりあ","スペイン料理"],
+      "yo_risotto":       ["リゾット","りぞっと"],
+      "yo_quiche":        ["キッシュ","きっしゅ"],
+      // サラダ・スープ系
+      "yo_caesar_salad":  ["シーザーサラダ","シーザー"],
+      "yo_caprese":       ["カプレーゼ","トマトとモッツァレラ"],
+      "yo_minestrone":    ["ミネストローネ","トマトスープ","野菜スープ"],
+      "yo_clam_chowder":  ["クラムチャウダー","貝のスープ"],
+      "yo_corn_soup":     ["コーンスープ","コーンポタージュ"],
+      "yo_onion_soup":    ["オニオンスープ","玉ねぎスープ"],
+      "yo_potage":        ["ポタージュ","クリームスープ"],
+      // 和食系
+      "chawanmushi":      ["茶碗蒸し","ちゃわんむし","だし蒸し"],
+      "yakiniku":         ["焼肉","やきにく","BBQ","バーベキュー"],
+      "deli_yakitori":    ["焼き鳥","やきとり","串焼き"],
+      // チャーハン系
+      "ch_ankake_chahan": ["あんかけチャーハン"],
+      "chahan_v_parent":  ["チャーハン","炒飯","やきめし"],
+      "bamiyan_chahan":   ["チャーハン","バーミヤン"],
+      // パン・サンドイッチ系
+      "croissant":        ["クロワッサン","くろわっさん","バタークロワッサン"],
+      "bagel":            ["ベーグル","べーぐる"],
+      "bread_bagel_plain":["ベーグル","プレーンベーグル"],
+      "bread_curry_pan":  ["カレーパン","かれーぱん"],
+      "egg_sandwich":     ["たまごサンド","卵サンド","エッグサンド"],
+      "conbini_sandwich_egg":["コンビニサンド","たまごサンド"],
+      "cutlet_sandwich":  ["カツサンド","メンチカツサンド"],
+      // スイーツ・デザート系
+      "bread_donut_plain":["ドーナツ","どーなつ","プレーンドーナツ"],
+      "bread_donut_choco":["チョコドーナツ","チョコレートドーナツ"],
+      "bread_jam_donut":  ["ジャムドーナツ","あんドーナツ"],
+      "yo_salmon_saute":  ["サーモンソテー","鮭ソテー"],
+      // 外食チェーン系
+      "starbucks_v_parent":["スタバ","スターバックス","Starbucks"],
+      "tullys_v_parent":  ["タリーズ","Tully's"],
+      "doutor_v_parent":  ["ドトール","Doutor"],
+      "komeda_v_parent":  ["コメダ","珈琲","コメダ珈琲"],
+      "yoshinoya_v_parent":["吉野家","よしのや"],
+      "sukiya_v_parent":  ["すき家","スキヤ"],
+      "matsuya_v_parent": ["松屋","まつや"],
+      "marugame_v_parent":["丸亀製麺","丸亀","まるがめ"],
+      "ohsho_v_parent":   ["餃子の王将","王将","ぎょうざのおうしょう"],
+    };
+
+    // 検索マッチング関数
+    function matchesSearch(d, query) {
+      if (!query) return true;
+      const q = query.toLowerCase().replace(/\s/g, "");
+      // 1. 食品名で直接マッチ
+      if (d.name.toLowerCase().replace(/\s/g, "").includes(q)) return true;
+      // 2. キーワード辞書でマッチ
+      const keywords = SEARCH_KEYWORDS[d.key] || [];
+      if (keywords.some(kw => kw.toLowerCase().replace(/\s/g,"").includes(q))) return true;
+      return false;
+    }
 
     let list = allDishes
-      .filter(d => !shouldHideFromGrid(d))
-      .filter(d => !f || d.name.includes(f))
+      .filter(d => !f ? !shouldHideFromGrid(d) : true)  // 検索時はhiddenKeysを無視
+      .filter(d => !f || matchesSearch(d, f))
       .map(d => ({ ...d, group: d.group || "その他", cat: d.cat || "その他" }));
+
+    // 検索時は重複キーを排除
+    if (f) {
+      const seen = new Set();
+      list = list.filter(d => {
+        if (seen.has(d.key)) return false;
+        seen.add(d.key);
+        return true;
+      });
+    }
 
     // 検索時は関連度順ソート
     if (f) {
+      const q = f.toLowerCase().replace(/\s/g, "");
       list.sort((a, b) => {
-        const scoreA = a.name === f ? 0 : a.name.startsWith(f) ? 1 : 2;
-        const scoreB = b.name === f ? 0 : b.name.startsWith(f) ? 1 : 2;
-        if (scoreA !== scoreB) return scoreA - scoreB;
-        return a.name.length - b.name.length; // 同スコアは名前が短い順
+        const score = d => {
+          const name = d.name.toLowerCase().replace(/\s/g,"");
+          if (name === q) return 0;           // 完全一致
+          if (name.startsWith(q)) return 1;   // 前方一致
+          if (name.includes(q)) return 2;     // 部分一致
+          const kws = SEARCH_KEYWORDS[d.key] || [];
+          if (kws.some(kw => kw.toLowerCase().replace(/\s/g,"") === q)) return 3; // キーワード完全一致
+          if (kws.some(kw => kw.toLowerCase().replace(/\s/g,"").includes(q))) return 4; // キーワード部分一致
+          return 5;
+        };
+        const sa = score(a), sb = score(b);
+        if (sa !== sb) return sa - sb;
+        return a.name.length - b.name.length;
       });
     }
 
@@ -6369,7 +6965,7 @@ ${weekData.map(d=>d.count>0?`${d.date}: ${d.kcal}kcal P${d.protein}g F${d.fat}g 
       details.open = !!f || groupName === "料理" || groupName === "カスタム";
 
       const summary = document.createElement("summary");
-      summary.innerHTML = `<span class="summaryTitle">${groupName === "カスタム" ? "🥘 カスタム" : groupName}</span><span class="countText">${totalCount}件</span><span class="summaryArrow">${details.open ? "−" : "＋"}</span>`;
+      summary.innerHTML = `<span class="summaryTitle"><span class="catIllust">${getGroupIcon(groupName)}</span>${groupName}</span><span class="countText">${totalCount}件</span><span class="summaryArrow">${details.open ? "−" : "＋"}</span>`;
       summary.addEventListener("click", () => {
         setTimeout(() => {
           const arrow = summary.querySelector(".summaryArrow");
@@ -6391,7 +6987,7 @@ ${weekData.map(d=>d.count>0?`${d.date}: ${d.kcal}kcal P${d.protein}g F${d.fat}g 
         sub.open = !!f || groupName === "カスタム";
 
         const subSummary = document.createElement("summary");
-        subSummary.innerHTML = `<span style="font-weight:700">${catName}</span><span class="countText">${items.length}件</span><span class="summaryArrow">${sub.open ? "−" : "＋"}</span>`;
+        subSummary.innerHTML = `<span class="catLabel"><span class="catIllust">${getCatIcon(catName)}</span><span>${catName}</span></span><span class="countText">${items.length}件</span><span class="summaryArrow">${sub.open ? "−" : "＋"}</span>`;
         subSummary.addEventListener("click", () => {
           setTimeout(() => {
             const arrow = subSummary.querySelector(".summaryArrow");
@@ -6417,7 +7013,7 @@ ${weekData.map(d=>d.count>0?`${d.date}: ${d.kcal}kcal P${d.protein}g F${d.fat}g 
             const typeWrap = document.createElement("details");
             typeWrap.className = "catWrap";
             const typeSummary = document.createElement("summary");
-            typeSummary.innerHTML = `<span style="font-weight:700">${type}</span><span class="countText">${bucket.length}件</span><span class="summaryArrow">＋</span>`;
+            typeSummary.innerHTML = `<span class="catLabel"><span class="catIllust">${getCatIcon(type)}</span><span>${type}</span></span><span class="countText">${bucket.length}件</span><span class="summaryArrow">＋</span>`;
             typeWrap.addEventListener("toggle", () => {
               if (typeWrap.open) {
                 accordionWraps.forEach(other => { if (other !== typeWrap) other.open = false; });
@@ -6449,7 +7045,7 @@ ${weekData.map(d=>d.count>0?`${d.date}: ${d.kcal}kcal P${d.protein}g F${d.fat}g 
             const typeWrap = document.createElement("details");
             typeWrap.className = "catWrap";
             const typeSummary = document.createElement("summary");
-            typeSummary.innerHTML = `<span style="font-weight:700">${type}</span><span class="countText">${bucket.length}件</span><span class="summaryArrow">＋</span>`;
+            typeSummary.innerHTML = `<span class="catLabel"><span class="catIllust">${getCatIcon(type)}</span><span>${type}</span></span><span class="countText">${bucket.length}件</span><span class="summaryArrow">＋</span>`;
             typeWrap.addEventListener("toggle", () => {
               if (typeWrap.open) accordionWraps2.forEach(other => { if (other !== typeWrap) other.open = false; });
               const arrow = typeSummary.querySelector(".summaryArrow");
@@ -6887,7 +7483,8 @@ JSONのみで回答してください（他のテキスト不要）。
   function renderColorThemeUI(){
     const current = localStorage.getItem(COLOR_THEME_KEY) || "";
     const map = {
-      "":        { id:"themeDefault",  color:"var(--accent)" },
+      "":        { id:"themeDefault",  color:"#5E6AD2" },
+      "miyama":  { id:"themeMiyama",   color:"#7BAE8F" },
       "orange":  { id:"themeOrange",   color:"#e85d1a" },
       "blue":    { id:"themeBlue",     color:"#1a7fd4" },
       "natural": { id:"themeNatural",  color:"#3d8c40" },
