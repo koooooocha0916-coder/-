@@ -38,13 +38,13 @@
       --warn:#FF9500;
       --shadow:0 4px 20px rgba(0,0,0,.08);
       --shadow-sm:0 2px 10px rgba(0,0,0,.05);
-      --radius:20px;
+      --radius:24px;
       --hero-grad-start:#4D5BC0;
       --hero-grad-end:#6E7EE0;
       --hero-shadow:rgba(94,106,210,.30);
-      --radius-sm:12px;
+      --radius-sm:14px;
       --headerH:68px;\n      --headerH: calc(56px + env(safe-area-inset-top));
-      --tabH:82px;
+      --tabH:76px;
     }
 
     /* テーマ: ミヤマ北欧 */
@@ -341,7 +341,7 @@
     .container{
       max-width: 980px;
       margin: 0 auto;
-      padding: 12px 14px 0;
+      padding: 12px 20px 0;
     }
 
     .screen{
@@ -905,8 +905,8 @@
       box-shadow: 0 8px 32px rgba(44,40,37,.12);
       padding: 8px;
       display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:6px;
+      grid-template-columns: repeat(5, 1fr);
+      gap:4px;
     }
 
     [data-theme="dark"] .appHeader{
@@ -942,19 +942,20 @@
     .tabBtn{
       border:none;
       background:transparent;
-      padding: 10px 6px;
-      border-radius: 20px;
+      padding: 8px 4px;
+      border-radius: 16px;
       cursor:pointer;
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      gap:3px;
+      gap:2px;
       color:var(--muted);
-      font-size:10px;
+      font-size:9px;
       font-weight:700;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.1px;
       transition: all .2s ease;
+      flex:1;
     }
 
     .tabBtn.active{
@@ -969,7 +970,7 @@
       box-shadow: 0 4px 14px rgba(141,196,160,.3);
     }
 
-    .tabIcon{ font-size:18px; line-height:1; display:flex; align-items:center; justify-content:center; }
+    .tabIcon{ font-size:16px; line-height:1; display:flex; align-items:center; justify-content:center; }
 
     .toast{
       position: fixed;
@@ -1450,33 +1451,75 @@
 
   <main class="container">
     <section id="screen-home" class="screen active">
-      <!-- 今日の摂取カロリー -->
-      <div class="heroCard">
-        <div class="heroTop">
-          <div>
-            <div class="heroLabel">今日の摂取カロリー</div>
-            <div class="heroKcal" id="homeTotalKcal">0 kcal</div>
-            <div class="heroRemain" id="remainText">あと 0 kcal</div>
+
+      <!-- キャラクター＋スキャンボタン -->
+      <div class="card" style="padding:20px;background:linear-gradient(135deg,var(--card) 0%,var(--sub) 100%);">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+          <!-- キャラクタースペース -->
+          <div id="characterArea" style="display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;">
+            <div id="characterSvg" style="width:150px;height:150px;border-radius:36px;background:var(--card);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:80px;box-shadow:0 4px 16px rgba(0,0,0,.08);">
+              🌱
+            </div>
+            <div id="characterStatus" style="font-size:11px;font-weight:700;color:var(--accent);background:var(--card);padding:4px 12px;border-radius:999px;border:1.5px solid var(--line);">元気</div>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
-            <div class="miniBadge" id="portionBadge">量：普通</div>
-            <div id="streakBadge" style="display:none;padding:6px 10px;border-radius:14px;background:rgba(243,185,73,.15);border:1px solid rgba(243,185,73,.4);font-size:12px;font-weight:700;color:#c8860a;text-align:center;min-width:88px;"></div>
+          <!-- メッセージ＋スキャンボタン -->
+          <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+            <div>
+              <div style="font-size:16px;font-weight:800;color:var(--text-main);margin-bottom:4px;">こんにちは！</div>
+              <div style="font-size:13px;color:var(--text-sub);line-height:1.5;" id="characterMessage">今日も記録を続けよう！</div>
+            </div>
+            <!-- スキャンボタン（小さめ） -->
+            <button onclick="openCameraMenu()" style="width:auto;align-self:flex-start;padding:16px 28px;border-radius:14px;border:none;background:var(--accent);color:#fff;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 10px rgba(94,106,210,.2);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              📷 スキャン
+            </button>
           </div>
         </div>
+      </div>
 
-        <div class="statsRow">
-          <div class="stat"><div class="statLabel">たんぱく質</div><div class="statValue" id="statProtein">0g</div></div>
-          <div class="stat"><div class="statLabel">脂質</div><div class="statValue" id="statFat">0g</div></div>
-          <div class="stat"><div class="statLabel">糖質</div><div class="statValue" id="statCarb">0g</div></div>
-          <div class="stat"><div class="statLabel">水分</div><div class="statValue" id="statWater">0ml</div></div>
+      <div style="height:20px"></div>
+
+      <!-- カロリー大カード -->
+      <div class="card" style="padding:20px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <div>
+            <div style="font-size:12px;color:var(--muted);font-weight:600;margin-bottom:4px;">今日の摂取カロリー</div>
+            <div style="font-size:40px;font-weight:900;line-height:1;font-family:'DM Serif Display',serif;letter-spacing:-1.5px;color:var(--text-main);" id="homeTotalKcal">0 <span style="font-size:18px;font-weight:700;font-family:inherit;">kcal</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+            <div style="padding:6px 12px;border-radius:999px;background:var(--sub);border:1.5px solid var(--line);font-size:12px;font-weight:700;color:var(--muted);" id="portionBadge">量：普通</div>
+            <div id="remainText" style="font-size:12px;color:var(--accent);font-weight:700;"></div>
+            <div id="streakBadge" style="display:none;padding:5px 10px;border-radius:999px;background:rgba(243,185,73,.15);border:1px solid rgba(243,185,73,.4);font-size:11px;font-weight:700;color:#c8860a;"></div>
+          </div>
+        </div>
+        <!-- 栄養素4カード -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+          <div style="background:var(--sub);border-radius:16px;padding:10px 8px;text-align:center;border-top:3px solid #A9C3D6;">
+            <div style="font-size:10px;color:var(--muted);font-weight:600;margin-bottom:4px;">たんぱく質</div>
+            <div style="font-size:16px;font-weight:900;color:var(--text-main);font-family:'DM Serif Display',serif;" id="statProtein">0g</div>
+          </div>
+          <div style="background:var(--sub);border-radius:16px;padding:10px 8px;text-align:center;border-top:3px solid #E8907A;">
+            <div style="font-size:10px;color:var(--muted);font-weight:600;margin-bottom:4px;">脂質</div>
+            <div style="font-size:16px;font-weight:900;color:var(--text-main);font-family:'DM Serif Display',serif;" id="statFat">0g</div>
+          </div>
+          <div style="background:var(--sub);border-radius:16px;padding:10px 8px;text-align:center;border-top:3px solid #E4B567;">
+            <div style="font-size:10px;color:var(--muted);font-weight:600;margin-bottom:4px;">糖質</div>
+            <div style="font-size:16px;font-weight:900;color:var(--text-main);font-family:'DM Serif Display',serif;" id="statCarb">0g</div>
+          </div>
+          <div style="background:var(--sub);border-radius:16px;padding:10px 8px;text-align:center;border-top:3px solid #95C8B7;">
+            <div style="font-size:10px;color:var(--muted);font-weight:600;margin-bottom:4px;">水分</div>
+            <div style="font-size:16px;font-weight:900;color:var(--text-main);font-family:'DM Serif Display',serif;" id="statWater">0ml</div>
+          </div>
         </div>
         <div id="microBadges" style="display:none;flex-wrap:wrap;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);"></div>
       </div>
 
+      <div style="height:20px"></div>
+
       <!-- おすすめ -->
       <div class="card"><h2 class="sectionTitle">おすすめ</h2><p id="advice"></p></div>
 
-      <div style="height:14px"></div>
+      <div style="height:22px"></div>
       <div class="card">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
           <h2 class="sectionTitle" style="margin:0;">🤖 AIアドバイス</h2>
@@ -1488,24 +1531,9 @@
         <div id="aiAdviceResult" class="small" style="color:var(--muted);">「分析する」で今週のデータをAIに分析してもらえます</div>
       </div>
 
-      <div style="height:14px"></div>
 
-      <!-- 水分 -->
-      <div class="card">
-        <h2 class="sectionTitle">水分</h2>
-        <div class="actionGrid">
-          <button class="quickBtn" onclick="addWater(100)">+100ml</button>
-          <button class="quickBtn" onclick="addWater(200)">+200ml</button>
-          <button class="quickBtn" onclick="addWater(500)">+500ml</button>
-          <button class="quickBtn" onclick="resetWater()">リセット</button>
-        </div>
-        <div style="height:10px"></div>
-        <p id="waterTotalHome"></p>
-        <div class="meter"><div class="meterBar" id="waterBarHome" style="width:0%"></div></div>
-        <div class="small" id="waterGoalTextHome" style="margin-top:6px;"></div>
-      </div>
+      <div style="height:22px"></div>
 
-      <div style="height:14px"></div>
 
       <!-- 目標・グラフ -->
       <div class="grid2">
@@ -1524,14 +1552,14 @@
         </div>
       </div>
 
-      <div style="height:14px"></div>
+      <div style="height:22px"></div>
       <div class="card">
         <h2 class="sectionTitle">今週のカレンダー</h2>
         <div id="weekCalendar" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;width:100%;overflow:hidden;"></div>
         <div class="small" style="margin-top:8px;text-align:center;">日付をタップするとその日の記録へ</div>
       </div>
 
-      <div style="height:14px"></div>
+      <div style="height:22px"></div>
     </section>
 
     <section id="screen-food" class="screen">
@@ -1563,16 +1591,33 @@
         </div>
       </div>
 
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
+
+      <!-- 水分（食品ページ） -->
+      <div class="card">
+        <h2 class="sectionTitle">水分</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+          <button class="quickBtn" onclick="addWater(100)">+100ml</button>
+          <button class="quickBtn" onclick="addWater(200)">+200ml</button>
+          <button class="quickBtn" onclick="addWater(500)">+500ml</button>
+          <button class="quickBtn" onclick="addWater(-100)">-100ml</button>
+        </div>
+        <div style="height:10px"></div>
+        <p id="waterTotalHome"></p>
+        <div class="meter"><div class="meterBar" id="waterBarHome" style="width:0%"></div></div>
+        <div class="small" id="waterGoalTextHome" style="margin-top:6px;"></div>
+      </div>
+
+      <div style="height:20px"></div>
       <div class="card"><h2 class="sectionTitle">お気に入り</h2><div class="recentRow" id="favorites"></div><div class="small">※右上の★で登録 / 解除</div></div>
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <div class="card"><h2 class="sectionTitle">最近食べた（48時間）</h2><div class="recentRow" id="recent"></div><div class="small">※48時間以内に追加したものだけ表示</div></div>
 
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <div id="grid"></div>
 
       <!-- ===== カスタム食品セクション ===== -->
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <div class="card">
         <h2 class="sectionTitle">🥘 カスタム食品を追加</h2>
         <div class="customFoodForm">
@@ -1613,7 +1658,32 @@
       </div>
     </section>
 
-    <section id="screen-log" class="screen">
+    <!-- スキャン画面 -->
+    <section id="screen-scan" class="screen">
+      <div class="card" style="text-align:center;padding:32px 20px;">
+        <div style="font-size:48px;margin-bottom:16px;">📷</div>
+        <h2 class="sectionTitle" style="justify-content:center;margin-bottom:8px;">食品をスキャン</h2>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">写真を撮るかバーコードをスキャンして<br>カロリーを自動記録</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <button onclick="closeCameraMenu();openPhotoAnalyzer();" style="width:100%;padding:16px;border-radius:20px;border:none;background:var(--accent);color:#fff;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            写真で解析
+          </button>
+          <button onclick="closeCameraMenu();openBarcodeScanner();" style="width:100%;padding:16px;border-radius:20px;border:1.5px solid var(--accent);background:var(--card);color:var(--accent);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="7" y1="7" x2="7" y2="17"/><line x1="10" y1="7" x2="10" y2="17"/><line x1="13" y1="7" x2="13" y2="12"/><line x1="16" y1="7" x2="16" y2="17"/></svg>
+            バーコードスキャン
+          </button>
+        </div>
+      </div>
+      <div style="height:20px"></div>
+      <div class="card">
+        <h2 class="sectionTitle">最近スキャンしたもの</h2>
+        <div id="recentScans" style="color:var(--muted);font-size:14px;text-align:center;padding:16px 0;">まだスキャン履歴がありません</div>
+      </div>
+    </section>
+
+    <!-- 今日画面 -->
+    <section id="screen-today" class="screen">
       <div class="card">
         <h2 class="sectionTitle">日付</h2>
         <div class="dateRow">
@@ -1624,16 +1694,20 @@
         </div>
         <div class="small" id="dateLabel" style="margin-top:10px;"></div>
       </div>
-
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <div class="card"><h2 class="sectionTitle">合計</h2><div id="result"></div></div>
-      <div style="height:12px"></div>
-      <div class="card"><h2 class="sectionTitle">今日たべたもの（朝・昼・夜）</h2><div id="log"></div>
+      <div style="height:20px"></div>
+      <div class="card">
+        <h2 class="sectionTitle">今日たべたもの（朝・昼・夜）</h2>
+        <div id="log"></div>
         <div style="height:10px"></div>
         <div id="copyPrevWrap"></div>
         <div class="small" style="margin-top:4px;">※「×」で削除できます</div>
       </div>
-      <div style="height:12px"></div>
+    </section>
+
+    <!-- 記録画面（グラフ＋カレンダー＋体重＋今月の食事） -->
+    <section id="screen-record" class="screen">
       <div class="card">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
           <h2 class="sectionTitle" style="margin:0;">推移グラフ</h2>
@@ -1650,7 +1724,7 @@
         <canvas id="weekChart" width="700" height="200" style="width:100%;height:auto;"></canvas>
         <div class="small" id="weekChartSub" style="margin-top:6px;text-align:center;"></div>
       </div>
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <div class="card">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
           <h2 class="sectionTitle" style="margin:0;">月間カレンダー</h2>
@@ -1663,9 +1737,7 @@
         <div id="monthCalendar"></div>
         <div class="small" style="margin-top:8px;text-align:center;">日付をタップするとその日の記録へ</div>
       </div>
-    </section>
-
-    <section id="screen-weight" class="screen">
+      <div style="height:20px"></div>
       <div class="card">
         <h2 class="sectionTitle">体重入力</h2>
         <div class="weightRow">
@@ -1674,17 +1746,21 @@
         </div>
         <div class="small" style="margin-top:10px;">※今日の最新体重で目標が更新されます</div>
       </div>
-
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <div class="card"><h2 class="sectionTitle">体重グラフ</h2><div class="chartWrap"><canvas id="weightChart" class="weightCanvas" width="700" height="260"></canvas></div></div>
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <div class="card">
         <h2 class="sectionTitle">カロリー×体重 相関</h2>
         <canvas id="correlationChart" width="700" height="220" style="width:100%;height:auto;"></canvas>
         <div class="small" id="correlationSub" style="margin-top:6px;text-align:center;"></div>
       </div>
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <div class="card"><h2 class="sectionTitle">体重履歴</h2><ul id="weightLog"></ul></div>
+      <div style="height:20px"></div>
+      <div class="card">
+        <h2 class="sectionTitle">今月の食事記録</h2>
+        <div id="monthlyFoodLog" style="color:var(--muted);font-size:14px;text-align:center;padding:16px 0;">読み込み中...</div>
+      </div>
     </section>
   </main>
 
@@ -1732,7 +1808,7 @@
           </div>
         </button>
       </div>
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <button onclick="closeCameraMenu()" style="width:100%;padding:12px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:14px;cursor:pointer;">キャンセル</button>
     </div>
   </div>
@@ -1769,7 +1845,7 @@
 
       <div id="barcodeResult" class="barcodeResult"></div>
 
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <button onclick="closeBarcodeScanner()" style="width:100%;padding:12px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:14px;cursor:pointer;">閉じる</button>
     </div>
   </div>
@@ -1790,7 +1866,7 @@
       <div id="photoLoading" style="display:none;" class="photoLoading">🤖 AIが解析中...</div>
       <div id="photoResult" class="photoResult"></div>
 
-      <div style="height:12px"></div>
+      <div style="height:20px"></div>
       <button onclick="closePhotoAnalyzer()" style="width:100%;padding:12px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:14px;cursor:pointer;">閉じる</button>
     </div>
   </div>
@@ -1995,20 +2071,24 @@
 
   <nav class="tabBar">
     <button class="tabBtn active" data-tab="home" onclick="switchTab('home')">
-      <span class="tabIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></span>
+      <span class="tabIcon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></span>
       <span>ホーム</span>
     </button>
+    <button class="tabBtn" data-tab="scan" onclick="switchTab('scan')">
+      <span class="tabIcon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+      <span>スキャン</span>
+    </button>
     <button class="tabBtn" data-tab="food" onclick="switchTab('food')">
-      <span class="tabIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span>
+      <span class="tabIcon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span>
       <span>食品</span>
     </button>
-    <button class="tabBtn" data-tab="log" onclick="switchTab('log')">
-      <span class="tabIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg></span>
-      <span>記録</span>
+    <button class="tabBtn" data-tab="today" onclick="switchTab('today')">
+      <span class="tabIcon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+      <span>ログ</span>
     </button>
-    <button class="tabBtn" data-tab="weight" onclick="switchTab('weight')">
-      <span class="tabIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3c0 .9.4 1.7 1 2.3L7 20h10l-3-12.7c.6-.6 1-1.4 1-2.3a3 3 0 0 0-3-3z"/><line x1="5" y1="20" x2="19" y2="20"/></svg></span>
-      <span>体重</span>
+    <button class="tabBtn" data-tab="record" onclick="switchTab('record')">
+      <span class="tabIcon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3c0 .9.4 1.7 1 2.3L7 20h10l-3-12.7c.6-.6 1-1.4 1-2.3a3 3 0 0 0-3-3z"/><line x1="5" y1="20" x2="19" y2="20"/></svg></span>
+      <span>記録</span>
     </button>
   </nav>
 
@@ -2244,9 +2324,10 @@
     if (screen) screen.classList.add("active");
     const btn = document.querySelector(`.tabBtn[data-tab="${tab}"]`);
     if (btn) btn.classList.add("active");
-    if (tab === "weight") { renderWeightChart(); renderCorrelationChart(); }
-    if (tab === "log") renderKcalHistoryChart();
+    if (tab === "record") { renderWeightChart(); renderCorrelationChart(); renderKcalHistoryChart(); renderMonthlyFoodLog(); }
+    if (tab === "today") renderTodayLog();
     if (tab === "food") renderGrid(document.getElementById("search")?.value || "");
+    if (tab === "home") renderCharacter();
   }
 
   // ===== [BUG FIX] total は常に logItems から再計算する =====
@@ -2758,7 +2839,7 @@
 
       const cell = document.createElement("div");
       cell.className = "calCell" + (isToday ? " today" : "");
-      cell.onclick = () => { setDate(dateKey); switchTab("log"); };
+      cell.onclick = () => { setDate(dateKey); switchTab("today"); };
       cell.innerHTML = `
         <div class="calDay">${dayName}</div>
         <div class="calDate" style="color:${isToday ? "var(--accent)" : "var(--text)"}">${dateNum}</div>
@@ -3286,7 +3367,7 @@
     renderWater();
   }
 
-  function addWater(ml){ waterItems.push({ time: nowTime(), ml }); saveWater(); renderWater(); showToast(`水分 +${ml}ml`); }
+  function addWater(ml){ waterItems.push({ time: nowTime(), ml }); saveWater(); renderWater(); showToast(ml > 0 ? `水分 +${ml}ml` : `水分 ${ml}ml`); }
   function resetWater(){ waterItems = []; saveWater(); renderWater(); showToast("水分をリセットしたよ"); }
 
   function renderWater(){
@@ -5669,6 +5750,105 @@
     };
     return icons[name] || `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="16" cy="16" r="10"/></svg>`;
   }
+
+  // ===== 今日の食事ログ表示 =====
+  function renderTodayLog(){
+    renderResult();
+    renderLog();
+  }
+
+  // ===== 今月の食事記録 =====
+  function renderMonthlyFoodLog(){
+    const el = document.getElementById("monthlyFoodLog");
+    if (!el) return;
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+    const days = new Date(year, month + 1, 0).getDate();
+    let html = "";
+    let hasAny = false;
+    for (let d = days; d >= 1; d--) {
+      const date = new Date(year, month, d);
+      const dk = formatDateKey(date);
+      const items = JSON.parse(localStorage.getItem("log_" + dk) || "[]");
+      if (!items.length) continue;
+      hasAny = true;
+      const total = items.reduce((s, i) => s + (i.kcal || 0), 0);
+      html += `<div style="padding:10px 0;border-bottom:1px solid var(--line2);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span style="font-weight:700;font-size:14px;">${month+1}月${d}日</span>
+          <span style="font-size:13px;color:var(--accent);font-weight:700;">${Math.round(total)} kcal</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;">
+          ${items.map(i => `<span style="font-size:11px;padding:2px 8px;border-radius:999px;background:var(--sub);color:var(--text-sub);">${i.name}</span>`).join("")}
+        </div>
+      </div>`;
+    }
+    el.innerHTML = hasAny ? html : '<div style="color:var(--muted);font-size:14px;text-align:center;padding:16px 0;">今月の記録がまだありません</div>';
+  }
+
+  // ===== キャラクター状態判定 =====
+  function renderCharacter(){
+    const today = formatDateKey(new Date());
+    const t = getDayTotal(today);
+    const waterEl = document.getElementById("statWater");
+    const waterMl = waterEl ? parseInt(waterEl.textContent) || 0 : 0;
+
+    let emoji = "🌱";
+    let status = "記録なし";
+    let message = "今日も記録を続けよう！";
+    let statusColor = "var(--muted)";
+    let statusBg = "rgba(142,142,147,.1)";
+
+    if (t.kcal > 0) {
+      const kcalRatio = t.kcal / (target.kcal || 1500);
+      const proteinRatio = t.protein / (target.protein || 60);
+
+      if (waterMl < 500) {
+        emoji = "🏜️";
+        status = "水分不足";
+        message = "水を飲もう！目安は1日1.5L以上";
+        statusColor = "#1a7fd4";
+        statusBg = "rgba(26,127,212,.1)";
+      } else if (kcalRatio < 0.5) {
+        emoji = "😴";
+        status = "エネルギー不足";
+        message = "もう少し食べよう！エネルギーが足りないよ";
+        statusColor = "#e85d1a";
+        statusBg = "rgba(232,93,26,.1)";
+      } else if (proteinRatio < 0.5) {
+        emoji = "💪";
+        status = "たんぱく質不足";
+        message = "たんぱく質を意識して摂ろう！";
+        statusColor = "#A9C3D6";
+        statusBg = "rgba(169,195,214,.15)";
+      } else if (kcalRatio > 1.2) {
+        emoji = "😅";
+        status = "食べすぎ注意";
+        message = "少し食べすぎかも。明日から調整しよう！";
+        statusColor = "#E4B567";
+        statusBg = "rgba(228,181,103,.15)";
+      } else {
+        emoji = "😊";
+        status = "元気";
+        message = "バランスよく食べられてるよ！";
+        statusColor = "var(--success)";
+        statusBg = "rgba(94,106,210,.1)";
+      }
+    }
+
+    const svgEl = document.getElementById("characterSvg");
+    const statusEl = document.getElementById("characterStatus");
+    const msgEl = document.getElementById("characterMessage");
+    if (svgEl) svgEl.textContent = emoji;
+    if (statusEl) {
+      statusEl.textContent = status;
+      statusEl.style.color = statusColor;
+      statusEl.style.background = statusBg;
+    }
+    if (msgEl) msgEl.textContent = message;
+  }
+
   function buildDishMap(){
     const map = {};
     for (const d of DISHES) map[d.key] = d;
@@ -7676,7 +7856,7 @@ JSONのみで回答してください（他のテキスト不要）。
 
       const classes = ["monthDay", isToday ? "today" : "", dow === 0 ? "sun" : dow === 6 ? "sat" : ""].filter(Boolean).join(" ");
 
-      html += `<div class="${classes}" onclick="setDate('${dateKey}');switchTab('log');">
+      html += `<div class="${classes}" onclick="setDate('${dateKey}');switchTab('today');">
         <div class="mDayNum">${d}</div>
         <div class="mDayDot" style="background:${dotColor};"></div>
       </div>`;
@@ -7772,6 +7952,7 @@ JSONのみで回答してください（他のテキスト不要）。
   renderFavorites();
   renderFrequent();
   switchTab("home");
+  renderCharacter();
 
   // ===== PWA: Manifest をインライン生成 =====
   function generateAppIcon(accent, bg){
