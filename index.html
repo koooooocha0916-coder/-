@@ -972,6 +972,39 @@
 
     .tabIcon{ font-size:16px; line-height:1; display:flex; align-items:center; justify-content:center; }
 
+    .charToast{
+      position: fixed;
+      bottom: calc(var(--tabH) + 20px);
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card);
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      padding: 10px 16px 10px 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      opacity: 0;
+      transition: all .3s ease;
+      z-index: 999;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .charToast.show{
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    .charToast img{
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .charToastText{
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
     .toast{
       position: fixed;
       left: 50%;
@@ -1400,40 +1433,7 @@
       pointer-events:none;
       animation: addCheck .5s ease forwards;
     }
-    /* バーコードスキャナー */
-    .barcodeOverlay{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.5);
-      z-index:200;
-      align-items:flex-end;
-      justify-content:center;
-    }
-    .barcodeOverlay.open{ display:flex; }
-    .barcodeSheet{
-      background:var(--card);
-      border-radius:24px 24px 0 0;
-      width:100%;
-      max-width:600px;
-      padding:20px 18px calc(28px + env(safe-area-inset-bottom));
-      max-height:90vh;
-      overflow-y:auto;
-    }
-    .barcodeVideo{
-      width:100%;
-      border-radius:16px;
-      background:#000;
-      display:none;
-      max-height:260px;
-      object-fit:cover;
-    }
-    .barcodeResult{
-      margin-top:12px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
+
   </style>
 </head>
 <body>
@@ -1451,8 +1451,14 @@
   <main class="container">
     <section id="screen-home" class="screen active">
 
-      <!-- キャラクター＋スキャンボタン -->
-      <div class="card" style="padding:20px;background:linear-gradient(135deg,var(--card) 0%,var(--sub) 100%);">
+      <!-- スキャンボタン -->
+      <button onclick="openCameraMenu()" style="white-space:nowrap;width:100%;padding:16px;border-radius:20px;border:none;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(94,106,210,.25);margin-bottom:20px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        📷 スキャンして食事を記録する
+      </button>
+
+      <!-- キャラクター＋スキャンボタン（非表示） -->
+      <div class="card" style="padding:20px;background:linear-gradient(135deg,var(--card) 0%,var(--sub) 100%);display:none;">
         <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
           <!-- メッセージ＋スキャンボタン（左側） -->
           <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
@@ -1514,8 +1520,17 @@
 
       <div style="height:20px"></div>
 
-      <!-- おすすめ -->
-      <div class="card"><h2 class="sectionTitle">おすすめ</h2><p id="advice"></p></div>
+      <!-- おすすめ（吹き出し風） -->
+      <div class="card" style="position:relative;">
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div id="adviceCharIcon" style="width:0;height:0;display:none;"></div>
+          <div style="flex:1;">
+            <div style="position:relative;background:var(--sub);border-radius:16px;padding:12px 14px;border:1.5px solid var(--line);">
+              <div id="advice" style="font-size:13px;line-height:1.6;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div style="height:22px"></div>
       <div class="card">
@@ -1666,10 +1681,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
             写真で解析
           </button>
-          <button onclick="closeCameraMenu();openBarcodeScanner();" style="width:100%;padding:16px;border-radius:20px;border:1.5px solid var(--accent);background:var(--card);color:var(--accent);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="7" y1="7" x2="7" y2="17"/><line x1="10" y1="7" x2="10" y2="17"/><line x1="13" y1="7" x2="13" y2="12"/><line x1="16" y1="7" x2="16" y2="17"/></svg>
-            バーコードスキャン
-          </button>
+          
         </div>
       </div>
       <div style="height:20px"></div>
@@ -1794,26 +1806,13 @@
             <div style="font-size:12px;color:var(--muted);margin-top:2px;">料理の写真をAIが解析してカロリーを推定</div>
           </div>
         </button>
-        <button onclick="closeCameraMenu();openBarcodeScanner();" style="
-          width:100%;padding:18px 16px;border-radius:18px;
-          border:1.5px solid var(--line);background:var(--card);
-          display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;">
-          <span style="font-size:32px;">📦</span>
-          <div>
-            <div style="font-size:15px;font-weight:700;color:var(--text);">バーコードスキャン</div>
-            <div style="font-size:12px;color:var(--muted);margin-top:2px;">市販食品のバーコードから栄養素を取得</div>
-          </div>
-        </button>
+        
       </div>
       <div style="height:20px"></div>
       <button onclick="closeCameraMenu()" style="width:100%;padding:12px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:14px;cursor:pointer;">キャンセル</button>
     </div>
   </div>
 
-  <!-- バーコードスキャナーモーダル -->
-  <div class="barcodeOverlay" id="barcodeOverlay" onclick="closeBarcodeIfOutside(event)">
-    <div class="barcodeSheet">
-      <div class="settingsHandle"></div>
       <h2 class="sectionTitle">📦 バーコードスキャン</h2>
       <div class="small" style="margin-bottom:12px;">市販食品のバーコードをカメラで読み取ります。見つからない場合もあります。</div>
 
@@ -1854,7 +1853,7 @@
       <h2 class="sectionTitle">📷 写真でカロリー計算</h2>
       <div class="small" style="margin-bottom:12px;">料理の写真を選ぶとAIが食品とカロリーを推定します。目安としてご利用ください。</div>
 
-      <input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none;" onchange="handlePhotoSelect(event)">
+      <input type="file" id="photoInput" accept="image/*" style="display:none;" onchange="handlePhotoSelect(event)">
       <button onclick="document.getElementById('photoInput').click()" style="width:100%;padding:14px;border-radius:16px;border:2px dashed var(--accent);background:rgba(74,163,255,.06);color:var(--accent);font-size:15px;font-weight:700;cursor:pointer;">
         📸 写真を選ぶ / 撮影する
       </button>
@@ -1886,22 +1885,6 @@
       </div>
 
       <div class="settingsSection">
-        <div class="settingsSectionTitle">キャラクター</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px;">
-          <button onclick="selectCharacter('potato')" id="charBtn_potato" style="padding:12px 8px;border-radius:16px;border:2px solid transparent;cursor:pointer;background:var(--sub);display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <img src="${POTATO_IMAGES.happy}" style="width:56px;height:56px;object-fit:contain;" alt="じゃがいも">
-            <span style="font-size:11px;font-weight:700;color:var(--text-sub);">じゃがいも</span>
-          </button>
-          <button onclick="selectCharacter('carrot')" id="charBtn_carrot" style="padding:12px 8px;border-radius:16px;border:2px solid transparent;cursor:pointer;background:var(--sub);display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <div style="width:56px;height:56px;color:var(--text-main);">${CHARACTERS.carrot.svg('happy')}</div>
-            <span style="font-size:11px;font-weight:700;color:var(--text-sub);">にんじん</span>
-          </button>
-          <button onclick="selectCharacter('tomato')" id="charBtn_tomato" style="padding:12px 8px;border-radius:16px;border:2px solid transparent;cursor:pointer;background:var(--sub);display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <div style="width:56px;height:56px;color:var(--text-main);">${CHARACTERS.tomato.svg('happy')}</div>
-            <span style="font-size:11px;font-weight:700;color:var(--text-sub);">トマト</span>
-          </button>
-        </div>
-
         <div class="settingsSectionTitle">テーマカラー</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
           <button onclick="setColorTheme('')" id="themeDefault" style="padding:10px 8px;border-radius:14px;border:2px solid transparent;cursor:pointer;background:#f2f2f7;display:flex;flex-direction:column;align-items:center;gap:5px;">
@@ -2106,6 +2089,10 @@
   </nav>
 
   <div class="toast" id="toast"></div>
+  <div class="charToast" id="charToast" style="display:none !important;">
+    <img id="charToastImg" src="" alt="">
+    <span class="charToastText" id="charToastText"></span>
+  </div>
 
 <script>
   function cssVar(name){
@@ -2298,6 +2285,23 @@
   function renderPortionBadge(){
     const badge = document.getElementById("portionBadge");
     if (badge) badge.textContent = `量：${portionLabelFromValue(getPortion())}`;
+  }
+
+  // キャラトースト
+  let charToastTimer = null;
+  function showCharToast(text){
+    const charKey = getSelectedCharacter();
+    const img = POTATO_IMAGES ? POTATO_IMAGES.happy : null;
+    if (!img) { showToast(text); return; }
+    const el = document.getElementById("charToast");
+    const imgEl = document.getElementById("charToastImg");
+    const textEl = document.getElementById("charToastText");
+    if (!el) return;
+    imgEl.src = img;
+    textEl.textContent = text;
+    el.classList.add("show");
+    clearTimeout(charToastTimer);
+    charToastTimer = setTimeout(() => el.classList.remove("show"), 2500);
   }
 
   function showToast(text){
@@ -2624,6 +2628,11 @@
   function renderAdvice(total){
     const el = document.getElementById("advice");
     if (!el) return;
+    // 吹き出しのキャラアイコン更新
+    const iconEl = document.getElementById("adviceCharIcon");
+    if (iconEl && typeof POTATO_IMAGES !== "undefined") {
+      iconEl.innerHTML = `<img src="${POTATO_IMAGES.normal}" style="width:36px;height:36px;object-fit:contain;" alt="">`;
+    }
 
     const h = new Date().getHours();
     const dow = new Date().getDay(); // 0=日〜6=土
@@ -2635,12 +2644,19 @@
     const diff = { protein: total.protein - target.protein, carb: total.carb - target.carb, fat: total.fat - target.fat };
     const allOk = Math.abs(diff.protein) <= 10 && Math.abs(diff.carb) <= 20 && Math.abs(diff.fat) <= 6;
     if (allOk && total.kcal > 0) {
-      el.innerHTML = "<span style='font-size:1.1em'>🎯 PFCすべて目標内！この調子🔥</span>";
+      if (iconEl && typeof POTATO_IMAGES !== "undefined") {
+        iconEl.innerHTML = `<img src="${POTATO_IMAGES.happy}" style="width:36px;height:36px;object-fit:contain;" alt="">`;
+      }
+      el.innerHTML = "<span style='font-weight:700;'>🎯 PFCすべて目標内！この調子🔥</span>";
+      
       return;
     }
 
     // 記録なし → 時間帯別のウェルカムメッセージ＋おすすめ食品
     if (total.kcal === 0) {
+      if (iconEl && typeof POTATO_IMAGES !== "undefined") {
+        iconEl.innerHTML = `<img src="${POTATO_IMAGES.normal}" style="width:36px;height:36px;object-fit:contain;" alt="">`;
+      }
       const greetings = {
         "朝": ["おはよう☀️ 今日も記録してこ！", "朝ごはんから始めよう🍳", "良い朝！まず記録してみて📝"],
         "昼": ["お昼の時間🍱 ランチ記録しよ！", "昼ご飯どうだった？記録してみて", "もうお昼！ランチ記録してこ🍜"],
@@ -7746,7 +7762,29 @@ JSONのみで回答してください（他のテキスト不要）。
     showToast(CHARACTERS[key].name + "を選んだよ！");
   }
 
+  function toggleCharacter(){
+    const current = localStorage.getItem("characterVisible") !== "false";
+    const next = !current;
+    localStorage.setItem("characterVisible", next ? "true" : "false");
+    applyCharacterVisibility();
+    showToast(next ? "キャラクターをONにしたよ！" : "キャラクターをOFFにしたよ");
+  }
+
+  function applyCharacterVisibility(){
+    const visible = localStorage.getItem("characterVisible") !== "false";
+    const charArea = document.querySelector("#screen-home .card:first-child");
+    if (charArea) charArea.style.display = visible ? "" : "none";
+    // トグルボタンの状態更新
+    const btn = document.getElementById("charToggleBtn");
+    const knob = document.getElementById("charToggleKnob");
+    const selectArea = document.getElementById("charSelectArea");
+    if (btn) btn.style.background = visible ? "var(--accent)" : "var(--muted)";
+    if (knob) knob.style.transform = visible ? "translateX(22px)" : "translateX(0px)";
+    if (selectArea) selectArea.style.opacity = visible ? "1" : "0.4";
+  }
+
   function initCharacterUI(){
+    applyCharacterVisibility();
     const key = getSelectedCharacter();
     const btn = document.getElementById("charBtn_" + key);
     if (btn) {
